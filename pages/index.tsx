@@ -1,12 +1,29 @@
+/* -------------------------------------------------------------------------- */
+/*                                   IMPORT                                   */
+/* -------------------------------------------------------------------------- */
+
+/* --------------------------------- NEXT JS -------------------------------- */
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+
+/* ------------------------------- COMPONENTS ------------------------------- */
 import { Header } from "../components/Header";
-import { Button } from "../components/Button";
 import { Service } from "../components/Service";
 import { Footer } from "../components/Footer";
 
+/* --------------------------------- STYLES --------------------------------- */
+import variables from "../styles/variables.module.scss";
+import styles from "../styles/Home.module.scss";
+
+/* --------------------------------- IMAGES --------------------------------- */
+import coding from "../public/img/picto/coding.png";
+import search from "../public/img/picto/search.png";
+import pantone from "../public/img/picto/pantone.png";
+
+/* -------------------------------------------------------------------------- */
+/*                                  COMPONENT                                 */
+/* -------------------------------------------------------------------------- */
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
@@ -31,7 +48,7 @@ const Home: NextPage = () => {
             Faites vous accompagner par un développeur web freelance pour votre
             projet web
           </h2>
-          <Button text="Prendre contact" link="" />
+          <button>Prendre contact</button>
         </section>
 
         <section>
@@ -43,21 +60,21 @@ const Home: NextPage = () => {
           </p>
           <Service
             title="Développement web"
-            picto=""
+            picto={coding}
             text="Intégration et développement web fullstack pour création ou modification de site internet, d’application métier ou de solution SaaS."
-            link=""
+            modalKey="dev"
           />
           <Service
             title="Référencement naturel"
-            picto=""
+            picto={search}
             text="Optimisation du référencement afin de faire remonter le site web dans les résultats des moteurs de recherche et faire progresser son traffic."
-            link=""
+            modalKey="seo"
           />
           <Service
             title="Maquettes graphiques"
-            picto=""
+            picto={pantone}
             text="Conception d’interfaces et d’expériences utilisateur adaptés aux besoins de l’organisation. Elaboration ou application d’une charte graphique."
-            link=""
+            modalKey="ui"
           />
         </section>
       </main>

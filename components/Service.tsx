@@ -1,22 +1,26 @@
-import { Button } from "./Button";
+import Image from "next/image";
 
 export const Service = ({
   title,
   picto,
   text,
-  link,
+  modalKey,
 }: {
   title: string;
-  picto: string;
+  picto: StaticImageData;
   text: string;
-  link: string;
+  modalKey: string;
 }) => {
   return (
     <div>
-      <img src={picto} alt={"pictogramme " + title} />
+      <Image
+        src={picto}
+        alt={"pictogramme " + title}
+        placeholder="blur" // Optional blur-up while loading
+      />
       <h4>{title}</h4>
       <p>{text}</p>
-      <Button text="Découvrir" link={link} />
+      <button>Découvrir</button>
     </div>
   );
 };
