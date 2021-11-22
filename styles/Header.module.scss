@@ -11,35 +11,37 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20px 50px;
+    margin: 5px 50px;
   }
-}
+  .logo {
+    font-family: "Righteous", cursive;
+    font-size: 2rem;
+    font-weight: 700;
+  }
 
-.logo {
-  font-family: "Righteous", cursive;
-  font-size: 2.5rem;
-  font-weight: 700;
-}
+  .dot {
+    margin-left: 5px;
+    font-size: 3rem;
+    line-height: 0;
+    color: $primary-color;
+  }
 
-.dot {
-  margin-left: 5px;
-  font-size: 3rem;
-  line-height: 0;
-  color: $primary-color;
-}
-
-.navigation {
-  ul {
-    display: flex;
-    align-items: center;
-    li {
-      margin-left: 25px;
-      font-size: 1.1rem;
-      list-style-type: none;
+  .navigation {
+    ul {
+      display: flex;
+      align-items: center;
+      li {
+        margin-left: 25px;
+        list-style-type: none;
+      }
     }
   }
-}
 
-.cta {
-  background: $primary-color;
+  .cta {
+    background: linear-gradient(
+      0.25turn,
+      $primary-color,
+      $primary-color-medium
+    );
+  }
 }
