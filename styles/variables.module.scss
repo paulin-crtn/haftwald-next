@@ -1,7 +1,9 @@
 $primary-color: #3845de;
+$primary-color-light: #f8f7ff;
 $secondary-color: #dc1e61;
 $secondary-color-light: #de4e81;
 
 :export {
   primaryColor: $primary-color;
+  primaryColorLight: $primary-color-light;
 }

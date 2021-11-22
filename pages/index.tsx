@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------------------- */
-/*                                   IMPORT                                   */
+/*                                   IMPORTS                                  */
 /* -------------------------------------------------------------------------- */
 
 /* --------------------------------- NEXT JS -------------------------------- */
@@ -13,10 +13,10 @@ import { Service } from "../components/Service";
 import { Footer } from "../components/Footer";
 
 /* --------------------------------- STYLES --------------------------------- */
-import variables from "../styles/variables.module.scss";
 import styles from "../styles/Home.module.scss";
 
 /* --------------------------------- IMAGES --------------------------------- */
+import headlinesScreenshot from "../public/img/homepage.png";
 import coding from "../public/img/picto/coding.png";
 import search from "../public/img/picto/search.png";
 import pantone from "../public/img/picto/pantone.png";
@@ -39,19 +39,37 @@ const Home: NextPage = () => {
 
       <Header />
 
-      <main className={styles.main}>
+      <main>
         <section>
-          <h1>
-            Conception et réalisation de site internet et de logiciel métier
-          </h1>
-          <h2>
-            Faites vous accompagner par un développeur web freelance pour votre
-            projet web
-          </h2>
-          <button>Prendre contact</button>
+          <div className={styles.headlinesContainer}>
+            <div>
+              <h1>
+                Conception et réalisation de site internet et de logiciel métier
+              </h1>
+              <h2>
+                Faites vous accompagner par un{" "}
+                <strong>développeur web freelance</strong> pour votre{" "}
+                <strong>projet web</strong>
+              </h2>
+              <button>Prendre contact</button>
+            </div>
+
+            <div className={styles.headlinesScreenshotWrapper}>
+              <div className={styles.headlinesScreenshotInner}>
+                <figure className={styles.headlinesScreenshot}>
+                  <Image
+                    src={headlinesScreenshot}
+                    alt="VSCode screenshot"
+                    placeholder="blur"
+                    quality={100}
+                  />
+                </figure>
+              </div>
+            </div>
+          </div>
         </section>
 
-        <section>
+        <section className={styles.servicesContainer}>
           <h3>Prestations de service</h3>
           <p>
             Les prestations proposées couvrent l’ensemble des besoins auxquels
