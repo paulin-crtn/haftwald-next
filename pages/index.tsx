@@ -9,6 +9,7 @@ import Image from "next/image";
 
 /* ------------------------------- COMPONENTS ------------------------------- */
 import { Header } from "../components/Header";
+import { Contact } from "../components/Contact";
 import { Service } from "../components/Service";
 import { Footer } from "../components/Footer";
 
@@ -53,6 +54,7 @@ const Home: NextPage = () => {
         <section>
           <div className={styles.headlinesContainer}>
             <div>
+              <Contact />
               <h1>
                 Conception et réalisation de site internet et de logiciel métier
               </h1>
