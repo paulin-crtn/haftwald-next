@@ -1,22 +1,40 @@
-import { Button } from "./Button";
+/* -------------------------------------------------------------------------- */
+/*                                   IMPORTS                                  */
+/* -------------------------------------------------------------------------- */
+
+/* --------------------------------- NEXT JS -------------------------------- */
+import Image from "next/image";
+
+/* --------------------------------- STYLES --------------------------------- */
+import styles from "../styles/Service.module.scss";
+
+/* -------------------------------------------------------------------------- */
+/*                                  COMPONENT                                 */
+/* -------------------------------------------------------------------------- */
 
 export const Service = ({
   title,
   picto,
   text,
-  link,
+  modalKey,
 }: {
   title: string;
-  picto: string;
+  picto: StaticImageData;
   text: string;
-  link: string;
+  modalKey: string;
 }) => {
   return (
-    <div>
-      <img src={picto} alt={"pictogramme " + title} />
+    <div className={styles.serviceContainer}>
+      <figure>
+        <Image
+          src={picto}
+          alt={"pictogramme " + title}
+          placeholder="blur" // Optional blur-up while loading
+        />
+      </figure>
       <h4>{title}</h4>
       <p>{text}</p>
-      <Button text="Découvrir" link={link} />
+      <button>Découvrir</button>
     </div>
   );
 };

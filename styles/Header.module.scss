@@ -1,0 +1,47 @@
+@import "./variables.module.scss";
+
+.headerContainer {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 1000;
+  border-bottom: 1px solid #cccccc;
+  .headerWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 50px;
+  }
+  .logo {
+    font-family: "Righteous", cursive;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .dot {
+    margin-left: 5px;
+    font-size: 3rem;
+    line-height: 0;
+    color: $primary-color;
+  }
+
+  .navigation {
+    ul {
+      display: flex;
+      align-items: center;
+      li {
+        margin-left: 25px;
+        list-style-type: none;
+      }
+    }
+  }
+
+  .cta {
+    background: linear-gradient(
+      0.25turn,
+      $primary-color,
+      $primary-color-medium
+    );
+  }
+}
