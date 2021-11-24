@@ -24,6 +24,7 @@ import search from "../public/img/picto/search.png";
 import pantone from "../public/img/picto/pantone.png";
 import team from "../public/img/team.svg";
 import videocall from "../public/img/videocall.svg";
+import emoji from "../public/img/emoji.png";
 
 /* -------------------------------------------------------------------------- */
 /*                                  COMPONENT                                 */
@@ -84,7 +85,11 @@ const Home: NextPage = () => {
         </section>
 
         {/* -------------------------------- SERVICES ------------------------------- */}
-        <section className={styles.servicesContainer}>
+        <section
+          className={[styles.sectionContainer, styles.servicesContainer].join(
+            " "
+          )}
+        >
           <h3 className={styles.title}>Prestations de service</h3>
           <p className={styles.subTitle}>
             Les prestations proposées couvrent l’ensemble des besoins auxquels
@@ -114,7 +119,12 @@ const Home: NextPage = () => {
         </section>
 
         {/* -------------------------------- ORGANISATION ------------------------------- */}
-        <section className={styles.organisationContainer}>
+        <section
+          className={[
+            styles.sectionContainer,
+            styles.organisationContainer,
+          ].join(" ")}
+        >
           <h3 className={styles.title}>Organisation</h3>
           <p className={styles.subTitle}>
             En fonction de la nature et de la durée de la mission, la prestation
@@ -135,7 +145,11 @@ const Home: NextPage = () => {
         </section>
 
         {/* -------------------------------- QUESTIONS ------------------------------- */}
-        <section className={styles.questionContainer}>
+        <section
+          className={[styles.sectionContainer, styles.questionsContainer].join(
+            " "
+          )}
+        >
           <h3 className={styles.title}>Questions courantes</h3>
           <p className={styles.subTitle}>
             Trouvez les réponses à la plupart des questions que vous pourriez
@@ -144,34 +158,55 @@ const Home: NextPage = () => {
         </section>
 
         {/* -------------------------------- COMMITMENT ------------------------------- */}
-        <section className={styles.commitmentContainer}>
+        <section
+          className={[styles.sectionContainer, styles.commitmentContainer].join(
+            " "
+          )}
+        >
           <h3 className={styles.title}>Engagements</h3>
         </section>
 
         {/* -------------------------------- ABOUT ------------------------------- */}
-        <section className={styles.aboutContainer}>
+        <section
+          className={[styles.sectionContainer, styles.aboutContainer].join(" ")}
+        >
           <h3 className={styles.title}>Qui suis-je ?</h3>
+          <figure className={styles.emojiContainer}>
+            <Image
+              src={emoji}
+              alt="emoji paulin caratini"
+              placeholder="blur"
+              quality={100}
+            />
+          </figure>
           <p>
-            C’est en échangeant quotidiennement avec des intégrateurs et
-            développeurs web lorsque j’occupais des postes de chef de projet
-            digital au sein d’agences marketing que je me suis découvert un
-            intérêt prononcé pour le fonctionnement technique des applications
-            web.
+            C’est en échangeant quotidiennement avec des{" "}
+            <strong>intégrateurs et développeurs web</strong> lorsque j’occupais
+            des postes de <strong>chef de projet digital</strong> au sein d'
+            <strong>agences marketing</strong> que je me suis découvert un
+            intérêt prononcé pour le <strong>fonctionnement technique</strong>{" "}
+            des <strong>applications web</strong>.
             <br />
-            Cette curiosité m’a poussé à passer les certifications « Techniques
-            de développement web » et « Techniques d’intégration web » puis à
-            rejoindre tour à tour deux start-up pour les accompagner dans la
-            conception de leurs applications métiers réalisées sous TypeScript,
-            respectivement dans le secteur médical et de la grande distribution.
+            <br />
+            Cette curiosité m’a poussé à passer les certifications « 
+            <strong>Techniques de développement web</strong> » et « 
+            <strong>Techniques d’intégration web</strong> » puis à rejoindre
+            tour à tour deux start-up pour les accompagner dans la conception de
+            leurs <strong>applications métiers</strong> réalisées sous{" "}
+            <strong>TypeScript</strong>, respectivement dans le secteur médical
+            et de la grande distribution.
+            <br />
             <br />
             Ce sont ces expériences et ce parcours pluridisciplinaire qui me
             permettent aujourd’hui de proposer mes compétences à des
-            organisations à la recherche d’un développeur web freelance. Que
-            vous cherchiez à vous faire conseiller sur un projet en cours ou à
-            venir, à faire concevoir votre application web ou bien à renforcer
-            vos équipes, je vous invite à me contacter afin que nous puissions
-            échanger.
+            organisations à la recherche d’un{" "}
+            <strong>développeur web freelance</strong>. Que vous cherchiez à
+            vous faire conseiller sur un projet en cours ou à venir, à faire
+            concevoir votre <strong>application web</strong> ou bien à{" "}
+            <strong>renforcer vos équipes</strong>, je vous invite à me
+            contacter afin que nous puissions échanger.
           </p>
+          <button>Prendre contact</button>
         </section>
       </main>
 
