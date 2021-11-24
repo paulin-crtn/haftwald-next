@@ -9,9 +9,10 @@ import Image from "next/image";
 
 /* ------------------------------- COMPONENTS ------------------------------- */
 import { Header } from "../components/Header";
-import { Contact } from "../components/Contact";
 import { Service } from "../components/Service";
+import { Organisation } from "../components/Organisation";
 import { Footer } from "../components/Footer";
+import { Contact } from "../components/Contact";
 
 /* --------------------------------- STYLES --------------------------------- */
 import styles from "../styles/Home.module.scss";
@@ -21,6 +22,8 @@ import headlinesScreenshot from "../public/img/homepage.png";
 import coding from "../public/img/picto/coding.png";
 import search from "../public/img/picto/search.png";
 import pantone from "../public/img/picto/pantone.png";
+import team from "../public/img/team.svg";
+import videocall from "../public/img/videocall.svg";
 
 /* -------------------------------------------------------------------------- */
 /*                                  COMPONENT                                 */
@@ -54,7 +57,6 @@ const Home: NextPage = () => {
         <section>
           <div className={styles.headlinesContainer}>
             <div>
-              <Contact />
               <h1>
                 Conception et réalisation de site internet et de logiciel métier
               </h1>
@@ -89,7 +91,7 @@ const Home: NextPage = () => {
             vous pourriez être confronté dans le cadre de la création ou de la
             modification d’un site.
           </p>
-          <div className={styles.services}>
+          <div className={styles.cards}>
             <Service
               title="Développement web"
               picto={coding}
@@ -118,6 +120,18 @@ const Home: NextPage = () => {
             En fonction de la nature et de la durée de la mission, la prestation
             pourra s’exercer dans vos locaux ou à distance.
           </p>
+          <div className={styles.cards}>
+            <Organisation
+              title="Présentiel"
+              img={team}
+              text="Certains projets nécessitent une présence totale ou partielle sur site, auquel cas cas je peux me déplacer pour intégrer vos équipes directement dans vos locaux. La mobilité est possible sur l’ensemble du territoire."
+            />
+            <Organisation
+              title="Distanciel"
+              img={videocall}
+              text="Pour les mission de plus courte durée, moins complexe ou nécessitant de collaborer avec des équipes déjà connues, le télétravail est une solution à envisager. Je suis disponible sur vos outils tout au long du projet."
+            />
+          </div>
         </section>
 
         {/* -------------------------------- QUESTIONS ------------------------------- */}

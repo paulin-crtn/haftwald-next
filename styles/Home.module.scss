@@ -44,18 +44,21 @@
   }
 }
 
+// SERVICES & ORGANISATION
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 60px auto 0 auto;
+}
+
 // SERVICES
 .servicesContainer {
   background-color: $primary-color-light;
   padding: 80px 0;
   text-align: center;
-  .services {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1200px;
-    margin: 60px auto 0 auto;
-  }
 }
 
 // ORGANISATION
