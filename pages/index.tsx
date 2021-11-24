@@ -12,8 +12,15 @@ import { Header } from "../components/Header";
 import { Service } from "../components/Service";
 import { Organisation } from "../components/Organisation";
 import { Commitment } from "../components/Commitment";
+import { Question } from "../components/Question";
 import { Footer } from "../components/Footer";
 import { Contact } from "../components/Contact";
+
+/* ------------------------------- INTERFACES ------------------------------- */
+import { IQuestion } from "../interfaces/IQuestion";
+
+/* ---------------------------------- DATA ---------------------------------- */
+import { questions } from "../data/questions";
 
 /* --------------------------------- STYLES --------------------------------- */
 import styles from "../styles/Home.module.scss";
@@ -39,11 +46,11 @@ const Home: NextPage = () => {
       /* -------------------------------------------------------------------------- */}
       <Head>
         <title>
-          Développeur Web Freelance Typescript : React, Angular, Node | Haftwald
+          Développeur Web Freelance React, NextJS, Angular | Haftwald
         </title>
         <meta
           name="description"
-          content="Haftwald est un développeur web freelance fullstack maîtrisant les langages Javascript et Typescript ainsi que les frameworks React, Angular et Node.js"
+          content="Haftwald est un développeur web freelance maîtrisant les langages Javascript et Typescript ainsi que les frameworks React, NextJS et Angular"
         />
       </Head>
 
@@ -98,23 +105,23 @@ const Home: NextPage = () => {
             vous pourriez être confronté dans le cadre de la création ou de la
             modification d’un site.
           </p>
-          <div className={styles.wrapper}>
+          <div className={[styles.wrapper, styles.servicesWrapper].join(" ")}>
             <Service
               title="Développement web"
               picto={coding}
-              text="Intégration et développement web fullstack pour création ou modification de site internet, d’application métier ou de solution SaaS."
+              text="Intégration et développement web pour création ou modification de site internet, d’application métier ou de solution SaaS réalisé sous React, NextJS ou Angular."
               modalKey="dev"
             />
             <Service
               title="Référencement naturel"
               picto={search}
-              text="Optimisation du référencement afin de faire remonter le site web dans les résultats des moteurs de recherche et faire progresser son traffic."
+              text="Optimisation du référencement afin de faire remonter le site dans les résultats des moteurs de recherche et faire progresser son traffic."
               modalKey="seo"
             />
             <Service
               title="Maquettes graphiques"
               picto={pantone}
-              text="Conception d’interfaces et d’expériences utilisateur adaptés aux besoins de l’organisation. Elaboration ou application d’une charte graphique."
+              text="Conception d’interfaces et d’expériences utilisateur adaptés à votre cible, à vos objectifs et en cohérence avec votre charte graphique."
               modalKey="ui"
             />
           </div>
@@ -124,7 +131,7 @@ const Home: NextPage = () => {
         <section
           className={[
             styles.sectionContainer,
-            styles.organisationContainer,
+            styles.organisationsContainer,
           ].join(" ")}
         >
           <h3 className={styles.title}>Organisation</h3>
@@ -132,7 +139,9 @@ const Home: NextPage = () => {
             En fonction de la nature et de la durée de la mission, la prestation
             pourra s’exercer dans vos locaux ou à distance.
           </p>
-          <div className={styles.wrapper}>
+          <div
+            className={[styles.wrapper, styles.organisationsWrapper].join(" ")}
+          >
             <Organisation
               title="Présentiel"
               img={team}
@@ -157,6 +166,19 @@ const Home: NextPage = () => {
             Trouvez les réponses à la plupart des questions que vous pourriez
             vous poser.
           </p>
+          <div className={[styles.wrapper, styles.questionsWrapper].join(" ")}>
+            {questions.map((question: IQuestion, index) => (
+              <Question
+                key={index}
+                question={question.title}
+                answer={question.answer}
+              />
+            ))}
+          </div>
+          <div className={styles.cta}>
+            <p>Votre question n'apparait pas ?</p>
+            <button>Posez-là</button>
+          </div>
         </section>
 
         {/* -------------------------------- COMMITMENTS ------------------------------ */}
@@ -167,7 +189,9 @@ const Home: NextPage = () => {
           ].join(" ")}
         >
           <h3 className={styles.title}>Engagements</h3>
-          <div className={styles.wrapper}>
+          <div
+            className={[styles.wrapper, styles.commitmentsWrapper].join(" ")}
+          >
             <div>
               <Commitment
                 title="Transparence"

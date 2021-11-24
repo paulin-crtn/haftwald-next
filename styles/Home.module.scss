@@ -42,10 +42,6 @@ $maxWidth: 1200px;
 }
 
 .wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: $maxWidth;
   margin: 60px auto 0 auto;
 }
 
@@ -65,27 +61,61 @@ $maxWidth: 1200px;
 // SERVICES
 .servicesContainer {
   background-color: $primary-color-light;
+  .servicesWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: $maxWidth;
+  }
 }
 
 // ORGANISATION
-.organisationContainer {
+.organisationsContainer {
   background: linear-gradient(0.25turn, $primary-color, $primary-color-medium);
   .title,
   .subTitle {
     color: #ffffff;
   }
+  .organisationsWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: $maxWidth;
+  }
 }
 
 // QUESTIONS
+.questionsContainer {
+  .questionsWrapper {
+    max-width: 950px;
+  }
+  .cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    p {
+      margin-right: 20px;
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+  }
+}
 
 // COMMITMENTS
 .commitmentsContainer {
   background-color: $primary-color-light;
-  .cta {
-    flex: 0 0 550px;
-    margin-left: 50px;
-    button {
-      margin-top: 30px;
+  .commitmentsWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: $maxWidth;
+    .cta {
+      flex: 0 0 550px;
+      margin-left: 50px;
+      button {
+        margin-top: 30px;
+      }
     }
   }
 }
