@@ -41,6 +41,14 @@ $maxWidth: 1200px;
   text-align: center;
 }
 
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: $maxWidth;
+  margin: 60px auto 0 auto;
+}
+
 .title {
   margin-bottom: 20px;
   font-size: 2rem;
@@ -52,16 +60,6 @@ $maxWidth: 1200px;
   margin: 0 auto;
   font-size: 1.1rem;
   text-align: center;
-}
-
-// SERVICES & ORGANISATION
-
-.cards {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: $maxWidth;
-  margin: 60px auto 0 auto;
 }
 
 // SERVICES
@@ -80,7 +78,17 @@ $maxWidth: 1200px;
 
 // QUESTIONS
 
-// COMMITMENT
+// COMMITMENTS
+.commitmentsContainer {
+  background-color: $primary-color-light;
+  .cta {
+    flex: 0 0 550px;
+    margin-left: 50px;
+    button {
+      margin-top: 30px;
+    }
+  }
+}
 
 // ABOUT
 .aboutContainer {

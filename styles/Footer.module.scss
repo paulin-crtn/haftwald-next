@@ -1,0 +1,20 @@
+.footerContainer {
+  max-width: 850px;
+  margin: 60px auto;
+  text-align: center;
+  h6 {
+    font-family: "Righteous", cursive;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .presentation,
+  .legal,
+  .copyright {
+    margin-top: 30px;
+    font-size: 0.9rem;
+  }
+  .legal span {
+    font-weight: 500;
+    cursor: pointer;
+  }
+}

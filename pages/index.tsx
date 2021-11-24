@@ -11,6 +11,7 @@ import Image from "next/image";
 import { Header } from "../components/Header";
 import { Service } from "../components/Service";
 import { Organisation } from "../components/Organisation";
+import { Commitment } from "../components/Commitment";
 import { Footer } from "../components/Footer";
 import { Contact } from "../components/Contact";
 
@@ -24,6 +25,7 @@ import search from "../public/img/picto/search.png";
 import pantone from "../public/img/picto/pantone.png";
 import team from "../public/img/team.svg";
 import videocall from "../public/img/videocall.svg";
+import sendingemail from "../public/img/sendingemail.svg";
 import emoji from "../public/img/emoji.png";
 
 /* -------------------------------------------------------------------------- */
@@ -96,7 +98,7 @@ const Home: NextPage = () => {
             vous pourriez être confronté dans le cadre de la création ou de la
             modification d’un site.
           </p>
-          <div className={styles.cards}>
+          <div className={styles.wrapper}>
             <Service
               title="Développement web"
               picto={coding}
@@ -130,7 +132,7 @@ const Home: NextPage = () => {
             En fonction de la nature et de la durée de la mission, la prestation
             pourra s’exercer dans vos locaux ou à distance.
           </p>
-          <div className={styles.cards}>
+          <div className={styles.wrapper}>
             <Organisation
               title="Présentiel"
               img={team}
@@ -157,13 +159,36 @@ const Home: NextPage = () => {
           </p>
         </section>
 
-        {/* -------------------------------- COMMITMENT ------------------------------- */}
+        {/* -------------------------------- COMMITMENTS ------------------------------ */}
         <section
-          className={[styles.sectionContainer, styles.commitmentContainer].join(
-            " "
-          )}
+          className={[
+            styles.sectionContainer,
+            styles.commitmentsContainer,
+          ].join(" ")}
         >
           <h3 className={styles.title}>Engagements</h3>
+          <div className={styles.wrapper}>
+            <div>
+              <Commitment
+                title="Transparence"
+                text="Des échanges réguliers, clairs et directs afin de favoriser la bonne avancée du projet."
+              />
+              <Commitment
+                title="Investissement"
+                text="Un engagement, une réactivité et une adaptabilité tout au long de la mission."
+              />
+              <Commitment
+                title="Accompagnement"
+                text="Des conseils adaptés pour vous permettre de comprendre les enjeux et faire les meilleurs choix à chaque étape."
+              />
+            </div>
+            <div className={styles.cta}>
+              <figure>
+                <Image src={sendingemail} alt="sending email illustration" />
+              </figure>
+              <button>Prendre contact</button>
+            </div>
+          </div>
         </section>
 
         {/* -------------------------------- ABOUT ------------------------------- */}

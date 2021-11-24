@@ -1,0 +1,20 @@
+.commitmentContainer {
+  display: flex;
+  justify-items: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  .pictoContainer {
+    flex: 0 0 35px;
+    margin-right: 20px;
+  }
+  h5 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+  p {
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+  }
+}
