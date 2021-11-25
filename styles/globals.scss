@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   padding: 0;
@@ -35,7 +39,7 @@ strong {
 }
 
 button {
-  padding: 10px 20px;
+  padding: 7px 17px;
   font-family: inherit;
   font-size: 1rem;
   font-weight: 400;
@@ -48,4 +52,13 @@ button {
     $secondary-color-light
   );
   cursor: pointer;
+}
+
+#services,
+#organisation,
+#commitments,
+#questions,
+#about {
+  scroll-margin-top: 81px; // Header height
+  // scroll-snap-margin-top: 81px; // Header height + Safari & iOS fix
 }

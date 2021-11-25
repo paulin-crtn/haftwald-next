@@ -1,15 +1,9 @@
 @import "./variables.module.scss";
 
-// SHARED
-.title {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-.subTitle {
-  font-size: 1.1rem;
-  width: 60%;
-  margin: 0 auto;
+$maxWidth: 1200px;
+
+.container {
+  position: relative;
 }
 
 // HEADLINES
@@ -17,8 +11,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 210px auto 120px auto; // Add 90px to top because of fixed position header
+  max-width: $maxWidth;
+  margin: 203px auto 120px auto; // Add 82px (81px + 1px border) to top because of fixed position header
   h1 {
     margin: 0;
     font-size: 2.6rem;
@@ -44,27 +38,133 @@
   }
 }
 
+// SHARED
+
+.sectionContainer {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.wrapper {
+  margin: 60px auto 0 auto;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+.subTitle {
+  width: 60%;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
 // SERVICES
 .servicesContainer {
   background-color: $primary-color-light;
-  padding: 80px 0;
-  text-align: center;
-  .services {
+  .servicesWrapper {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    max-width: 1200px;
-    margin: 60px auto 0 auto;
+    max-width: $maxWidth;
   }
 }
 
 // ORGANISATION
-.organisationContainer {
+.organisationsContainer {
   background: linear-gradient(0.25turn, $primary-color, $primary-color-medium);
-  padding: 80px 0;
-  text-align: center;
   .title,
   .subTitle {
     color: #ffffff;
   }
+  .organisationsWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: $maxWidth;
+  }
+}
+
+// QUESTIONS
+.questionsContainer {
+  .questionsWrapper {
+    max-width: 950px;
+  }
+  .cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    p {
+      margin-right: 20px;
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+  }
+}
+
+// COMMITMENTS
+.commitmentsContainer {
+  background-color: $primary-color-light;
+  .commitmentsWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: $maxWidth;
+    .cta {
+      flex: 0 0 550px;
+      margin-left: 50px;
+      button {
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+// ABOUT
+.aboutContainer {
+  background: linear-gradient(0.25turn, $primary-color, $primary-color-medium);
+  .title,
+  .subTitle {
+    color: #ffffff;
+  }
+  .emojiContainer {
+    width: 160px;
+    height: 160px;
+    margin: 60px auto 30px auto;
+    border-radius: 1000px;
+    background-color: #ffffff;
+  }
+  p {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 30px;
+    color: #ffffff;
+  }
+  button {
+    margin-top: 60px;
+    background: #ffffff;
+    color: #000000;
+  }
+}
+
+// SCROLL TO TOP BUTTON
+// See "js/displayScrollTopButton.js" file
+.scrollToTopButton {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 1.3rem;
+  text-align: center;
+  color: #ffffff;
+  background: #000000;
+  border-radius: 50px;
+  cursor: pointer;
 }

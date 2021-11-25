@@ -1,0 +1,26 @@
+.questionContainer {
+  margin-bottom: 20px;
+  padding: 20px 30px;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  text-align: left;
+  .question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    h3 {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    div {
+      font-size: 1.3rem;
+      font-weight: 400;
+      user-select: none;
+    }
+  }
+  .answer {
+    max-width: 800px;
+    padding-top: 15px;
+  }
+}
