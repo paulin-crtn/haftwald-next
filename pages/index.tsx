@@ -5,6 +5,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
 /* ------------------------------- COMPONENTS ------------------------------- */
 import { Header } from "../components/Header";
@@ -267,6 +268,15 @@ const Home: NextPage = () => {
       /*                                   FOOTER                                   */
       /* -------------------------------------------------------------------------- */}
       <Footer />
+
+      {/* ------------------------------------------------------------------------- */
+      /*                            SCROLL TO TOP BUTTON                            */
+      /* -------------------------------------------------------------------------- */}
+      <div id="scrollToTopButton" className={styles.scrollToTopButton}>
+        <Link href="/">
+          <div>&uarr;</div>
+        </Link>
+      </div>
     </div>
   );
 };

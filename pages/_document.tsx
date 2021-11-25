@@ -1,3 +1,6 @@
+/* -------------------------------------------------------------------------- */
+/*                                   IMPORTS                                  */
+/* -------------------------------------------------------------------------- */
 import Document, {
   Html,
   Head,
@@ -6,12 +9,14 @@ import Document, {
   DocumentContext,
 } from "next/document";
 
+/* -------------------------------------------------------------------------- */
+/*                               CLASS COMPONENT                              */
+/* -------------------------------------------------------------------------- */
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
     return { ...initialProps };
   }
-
   render() {
     return (
       <Html lang="fr">
@@ -26,6 +31,10 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <script
+            type="text/javascript"
+            src="js/displayScrollTopButton.js"
+          ></script>
         </body>
       </Html>
     );
