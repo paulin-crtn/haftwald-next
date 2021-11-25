@@ -1,0 +1,76 @@
+@import "./variables.module.scss";
+
+.container {
+  position: fixed; /* postulat de départ */
+  top: 50%; /* à 50% du parent référent */
+  left: 50%; /* à 50% du parent référent */
+  transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+  width: 80%;
+  max-width: 450px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  z-index: 100;
+  .header {
+    position: relative;
+    padding: 30px;
+    text-align: center;
+    background-color: $primary-color;
+    color: #ffffff;
+    border-radius: 10px 10px 0 0;
+    .closeButton {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    p {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+  }
+  form {
+    padding: 30px;
+    label {
+      font-size: 1rem;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 5px;
+    }
+    .sublabel {
+      margin: -5px 0 5px 0;
+      font-size: 0.9rem;
+    }
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 7px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 300;
+      border: 1px solid #aaaaaa;
+      border-radius: 5px;
+    }
+    textarea {
+      height: 80px;
+      resize: none;
+      overflow: scroll;
+    }
+    button {
+      width: 100%;
+      margin: 10px 0;
+    }
+    .legal {
+      font-size: 0.8rem;
+      line-height: 1rem;
+      text-align: center;
+    }
+  }
+}

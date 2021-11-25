@@ -17,6 +17,10 @@ body {
   font-weight: 300;
 }
 
+body.overflowYHidden {
+  overflow-y: hidden; // Use when displaying modal
+}
+
 h1,
 h2,
 h3,
@@ -61,4 +65,16 @@ button {
 #about {
   scroll-margin-top: 81px; // Header height
   // scroll-snap-margin-top: 81px; // Header height + Safari & iOS fix
+}
+
+.contactOverlay.active {
+  position: fixed; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Black background with opacity */
+  z-index: 20; /* Specify a stack order in case you're using a different order for other elements */
 }

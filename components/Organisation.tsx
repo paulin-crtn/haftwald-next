@@ -15,10 +15,12 @@ export const Organisation = ({
   title,
   img,
   text,
+  setShowModalContact,
 }: {
   title: string;
   img: StaticImageData;
   text: string;
+  setShowModalContact: (arg: boolean) => void;
 }) => {
   return (
     <div className={styles.organisationContainer}>
@@ -30,7 +32,9 @@ export const Organisation = ({
         <figure>
           <Image src={img} alt={"illustration " + title} />
         </figure>
-        <button>Prendre contact</button>
+        <button onClick={() => setShowModalContact(true)}>
+          Prendre contact
+        </button>
       </div>
     </div>
   );

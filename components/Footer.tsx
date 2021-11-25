@@ -10,7 +10,7 @@ import styles from "../styles/Footer.module.scss";
 /* -------------------------------------------------------------------------- */
 export const Footer = () => {
   return (
-    <footer className={styles.footerContainer}>
+    <footer className={styles.container}>
       <h6>Haftwald</h6>
       <p className={styles.presentation}>
         Paulin Caratini, a.k.a. Haftwald, est un développeur web freelance à
