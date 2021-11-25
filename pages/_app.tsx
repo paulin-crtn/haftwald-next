@@ -1,7 +1,12 @@
-import "../styles/globals.scss";
+/* -------------------------------------------------------------------------- */
+/*                                   IMPORTS                                  */
+/* -------------------------------------------------------------------------- */
 import type { AppProps } from "next/app";
-import Head from "next/head";
+import "../styles/globals.scss";
 
+/* -------------------------------------------------------------------------- */
+/*                                  FUNCTION                                  */
+/* -------------------------------------------------------------------------- */
 function MyApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
 }

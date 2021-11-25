@@ -6,6 +6,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 
 /* ------------------------------- COMPONENTS ------------------------------- */
 import { Header } from "../components/Header";
@@ -179,7 +180,7 @@ const Home: NextPage = () => {
             ))}
           </div>
           <div className={styles.cta}>
-            <p>Votre question n'apparait pas ?</p>
+            <p>Votre question n’apparait pas ?</p>
             <button>Posez-là</button>
           </div>
         </section>
@@ -236,7 +237,7 @@ const Home: NextPage = () => {
           <p>
             C’est en échangeant quotidiennement avec des{" "}
             <strong>intégrateurs et développeurs web</strong> lorsque j’occupais
-            des postes de <strong>chef de projet digital</strong> au sein d'
+            des postes de <strong>chef de projet digital</strong> au sein d’
             <strong>agences marketing</strong> que je me suis découvert un
             intérêt prononcé pour le <strong>fonctionnement technique</strong>{" "}
             des <strong>applications web</strong>.
@@ -273,10 +274,11 @@ const Home: NextPage = () => {
       /*                            SCROLL TO TOP BUTTON                            */
       /* -------------------------------------------------------------------------- */}
       <div id="scrollToTopButton" className={styles.scrollToTopButton}>
-        <Link href="/">
+        <Link href="/" passHref>
           <div>&uarr;</div>
         </Link>
       </div>
+      <Script src="js/displayScrollTopButton.js"></Script>
     </div>
   );
 };

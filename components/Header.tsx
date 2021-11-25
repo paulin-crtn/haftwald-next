@@ -14,7 +14,7 @@ export const Header = () => {
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headerWrapper}>
-        <Link href="/">
+        <Link href="/" passHref>
           <p className={styles.logo}>
             Haftwald<span className={styles.dot}>.</span>
           </p>

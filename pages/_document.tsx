@@ -31,10 +31,6 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <script
-            type="text/javascript"
-            src="js/displayScrollTopButton.js"
-          ></script>
         </body>
       </Html>
     );
