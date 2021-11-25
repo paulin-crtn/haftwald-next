@@ -312,7 +312,7 @@ const Home: NextPage = () => {
       /* -------------------------------------------------------------------------- */}
       {showModalContact && (
         <div className={styles.modalContainer}>
-          <Contact />
+          <Contact setShowModalContact={setShowModalContact} />
         </div>
       )}
     </div>

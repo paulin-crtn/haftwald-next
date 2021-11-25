@@ -12,8 +12,8 @@ import styles from "../styles/Header.module.scss";
 /* -------------------------------------------------------------------------- */
 export const Header = () => {
   return (
-    <header className={styles.headerContainer}>
-      <div className={styles.headerWrapper}>
+    <header className={styles.container}>
+      <div className={styles.wrapper}>
         <Link href="/" passHref>
           <a className={styles.logo}>
             Haftwald<span className={styles.dot}>.</span>

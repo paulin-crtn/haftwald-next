@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <div className="overlay"></div>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </>
   );
 }
