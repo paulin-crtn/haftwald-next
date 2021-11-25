@@ -4,6 +4,12 @@
 /* --------------------------------- NEXT JS -------------------------------- */
 import Link from "next/link";
 
+/* ---------------------------- REACT CUSTOM HOOK --------------------------- */
+import useContact from "../utils/useContact";
+
+/* ------------------------------- COMPONENTS ------------------------------- */
+import { Contact } from "../components/Contact";
+
 /* --------------------------------- STYLES --------------------------------- */
 import styles from "../styles/Header.module.scss";
 
@@ -11,6 +17,12 @@ import styles from "../styles/Header.module.scss";
 /*                                  COMPONENT                                 */
 /* -------------------------------------------------------------------------- */
 export const Header = () => {
+  /* ---------------------------- REACT CUSTOM HOOK --------------------------- */
+  const { showModalContact, setShowModalContact } = useContact();
+
+  /* -------------------------------------------------------------------------- */
+  /*                                  TEMPLATE                                  */
+  /* -------------------------------------------------------------------------- */
   return (
     <header className={styles.container}>
       <div className={styles.wrapper}>
@@ -37,11 +49,24 @@ export const Header = () => {
               <a href="#about">Qui suis-je ?</a>
             </li>
             <li>
-              <button className={styles.cta}>Contact</button>
+              <button
+                className={styles.cta}
+                onClick={() => setShowModalContact(true)}
+              >
+                Contact
+              </button>
             </li>
           </ul>
         </nav>
       </div>
+      {/* ------------------------------------------------------------------------- */
+      /*                                MODAL CONTACT                               */
+      /* -------------------------------------------------------------------------- */}
+      {showModalContact && (
+        <div className={styles.modalContainer}>
+          <Contact setShowModalContact={setShowModalContact} />
+        </div>
+      )}
     </header>
   );
 };

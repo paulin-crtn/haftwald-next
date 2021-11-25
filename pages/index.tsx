@@ -8,8 +8,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 
-/* ---------------------------------- REACT --------------------------------- */
-import { useEffect, useState } from "react";
+/* ---------------------------- REACT CUSTOM HOOK --------------------------- */
+import useContact from "../utils/useContact";
 
 /* ------------------------------- COMPONENTS ------------------------------- */
 import { Header } from "../components/Header";
@@ -43,22 +43,8 @@ import emoji from "../public/img/emoji.png";
 /*                                  COMPONENT                                 */
 /* -------------------------------------------------------------------------- */
 const Home: NextPage = () => {
-  /* -------------------------------------------------------------------------- */
-  /*                               REACT USE STATE                              */
-  /* -------------------------------------------------------------------------- */
-  const [showModalContact, setShowModalContact] = useState(false);
-
-  /* -------------------------------------------------------------------------- */
-  /*                              REACT USE EFFECT                              */
-  /* -------------------------------------------------------------------------- */
-  useEffect(() => {
-    const body = document.querySelector("body");
-    const overlay = document.querySelector(".overlay");
-    if (showModalContact && body && overlay) {
-      body.classList.add("overflowYHidden");
-      overlay.classList.add("active");
-    }
-  }, [showModalContact]);
+  /* ---------------------------- REACT CUSTOM HOOK --------------------------- */
+  const { showModalContact, setShowModalContact } = useContact();
 
   /* -------------------------------------------------------------------------- */
   /*                                  TEMPLATE                                  */
@@ -174,11 +160,13 @@ const Home: NextPage = () => {
               title="Présentiel"
               img={team}
               text="Certains projets nécessitent une présence totale ou partielle sur site, auquel cas cas je peux me déplacer pour intégrer vos équipes directement dans vos locaux. La mobilité est possible sur l’ensemble du territoire."
+              setShowModalContact={setShowModalContact}
             />
             <Organisation
               title="Distanciel"
               img={videocall}
               text="Pour les mission de plus courte durée, moins complexe ou nécessitant de collaborer avec des équipes déjà connues, le télétravail est une solution à envisager. Je suis disponible sur vos outils tout au long du projet."
+              setShowModalContact={setShowModalContact}
             />
           </div>
         </section>
@@ -206,7 +194,7 @@ const Home: NextPage = () => {
           </div>
           <div className={styles.cta}>
             <p>Votre question n’apparait pas ?</p>
-            <button>Posez-là</button>
+            <button onClick={() => setShowModalContact(true)}>Posez-là</button>
           </div>
         </section>
 
@@ -240,7 +228,9 @@ const Home: NextPage = () => {
               <figure>
                 <Image src={sendingemail} alt="sending email illustration" />
               </figure>
-              <button>Prendre contact</button>
+              <button onClick={() => setShowModalContact(true)}>
+                Prendre contact
+              </button>
             </div>
           </div>
         </section>
@@ -286,7 +276,9 @@ const Home: NextPage = () => {
             <strong>renforcer vos équipes</strong>, je vous invite à me
             contacter afin que nous puissions échanger.
           </p>
-          <button>Prendre contact</button>
+          <button onClick={() => setShowModalContact(true)}>
+            Prendre contact
+          </button>
         </section>
       </main>
 

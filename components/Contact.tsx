@@ -13,26 +13,30 @@ import styles from "../styles/Contact.module.scss";
 export const Contact = ({
   setShowModalContact,
 }: {
-  setShowModalContact: (boolean: boolean) => void;
+  setShowModalContact: (arg: boolean) => void;
 }) => {
+  /* -------------------------------------------------------------------------- */
+  /*                                 REACT STATE                                */
+  /* -------------------------------------------------------------------------- */
   const [fullname, setFullname] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
 
   /**
+   * Send email
    *
    * @param data
    * @returns
    */
-  const sendMail = async (e: FormEvent<HTMLFormElement>) => {
+  async function sendMail(e: FormEvent<HTMLFormElement>) {
     console.log("button clicked");
     e.preventDefault();
 
     const res = await fetch("/api/sendgrid", {
       body: JSON.stringify({
-        email,
         fullname,
-        message: "Hello world",
+        email,
+        message,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -46,14 +50,17 @@ export const Contact = ({
       return;
     }
     console.log("done !");
-  };
+  }
 
+  /**
+   * Close contact modal
+   */
   function closeModal() {
     const body = document.querySelector("body");
-    const overlay = document.querySelector(".overlay");
-    if (body && overlay) {
+    const contactOverlay = document.querySelector(".contactOverlay");
+    if (body && contactOverlay) {
       body.classList.remove("overflowYHidden");
-      overlay.classList.remove("active");
+      contactOverlay.classList.remove("active");
     }
     setShowModalContact(false);
   }
@@ -62,7 +69,7 @@ export const Contact = ({
   /*                                  TEMPLATE                                  */
   /* -------------------------------------------------------------------------- */
   return (
-    <div className={styles.filter}>
+    <div className="contactOverlay">
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles.closeButton} onClick={closeModal}>

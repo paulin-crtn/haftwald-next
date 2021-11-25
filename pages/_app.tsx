@@ -8,12 +8,7 @@ import "../styles/globals.scss";
 /*                                  FUNCTION                                  */
 /* -------------------------------------------------------------------------- */
 function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      <div className="overlay"></div>
-      <Component {...pageProps} />
-    </>
-  );
+  return <Component {...pageProps} />;
 }
 
 export default MyApp;
