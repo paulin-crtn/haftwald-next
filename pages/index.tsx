@@ -8,6 +8,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 
+/* ---------------------------------- REACT --------------------------------- */
+import { useEffect, useState } from "react";
+
 /* ------------------------------- COMPONENTS ------------------------------- */
 import { Header } from "../components/Header";
 import { Service } from "../components/Service";
@@ -40,6 +43,26 @@ import emoji from "../public/img/emoji.png";
 /*                                  COMPONENT                                 */
 /* -------------------------------------------------------------------------- */
 const Home: NextPage = () => {
+  /* -------------------------------------------------------------------------- */
+  /*                               REACT USE STATE                              */
+  /* -------------------------------------------------------------------------- */
+  const [showModalContact, setShowModalContact] = useState(false);
+
+  /* -------------------------------------------------------------------------- */
+  /*                              REACT USE EFFECT                              */
+  /* -------------------------------------------------------------------------- */
+  useEffect(() => {
+    const body = document.querySelector("body");
+    const overlay = document.querySelector(".overlay");
+    if (showModalContact && body && overlay) {
+      body.classList.add("overflowYHidden");
+      overlay.classList.add("active");
+    }
+  }, [showModalContact]);
+
+  /* -------------------------------------------------------------------------- */
+  /*                                  TEMPLATE                                  */
+  /* -------------------------------------------------------------------------- */
   return (
     <div className={styles.container}>
       {/* ------------------------------------------------------------------------- */
@@ -76,7 +99,9 @@ const Home: NextPage = () => {
                 <strong>développeur web freelance</strong> pour votre{" "}
                 <strong>projet web</strong>
               </h2>
-              <button>Prendre contact</button>
+              <button onClick={() => setShowModalContact(true)}>
+                Prendre contact
+              </button>
             </div>
 
             <div className={styles.headlinesScreenshotWrapper}>
@@ -275,10 +300,21 @@ const Home: NextPage = () => {
       /* -------------------------------------------------------------------------- */}
       <div id="scrollToTopButton" className={styles.scrollToTopButton}>
         <Link href="/" passHref>
-          <div>&uarr;</div>
+          <a>
+            <div>&uarr;</div>
+          </a>
         </Link>
       </div>
       <Script src="js/displayScrollTopButton.js"></Script>
+
+      {/* ------------------------------------------------------------------------- */
+      /*                                MODAL CONTACT                               */
+      /* -------------------------------------------------------------------------- */}
+      {showModalContact && (
+        <div className={styles.modalContainer}>
+          <Contact />
+        </div>
+      )}
     </div>
   );
 };

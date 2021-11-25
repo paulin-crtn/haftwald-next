@@ -15,9 +15,9 @@ export const Header = () => {
     <header className={styles.headerContainer}>
       <div className={styles.headerWrapper}>
         <Link href="/" passHref>
-          <p className={styles.logo}>
+          <a className={styles.logo}>
             Haftwald<span className={styles.dot}>.</span>
-          </p>
+          </a>
         </Link>
         <nav className={styles.navigation}>
           <ul>

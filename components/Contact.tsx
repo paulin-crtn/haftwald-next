@@ -1,5 +1,15 @@
+/* -------------------------------------------------------------------------- */
+/*                                   IMPORTS                                  */
+/* -------------------------------------------------------------------------- */
+/* ---------------------------------- REACT --------------------------------- */
 import { FormEvent, useState } from "react";
 
+/* --------------------------------- STYLES --------------------------------- */
+import styles from "../styles/Contact.module.scss";
+
+/* -------------------------------------------------------------------------- */
+/*                                  COMPONENT                                 */
+/* -------------------------------------------------------------------------- */
 export const Contact = () => {
   const [fullname, setFullname] = useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -34,23 +44,27 @@ export const Contact = () => {
   };
 
   return (
-    <form onSubmit={(e) => sendMail(e)}>
-      <div>
-        <input
-          type="text"
-          value={fullname}
-          onChange={(e) => setFullname(e.target.value)}
-        />
-      </div>
-      <div>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </div>
+    <div className={styles.filter}>
+      <div className={styles.contactContainer}>
+        <form onSubmit={(e) => sendMail(e)}>
+          <div>
+            <input
+              type="text"
+              value={fullname}
+              onChange={(e) => setFullname(e.target.value)}
+            />
+          </div>
+          <div>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
 
-      <button type="submit">Envoyer</button>
-    </form>
+          <button type="submit">Envoyer</button>
+        </form>
+      </div>
+    </div>
   );
 };

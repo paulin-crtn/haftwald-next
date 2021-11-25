@@ -1,0 +1,10 @@
+.contactContainer {
+  position: fixed; /* postulat de départ */
+  top: 50%; /* à 50% du parent référent */
+  left: 50%; /* à 50% du parent référent */
+  transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+  width: 400px;
+  padding: 30px;
+  background-color: #ffffff;
+  z-index: 100;
+}
