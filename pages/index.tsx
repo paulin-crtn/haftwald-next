@@ -1,7 +1,6 @@
 /* -------------------------------------------------------------------------- */
 /*                                   IMPORTS                                  */
 /* -------------------------------------------------------------------------- */
-
 /* --------------------------------- NEXT JS -------------------------------- */
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -95,6 +94,7 @@ const Home: NextPage = () => {
 
         {/* -------------------------------- SERVICES ------------------------------- */}
         <section
+          id="services"
           className={[styles.sectionContainer, styles.servicesContainer].join(
             " "
           )}
@@ -129,6 +129,7 @@ const Home: NextPage = () => {
 
         {/* -------------------------------- ORGANISATION ------------------------------- */}
         <section
+          id="organisation"
           className={[
             styles.sectionContainer,
             styles.organisationsContainer,
@@ -157,6 +158,7 @@ const Home: NextPage = () => {
 
         {/* -------------------------------- QUESTIONS ------------------------------- */}
         <section
+          id="questions"
           className={[styles.sectionContainer, styles.questionsContainer].join(
             " "
           )}
@@ -183,6 +185,7 @@ const Home: NextPage = () => {
 
         {/* -------------------------------- COMMITMENTS ------------------------------ */}
         <section
+          id="commitments"
           className={[
             styles.sectionContainer,
             styles.commitmentsContainer,
@@ -217,6 +220,7 @@ const Home: NextPage = () => {
 
         {/* -------------------------------- ABOUT ------------------------------- */}
         <section
+          id="about"
           className={[styles.sectionContainer, styles.aboutContainer].join(" ")}
         >
           <h3 className={styles.title}>Qui suis-je ?</h3>

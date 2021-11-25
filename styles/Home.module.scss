@@ -8,7 +8,7 @@ $maxWidth: 1200px;
   justify-content: space-between;
   align-items: center;
   max-width: $maxWidth;
-  margin: 210px auto 120px auto; // Add 90px to top because of fixed position header
+  margin: 203px auto 120px auto; // Add 82px (81px + 1px border) to top because of fixed position header
   h1 {
     margin: 0;
     font-size: 2.6rem;

@@ -1,6 +1,8 @@
 /* -------------------------------------------------------------------------- */
 /*                                   IMPORTS                                  */
 /* -------------------------------------------------------------------------- */
+/* --------------------------------- NEXT JS -------------------------------- */
+import Link from "next/link";
 
 /* --------------------------------- STYLES --------------------------------- */
 import styles from "../styles/Header.module.scss";
@@ -12,25 +14,27 @@ export const Header = () => {
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headerWrapper}>
-        <p className={styles.logo}>
-          Haftwald<span className={styles.dot}>.</span>
-        </p>
+        <Link href="/">
+          <p className={styles.logo}>
+            Haftwald<span className={styles.dot}>.</span>
+          </p>
+        </Link>
         <nav className={styles.navigation}>
           <ul>
             <li>
-              <a href="#">Prestations</a>
+              <a href="#services">Prestations</a>
             </li>
             <li>
-              <a href="#">Organisation</a>
+              <a href="#organisation">Organisation</a>
             </li>
             <li>
-              <a href="#">Questions</a>
+              <a href="#questions">Questions</a>
             </li>
             <li>
-              <a href="#">Engagements</a>
+              <a href="#commitments">Engagements</a>
             </li>
             <li>
-              <a href="#">Qui suis-je ?</a>
+              <a href="#about">Qui suis-je ?</a>
             </li>
             <li>
               <button className={styles.cta}>Contact</button>
