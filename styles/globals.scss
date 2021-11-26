@@ -58,6 +58,10 @@ button {
   cursor: pointer;
 }
 
+button:disabled {
+  opacity: 0.6;
+}
+
 #services,
 #organisation,
 #commitments,
@@ -67,7 +71,7 @@ button {
   // scroll-snap-margin-top: 81px; // Header height + Safari & iOS fix
 }
 
-.contactOverlay.active {
+.overlay {
   position: fixed; /* Sit on top of the page content */
   width: 100%; /* Full width (cover the whole page) */
   height: 100%; /* Full height (cover the whole page) */

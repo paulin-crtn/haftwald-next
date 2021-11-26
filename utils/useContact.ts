@@ -19,10 +19,8 @@ const useContact = () => {
   /* ------------------------------ REACT EFFECT ------------------------------ */
   useEffect(() => {
     const body = document.querySelector("body");
-    const contactOverlay = document.querySelector(".contactOverlay");
-    if (showModalContact && body && contactOverlay) {
+    if (showModalContact && body) {
       body.classList.add("overflowYHidden");
-      contactOverlay.classList.add("active");
     }
   }, [showModalContact]);
 
