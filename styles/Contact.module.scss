@@ -36,32 +36,36 @@
   }
   form {
     padding: 30px;
-    label {
-      font-size: 1rem;
-      font-weight: 500;
-      display: block;
-      margin-bottom: 5px;
-    }
-    .sublabel {
-      margin: -5px 0 5px 0;
-      font-size: 0.9rem;
-    }
-    input,
-    textarea {
-      display: block;
-      width: 100%;
-      margin-bottom: 10px;
-      padding: 7px;
-      font-family: inherit;
-      font-size: 0.9rem;
-      font-weight: 300;
-      border: 1px solid #aaaaaa;
-      border-radius: 5px;
-    }
-    textarea {
-      height: 80px;
-      resize: none;
-      overflow: scroll;
+    .formGroup {
+      margin-bottom: 15px;
+      label {
+        font-size: 0.95rem;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 5px;
+      }
+      input,
+      textarea {
+        display: block;
+        width: 100%;
+        padding: 7px;
+        font-family: inherit;
+        font-size: 0.9rem;
+        font-weight: 300;
+        border: 1px solid #aaaaaa;
+        border-radius: 5px;
+      }
+      textarea {
+        height: 80px;
+        resize: none;
+        overflow: scroll;
+      }
+      .errors {
+        margin-top: 5px;
+        color: rgb(255, 80, 80);
+        font-size: 0.85rem;
+        font-weight: 400;
+      }
     }
     button {
       width: 100%;
