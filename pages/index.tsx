@@ -13,12 +13,13 @@ import useContact from "../utils/useContact";
 
 /* ------------------------------- COMPONENTS ------------------------------- */
 import { Header } from "../components/Header";
+import { ServiceCard } from "../components/ServiceCard";
 import { Service } from "../components/Service";
-import { Organisation } from "../components/Organisation";
+import { OrganisationCard } from "../components/OrganisationCard";
 import { Commitment } from "../components/Commitment";
 import { Question } from "../components/Question";
 import { Footer } from "../components/Footer";
-import { Contact } from "../components/Contact";
+import { ModalContact } from "../components/ModalContact";
 
 /* ------------------------------- INTERFACES ------------------------------- */
 import { IQuestion } from "../interfaces/IQuestion";
@@ -38,11 +39,38 @@ import team from "../public/img/team.svg";
 import videocall from "../public/img/videocall.svg";
 import sendingemail from "../public/img/sendingemail.svg";
 import emoji from "../public/img/emoji.png";
+import { useEffect, useState } from "react";
 
 /* -------------------------------------------------------------------------- */
 /*                                  COMPONENT                                 */
 /* -------------------------------------------------------------------------- */
 const Home: NextPage = () => {
+  /* ------------------------------- REACT STATE ------------------------------ */
+  const [showServiceDev, setShowServiceDev] = useState<boolean>(false);
+
+  /* ------------------------------ REACT EFFECT ------------------------------ */
+  useEffect(() => {
+    const body = document.querySelector("body");
+    const serviceContainer =
+      document.getElementsByClassName("serviceContainer")[0];
+    if (body) {
+      if (showServiceDev) {
+        body.classList.add("overflowYHidden");
+      } else {
+        body.classList.remove("overflowYHidden");
+      }
+    }
+    if (serviceContainer) {
+      if (showServiceDev) {
+        serviceContainer.classList.add("active");
+      } else {
+        setTimeout(() => {
+          serviceContainer.classList.remove("active");
+        }, 1000);
+      }
+    }
+  }, [showServiceDev]);
+
   /* ---------------------------- REACT CUSTOM HOOK --------------------------- */
   const { showModalContact, setShowModalContact } = useContact();
 
@@ -119,23 +147,23 @@ const Home: NextPage = () => {
             modification d’un site.
           </p>
           <div className={[styles.wrapper, styles.servicesWrapper].join(" ")}>
-            <Service
+            <ServiceCard
               title="Développement web"
               picto={coding}
               text="Intégration et développement web pour création ou modification de site internet, d’application métier ou de solution SaaS réalisé sous React, NextJS ou Angular."
-              modalKey="dev"
+              setShowService={setShowServiceDev}
             />
-            <Service
+            <ServiceCard
               title="Référencement naturel"
               picto={search}
               text="Optimisation du référencement afin de faire remonter le site dans les résultats des moteurs de recherche et faire progresser son traffic."
-              modalKey="seo"
+              setShowService={setShowServiceDev}
             />
-            <Service
+            <ServiceCard
               title="Maquettes graphiques"
               picto={pantone}
               text="Conception d’interfaces et d’expériences utilisateur adaptés à votre cible, à vos objectifs et en cohérence avec votre charte graphique."
-              modalKey="ui"
+              setShowService={setShowServiceDev}
             />
           </div>
         </section>
@@ -156,13 +184,13 @@ const Home: NextPage = () => {
           <div
             className={[styles.wrapper, styles.organisationsWrapper].join(" ")}
           >
-            <Organisation
+            <OrganisationCard
               title="Présentiel"
               img={team}
               text="Certains projets nécessitent une présence totale ou partielle sur site, auquel cas cas je peux me déplacer pour intégrer vos équipes directement dans vos locaux. La mobilité est possible sur l’ensemble du territoire."
               setShowModalContact={setShowModalContact}
             />
-            <Organisation
+            <OrganisationCard
               title="Distanciel"
               img={videocall}
               text="Pour les mission de plus courte durée, moins complexe ou nécessitant de collaborer avec des équipes déjà connues, le télétravail est une solution à envisager. Je suis disponible sur vos outils tout au long du projet."
@@ -303,9 +331,19 @@ const Home: NextPage = () => {
       /*                                MODAL CONTACT                               */
       /* -------------------------------------------------------------------------- */}
       {showModalContact && (
-        <div className={styles.modalContainer}>
-          <Contact setShowModalContact={setShowModalContact} />
-        </div>
+        <ModalContact setShowModalContact={setShowModalContact} />
+      )}
+
+      {/* ------------------------------------------------------------------------- */
+      /*                                 SERVICE DEV                                */
+      /* -------------------------------------------------------------------------- */}
+      {showServiceDev && (
+        <Service
+          setShowService={setShowServiceDev}
+          setShowModalContact={setShowModalContact}
+        >
+          <div>Content dev</div>
+        </Service>
       )}
     </div>
   );

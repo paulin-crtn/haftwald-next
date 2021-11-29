@@ -23,7 +23,7 @@ interface IInput {
 /* -------------------------------------------------------------------------- */
 /*                                  COMPONENT                                 */
 /* -------------------------------------------------------------------------- */
-export const Contact = ({
+export const ModalContact = ({
   setShowModalContact,
 }: {
   setShowModalContact: (arg: boolean) => void;
@@ -31,17 +31,29 @@ export const Contact = ({
   /* -------------------------------------------------------------------------- */
   /*                                 REACT STATE                                */
   /* -------------------------------------------------------------------------- */
-  const [fullname, setFullname] = useState<IInput>({ touched: false, value: "", error: "Vous devez remplir ce champs" });
-  const [email, setEmail] = useState<IInput>({ touched: false, value: "", error: "Vous devez remplir ce champs" });
-  const [message, setMessage] = useState<IInput>({ touched: false, value: "", error: "" });
+  const [fullname, setFullname] = useState<IInput>({
+    touched: false,
+    value: "",
+    error: "Vous devez remplir ce champs",
+  });
+  const [email, setEmail] = useState<IInput>({
+    touched: false,
+    value: "",
+    error: "Vous devez remplir ce champs",
+  });
+  const [message, setMessage] = useState<IInput>({
+    touched: false,
+    value: "",
+    error: "",
+  });
   const [isSending, setIsSending] = useState<boolean>(false);
 
   /* -------------------------------------------------------------------------- */
   /*                                 REACT MEMO                                 */
   /* -------------------------------------------------------------------------- */
   const isFormValid = useMemo(() => {
-    return !fullname.error && !email.error && !message.error
-  }, [fullname.value, email.value, message.value])
+    return !fullname.error && !email.error && !message.error;
+  }, [fullname.value, email.value, message.value]);
 
   /* -------------------------------------------------------------------------- */
   /*                                  FUNCTIONS                                 */
@@ -124,9 +136,7 @@ export const Contact = ({
       error = "Vous devez remplir ce champs";
     } else if (value.length > 29) {
       error = "Le champs doit faire moins de 30 caractères";
-    } else if (
-      !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)
-    ) {
+    } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
       error = "Veuillez renseigner une adresse email valide";
     }
     // Set state
@@ -175,12 +185,16 @@ export const Contact = ({
             <input
               type="text"
               id="fullname"
-              className={fullname.touched && fullname.error ? styles.inputError : ""}
+              className={
+                fullname.touched && fullname.error ? styles.inputError : ""
+              }
               value={fullname.value}
               onChange={(e) => handleFullnameChange(e)}
-              onBlur={() => setFullname({...fullname, touched: true})}
+              onBlur={() => setFullname({ ...fullname, touched: true })}
             />
-            {fullname.touched && <div className={styles.textError}>{fullname.error}</div>}
+            {fullname.touched && (
+              <div className={styles.textError}>{fullname.error}</div>
+            )}
           </div>
 
           {/* ---------------------------------- EMAIL --------------------------------- */}
@@ -192,22 +206,31 @@ export const Contact = ({
               className={email.touched && email.error ? styles.inputError : ""}
               value={email.value}
               onChange={(e) => handleEmailChange(e)}
-              onBlur={() => setEmail({...email, touched: true})}
+              onBlur={() => setEmail({ ...email, touched: true })}
             />
-            {email.touched && <div className={styles.textError}>{email.error}</div>}
+            {email.touched && (
+              <div className={styles.textError}>{email.error}</div>
+            )}
           </div>
 
           {/* --------------------------------- MESSAGE -------------------------------- */}
           <div className={styles.formGroup}>
-            <label htmlFor="message"><div>Votre besoin</div><div className={styles.optional}>Facultatif</div></label>
+            <label htmlFor="message">
+              <div>Votre besoin</div>
+              <div className={styles.optional}>Facultatif</div>
+            </label>
             <textarea
               id="message"
-              className={message.touched && message.error ? styles.inputError : ""}
+              className={
+                message.touched && message.error ? styles.inputError : ""
+              }
               value={message.value}
               onChange={(e) => handleMessageChange(e)}
-              onBlur={() => setMessage({...message, touched: true})}
+              onBlur={() => setMessage({ ...message, touched: true })}
             ></textarea>
-            {message.touched && <div className={styles.textError}>{message.error}</div>}
+            {message.touched && (
+              <div className={styles.textError}>{message.error}</div>
+            )}
           </div>
 
           {/* ------------------------------ SUBMIT BUTTON ----------------------------- */}

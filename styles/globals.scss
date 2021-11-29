@@ -82,3 +82,22 @@ button:disabled {
   background-color: rgba(0, 0, 0, 0.6); /* Black background with opacity */
   z-index: 20; /* Specify a stack order in case you're using a different order for other elements */
 }
+
+// SERVICE
+.serviceContainer {
+  position: fixed;
+  top: 0;
+  right: -600px;
+  width: 80%;
+  min-height: 100%;
+  max-width: 600px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 10px 0 0 10px;
+  z-index: 100;
+  transition: right 1s;
+}
+
+.serviceContainer.active {
+  right: 0px;
+  transition: right 1s;
+}

@@ -8,7 +8,7 @@ import Link from "next/link";
 import useContact from "../utils/useContact";
 
 /* ------------------------------- COMPONENTS ------------------------------- */
-import { Contact } from "../components/Contact";
+import { ModalContact } from "./ModalContact";
 
 /* --------------------------------- STYLES --------------------------------- */
 import styles from "../styles/Header.module.scss";
@@ -64,7 +64,7 @@ export const Header = () => {
       /* -------------------------------------------------------------------------- */}
       {showModalContact && (
         <div className={styles.modalContainer}>
-          <Contact setShowModalContact={setShowModalContact} />
+          <ModalContact setShowModalContact={setShowModalContact} />
         </div>
       )}
     </header>

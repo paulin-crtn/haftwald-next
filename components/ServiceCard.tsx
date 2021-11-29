@@ -6,36 +6,35 @@
 import Image from "next/image";
 
 /* --------------------------------- STYLES --------------------------------- */
-import styles from "../styles/Organisation.module.scss";
+import styles from "../styles/Service.module.scss";
 
 /* -------------------------------------------------------------------------- */
 /*                                  COMPONENT                                 */
 /* -------------------------------------------------------------------------- */
-export const Organisation = ({
+
+export const ServiceCard = ({
   title,
-  img,
+  picto,
   text,
-  setShowModalContact,
+  setShowService,
 }: {
   title: string;
-  img: StaticImageData;
+  picto: StaticImageData;
   text: string;
-  setShowModalContact: (arg: boolean) => void;
+  setShowService: (arg: boolean) => void;
 }) => {
   return (
-    <div className={styles.organisationContainer}>
-      <div className={styles.content}>
-        <h4>{title}</h4>
-        <p>{text}</p>
-      </div>
-      <div className={styles.cta}>
-        <figure>
-          <Image src={img} alt={"illustration " + title} />
-        </figure>
-        <button onClick={() => setShowModalContact(true)}>
-          Prendre contact
-        </button>
-      </div>
+    <div className={styles.serviceContainer}>
+      <figure>
+        <Image
+          src={picto}
+          alt={"pictogramme " + title}
+          placeholder="blur" // Optional blur-up while loading
+        />
+      </figure>
+      <h4>{title}</h4>
+      <p>{text}</p>
+      <button onClick={() => setShowService(true)}>Découvrir</button>
     </div>
   );
 };
