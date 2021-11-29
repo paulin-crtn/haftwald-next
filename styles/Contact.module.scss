@@ -1,5 +1,7 @@
 @import "./variables.module.scss";
 
+$errorColor: #e64545;
+
 .container {
   position: fixed; /* postulat de départ */
   top: 50%; /* à 50% du parent référent */
@@ -12,7 +14,7 @@
   z-index: 100;
   .header {
     position: relative;
-    padding: 30px;
+    padding: 40px 30px;
     text-align: center;
     background-color: $primary-color;
     color: #ffffff;
@@ -25,24 +27,35 @@
       cursor: pointer;
     }
     h3 {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: 600;
     }
     p {
-      margin-top: 15px;
+      margin-top: 5px;
       font-size: 0.9rem;
       font-weight: 300;
     }
   }
   form {
-    padding: 30px;
+    padding: 40px 30px;
     .formGroup {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       label {
-        font-size: 0.95rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 1rem;
         font-weight: 500;
-        display: block;
         margin-bottom: 5px;
+        .optional {
+          margin-left: 7px;
+          padding: 3px 7px;
+          font-size: 0.7rem;
+          font-weight: 400;
+          color: $primary-color;
+          background-color: $primary-color-light;
+          border-radius: 5px;
+        }
       }
       input,
       textarea {
@@ -60,16 +73,19 @@
         resize: none;
         overflow: scroll;
       }
-      .errors {
+      .inputError {
+        border-color: $errorColor;
+      }
+      .textError {
         margin-top: 5px;
-        color: rgb(255, 80, 80);
+        color: $errorColor;
         font-size: 0.85rem;
         font-weight: 400;
       }
     }
     button {
       width: 100%;
-      margin: 10px 0;
+      margin: 10px 0 0 0;
     }
     .legal {
       font-size: 0.8rem;

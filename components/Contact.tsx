@@ -2,7 +2,7 @@
 /*                                   IMPORTS                                  */
 /* -------------------------------------------------------------------------- */
 /* ---------------------------------- REACT --------------------------------- */
-import { FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useMemo, useState } from "react";
 
 /* -------------------------------- COMPONENT ------------------------------- */
 import { Spinner } from "./Spinner";
@@ -15,6 +15,7 @@ import styles from "../styles/Contact.module.scss";
 /* -------------------------------------------------------------------------- */
 
 interface IInput {
+  touched: boolean;
   value: string;
   error: string;
 }
@@ -30,10 +31,17 @@ export const Contact = ({
   /* -------------------------------------------------------------------------- */
   /*                                 REACT STATE                                */
   /* -------------------------------------------------------------------------- */
-  const [fullname, setFullname] = useState<IInput>({ value: "", error: "" });
-  const [email, setEmail] = useState<IInput>({ value: "", error: "" });
-  const [message, setMessage] = useState<IInput>({ value: "", error: "" });
+  const [fullname, setFullname] = useState<IInput>({ touched: false, value: "", error: "Vous devez remplir ce champs" });
+  const [email, setEmail] = useState<IInput>({ touched: false, value: "", error: "Vous devez remplir ce champs" });
+  const [message, setMessage] = useState<IInput>({ touched: false, value: "", error: "" });
   const [isSending, setIsSending] = useState<boolean>(false);
+
+  /* -------------------------------------------------------------------------- */
+  /*                                 REACT MEMO                                 */
+  /* -------------------------------------------------------------------------- */
+  const isFormValid = useMemo(() => {
+    return !fullname.error && !email.error && !message.error
+  }, [fullname.value, email.value, message.value])
 
   /* -------------------------------------------------------------------------- */
   /*                                  FUNCTIONS                                 */
@@ -47,19 +55,7 @@ export const Contact = ({
   async function sendMail(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    checkFullname();
-    checkEmail();
-    checkMessage();
-
-    if (fullname.error != "" || email.error != "" || message.error != "") {
-      return;
-    }
-
     setIsSending(true);
-
-    //
-    console.log("end");
-    return;
 
     const res = await fetch("/api/sendgrid", {
       body: JSON.stringify({
@@ -87,10 +83,8 @@ export const Contact = ({
    */
   function closeModal() {
     const body = document.querySelector("body");
-    const contactOverlay = document.querySelector(".contactOverlay");
-    if (body && contactOverlay) {
+    if (body) {
       body.classList.remove("overflowYHidden");
-      contactOverlay.classList.remove("active");
     }
     setShowModalContact(false);
   }
@@ -98,20 +92,22 @@ export const Contact = ({
   /**
    * Check fullname input
    */
-  function checkFullname() {
+  function handleFullnameChange(e: ChangeEvent<HTMLInputElement>) {
     // Initialization
+    const value: string = e.target.value;
     let error: string = "";
     // Validation
-    if (fullname.value.length === 0) {
+    if (value.length === 0) {
       error = "Vous devez remplir ce champs";
-    } else if (fullname.value.length < 3) {
+    } else if (value.length < 3) {
       error = "Le champs doit faire au moins 3 caractères";
-    } else if (fullname.value.length > 29) {
+    } else if (value.length > 29) {
       error = "Le champs doit faire moins de 30 caractères";
     }
-    // Assignation
+    // Set state
     setFullname({
       ...fullname,
+      value,
       error,
     });
   }
@@ -119,22 +115,24 @@ export const Contact = ({
   /**
    * Check email input
    */
-  function checkEmail() {
+  function handleEmailChange(e: ChangeEvent<HTMLInputElement>) {
     // Initialization
+    const value: string = e.target.value;
     let error: string = "";
     // Validation
-    if (email.value.length === 0) {
+    if (value.length === 0) {
       error = "Vous devez remplir ce champs";
-    } else if (email.value.length > 29) {
+    } else if (value.length > 29) {
       error = "Le champs doit faire moins de 30 caractères";
     } else if (
-      !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)
+      !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)
     ) {
       error = "Veuillez renseigner une adresse email valide";
     }
-    // Assignation
+    // Set state
     setEmail({
       ...email,
+      value,
       error,
     });
   }
@@ -142,20 +140,18 @@ export const Contact = ({
   /**
    * Check message textarea
    */
-  function checkMessage() {
-    console.log("checked message");
-
+  function handleMessageChange(e: ChangeEvent<HTMLTextAreaElement>) {
     // Initialization
+    const value: string = e.target.value;
     let error: string = "";
     // Validation
-    if (message.value.length < 15) {
-      error = "Expliquez brièvement l'objet de votre demande";
-    } else if (message.value.length > 9999) {
+    if (value.length > 9999) {
       error = "Le champs doit faire moins de 1000 caractères";
     }
-    // Assignation
+    // Set state
     setMessage({
       ...message,
+      value,
       error,
     });
   }
@@ -170,12 +166,7 @@ export const Contact = ({
           <div className={styles.closeButton} onClick={closeModal}>
             &#10005;
           </div>
-          <h3>Demande contact</h3>
-          <p>
-            Vodre demande est sans engagement.
-            <br />
-            Tous les champs sont obligatoires.
-          </p>
+          <h3>Demande de contact</h3>
         </div>
         <form onSubmit={(e) => sendMail(e)}>
           {/* -------------------------------- FULLNAME -------------------------------- */}
@@ -184,16 +175,12 @@ export const Contact = ({
             <input
               type="text"
               id="fullname"
+              className={fullname.touched && fullname.error ? styles.inputError : ""}
               value={fullname.value}
-              onChange={(e) =>
-                setFullname({
-                  ...fullname,
-                  value: e.target.value,
-                })
-              }
-              onBlur={checkFullname}
+              onChange={(e) => handleFullnameChange(e)}
+              onBlur={() => setFullname({...fullname, touched: true})}
             />
-            <div className={styles.errors}>{fullname.error}</div>
+            {fullname.touched && <div className={styles.textError}>{fullname.error}</div>}
           </div>
 
           {/* ---------------------------------- EMAIL --------------------------------- */}
@@ -202,37 +189,29 @@ export const Contact = ({
             <input
               type="email"
               id="email"
+              className={email.touched && email.error ? styles.inputError : ""}
               value={email.value}
-              onChange={(e) =>
-                setEmail({
-                  ...email,
-                  value: e.target.value,
-                })
-              }
-              onBlur={checkEmail}
+              onChange={(e) => handleEmailChange(e)}
+              onBlur={() => setEmail({...email, touched: true})}
             />
-            <div className={styles.errors}>{email.error}</div>
+            {email.touched && <div className={styles.textError}>{email.error}</div>}
           </div>
 
           {/* --------------------------------- MESSAGE -------------------------------- */}
           <div className={styles.formGroup}>
-            <label htmlFor="message">Votre besoin en quelques mots</label>
+            <label htmlFor="message"><div>Votre besoin</div><div className={styles.optional}>Facultatif</div></label>
             <textarea
               id="message"
+              className={message.touched && message.error ? styles.inputError : ""}
               value={message.value}
-              onChange={(e) =>
-                setMessage({
-                  ...message,
-                  value: e.target.value,
-                })
-              }
-              onBlur={checkMessage}
+              onChange={(e) => handleMessageChange(e)}
+              onBlur={() => setMessage({...message, touched: true})}
             ></textarea>
-            <div className={styles.errors}>{message.error}</div>
+            {message.touched && <div className={styles.textError}>{message.error}</div>}
           </div>
 
           {/* ------------------------------ SUBMIT BUTTON ----------------------------- */}
-          <button type="submit" disabled={isSending}>
+          <button type="submit" disabled={isSending || !isFormValid}>
             {isSending ? <Spinner /> : "Envoyer"}
           </button>
           {/*<p className={styles.legal}>
