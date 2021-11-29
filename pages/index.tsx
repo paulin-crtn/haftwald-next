@@ -8,6 +8,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 
+/* ---------------------------------- REACT --------------------------------- */
+import { useEffect, useState } from "react";
+
 /* ---------------------------- REACT CUSTOM HOOK --------------------------- */
 import useContact from "../utils/useContact";
 
@@ -39,7 +42,6 @@ import team from "../public/img/team.svg";
 import videocall from "../public/img/videocall.svg";
 import sendingemail from "../public/img/sendingemail.svg";
 import emoji from "../public/img/emoji.png";
-import { useEffect, useState } from "react";
 
 /* -------------------------------------------------------------------------- */
 /*                                  COMPONENT                                 */
@@ -63,10 +65,6 @@ const Home: NextPage = () => {
     if (serviceContainer) {
       if (showServiceDev) {
         serviceContainer.classList.add("active");
-      } else {
-        setTimeout(() => {
-          serviceContainer.classList.remove("active");
-        }, 1000);
       }
     }
   }, [showServiceDev]);

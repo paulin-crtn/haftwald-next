@@ -6,7 +6,7 @@
 import Image from "next/image";
 
 /* --------------------------------- STYLES --------------------------------- */
-import styles from "../styles/Organisation.module.scss";
+import styles from "../styles/OrganisationCard.module.scss";
 
 /* -------------------------------------------------------------------------- */
 /*                                  COMPONENT                                 */
