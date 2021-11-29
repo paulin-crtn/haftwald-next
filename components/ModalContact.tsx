@@ -53,7 +53,7 @@ export const ModalContact = ({
   /* -------------------------------------------------------------------------- */
   const isFormValid = useMemo(() => {
     return !fullname.error && !email.error && !message.error;
-  }, [fullname.value, email.value, message.value]);
+  }, [fullname, email, message]);
 
   /* -------------------------------------------------------------------------- */
   /*                                  FUNCTIONS                                 */
