@@ -87,17 +87,17 @@ button:disabled {
 .serviceContainer {
   position: fixed;
   top: 0;
-  right: -600px;
-  width: 80%;
+  right: -800px;
+  width: 90%;
+  max-width: 800px;
   min-height: 100%;
-  max-width: 600px;
   background-color: hsl(0, 0%, 100%);
   border-radius: 10px 0 0 10px;
   z-index: 100;
-  transition: right 0.8s;
+  transition: right 0.7s; // 0.7s match 700ms setTimeout in components/Service.tsx
 }
 
 .serviceContainer.active {
   right: 0px;
-  transition: right 0.8s;
+  transition: right 0.7s; // 0.7s match 700ms setTimeout in components/Service.tsx
 }

@@ -49,6 +49,8 @@ import emoji from "../public/img/emoji.png";
 const Home: NextPage = () => {
   /* ------------------------------- REACT STATE ------------------------------ */
   const [showServiceDev, setShowServiceDev] = useState<boolean>(false);
+  const [showServiceSeo, setShowServiceSeo] = useState<boolean>(false);
+  const [showServiceUi, setShowServiceUi] = useState<boolean>(false);
 
   /* ------------------------------ REACT EFFECT ------------------------------ */
   useEffect(() => {
@@ -56,18 +58,18 @@ const Home: NextPage = () => {
     const serviceContainer =
       document.getElementsByClassName("serviceContainer")[0];
     if (body) {
-      if (showServiceDev) {
+      if (showServiceDev || showServiceSeo || showServiceUi) {
         body.classList.add("overflowYHidden");
       } else {
         body.classList.remove("overflowYHidden");
       }
     }
     if (serviceContainer) {
-      if (showServiceDev) {
+      if (showServiceDev || showServiceSeo || showServiceUi) {
         serviceContainer.classList.add("active");
       }
     }
-  }, [showServiceDev]);
+  }, [showServiceDev, showServiceSeo, showServiceUi]);
 
   /* ---------------------------- REACT CUSTOM HOOK --------------------------- */
   const { showModalContact, setShowModalContact } = useContact();
@@ -155,13 +157,13 @@ const Home: NextPage = () => {
               title="Référencement naturel"
               picto={search}
               text="Optimisation du référencement afin de faire remonter le site dans les résultats des moteurs de recherche et faire progresser son traffic."
-              setShowService={setShowServiceDev}
+              setShowService={setShowServiceSeo}
             />
             <ServiceCard
               title="Maquettes graphiques"
               picto={pantone}
               text="Conception d’interfaces et d’expériences utilisateur adaptés à votre cible, à vos objectifs et en cohérence avec votre charte graphique."
-              setShowService={setShowServiceDev}
+              setShowService={setShowServiceUi}
             />
           </div>
         </section>
@@ -337,10 +339,87 @@ const Home: NextPage = () => {
       /* -------------------------------------------------------------------------- */}
       {showServiceDev && (
         <Service
+          title="Développement web"
+          picto={coding}
           setShowService={setShowServiceDev}
           setShowModalContact={setShowModalContact}
         >
           <div>Content dev</div>
+        </Service>
+      )}
+
+      {/* ------------------------------------------------------------------------- */
+      /*                                 SERVICE SEO                                */
+      /* -------------------------------------------------------------------------- */}
+      {showServiceSeo && (
+        <Service
+          title="Référencement naturel"
+          picto={search}
+          setShowService={setShowServiceSeo}
+          setShowModalContact={setShowModalContact}
+        >
+          <div>
+            <p>
+              Le référencement naturel, aussi connu sous l’acronyme SEO pour
+              Search Engine Optimization, permet à votre site internet
+              d’apparaitre dans les résultats des moteurs de recherche comme
+              Google, Yahoo! ou Bing.
+            </p>
+
+            <p>
+              La position dans les moteurs de recherche dépend de plusieurs
+              facteurs, dont notamment :
+            </p>
+
+            <ul>
+              <li>la structure HTML des pages</li>
+              <li>la présence de méta-balises (title, description)</li>
+              <li>la rapidité de chargement du site</li>
+              <li>un design adaptatif (responsive)</li>
+              <li>la présence d’un fichier Sitemap</li>
+              <li>l’utilisation de CDN et du protocole HTTPS</li>
+              <li>etc.</li>
+            </ul>
+
+            <p>
+              Vous pouvez également prendre une part active dans le
+              référencement de votre site en suivant certaines bonnes pratiques,
+              dont notamment :
+            </p>
+
+            <ul>
+              <li>le partage sur les réseaux sociaux</li>
+              <li>
+                le contenus de vos pages (longueur, présence de certains
+                mot-clés)
+              </li>
+              <li>
+                la publication régulière de nouveaux contenus (via un blog par
+                exemple)
+              </li>
+              <li>le nombre de liens pointant vers votre site</li>
+              <li>etc.</li>
+            </ul>
+
+            <p>
+              Prestataire et client ont donc tous les deux un rôle clé dans la
+              réussite du référencement naturel d’un site.{" "}
+            </p>
+          </div>
+        </Service>
+      )}
+
+      {/* ------------------------------------------------------------------------- */
+      /*                                 SERVICE UI                                 */
+      /* -------------------------------------------------------------------------- */}
+      {showServiceUi && (
+        <Service
+          title="Maquettes graphiques"
+          picto={pantone}
+          setShowService={setShowServiceUi}
+          setShowModalContact={setShowModalContact}
+        >
+          <div>Content ui</div>
         </Service>
       )}
     </div>
