@@ -80,7 +80,7 @@ export const Service = ({
           </figure>
           <h3>{title}</h3>
         </div>
-        <div className={styles.content}>{children}</div>
+        <div>{children}</div>
       </div>
     </div>
   );
