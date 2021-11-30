@@ -7,6 +7,12 @@ import Image from "next/image";
 /* ---------------------------------- REACT --------------------------------- */
 import { ReactNode, useEffect } from "react";
 
+/* -------------------------------- FUNCTION -------------------------------- */
+import {
+  addBodyOverflowClass,
+  removeBodyOverflowClass,
+} from "../utils/setBodyOverflowClass";
+
 /* --------------------------------- STYLES --------------------------------- */
 import styles from "../styles/Service.module.scss";
 
@@ -30,7 +36,23 @@ export const Service = ({
   /*                                REACT EFFECT                                */
   /* -------------------------------------------------------------------------- */
   /**
-   * Close service when user : click outside service or press esc key
+   * Apply overflowYHidden class on body
+   */
+  useEffect(() => addBodyOverflowClass(), []);
+
+  /**
+   * Apply class active to serviceContainer
+   */
+  useEffect(() => {
+    const serviceContainer =
+      document.getElementsByClassName("serviceContainer")[0];
+    if (serviceContainer) {
+      serviceContainer.classList.add("active");
+    }
+  }, []);
+
+  /**
+   * Detect when user : clicks outside service or presses esc key
    */
   useEffect(() => {
     const overlay = document.getElementsByClassName("overlay")[0];
@@ -64,6 +86,7 @@ export const Service = ({
   function closeService(showModalContact = false) {
     removeClassActive();
     setTimeout(() => {
+      removeBodyOverflowClass();
       setShowService(false);
       if (showModalContact) {
         setShowModalContact(true);

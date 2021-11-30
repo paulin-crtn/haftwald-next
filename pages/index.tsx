@@ -11,9 +11,6 @@ import Script from "next/script";
 /* ---------------------------------- REACT --------------------------------- */
 import { useEffect, useState } from "react";
 
-/* ---------------------------- REACT CUSTOM HOOK --------------------------- */
-import useContact from "../utils/useContact";
-
 /* ------------------------------- COMPONENTS ------------------------------- */
 import { Header } from "../components/Header";
 import { ServiceCard } from "../components/ServiceCard";
@@ -54,35 +51,13 @@ import mongodb from "../public/img/techno/mongodb.svg";
 /*                                  COMPONENT                                 */
 /* -------------------------------------------------------------------------- */
 const Home: NextPage = () => {
-  /* ------------------------------- REACT STATE ------------------------------ */
+  /* -------------------------------------------------------------------------- */
+  /*                                 REACT STATE                                */
+  /* -------------------------------------------------------------------------- */
+  const [showModalContact, setShowModalContact] = useState<boolean>(false);
   const [showServiceDev, setShowServiceDev] = useState<boolean>(false);
   const [showServiceSeo, setShowServiceSeo] = useState<boolean>(false);
   const [showServiceUi, setShowServiceUi] = useState<boolean>(false);
-
-  /* ------------------------------ REACT EFFECT ------------------------------ */
-  /**
-   * Toggle service visibility
-   */
-  useEffect(() => {
-    const body = document.querySelector("body");
-    const serviceContainer =
-      document.getElementsByClassName("serviceContainer")[0];
-    if (body) {
-      if (showServiceDev || showServiceSeo || showServiceUi) {
-        body.classList.add("overflowYHidden");
-      } else {
-        body.classList.remove("overflowYHidden");
-      }
-    }
-    if (serviceContainer) {
-      if (showServiceDev || showServiceSeo || showServiceUi) {
-        serviceContainer.classList.add("active");
-      }
-    }
-  }, [showServiceDev, showServiceSeo, showServiceUi]);
-
-  /* ---------------------------- REACT CUSTOM HOOK --------------------------- */
-  const { showModalContact, setShowModalContact } = useContact();
 
   /* -------------------------------------------------------------------------- */
   /*                                  TEMPLATE                                  */
