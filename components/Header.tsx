@@ -4,8 +4,8 @@
 /* --------------------------------- NEXT JS -------------------------------- */
 import Link from "next/link";
 
-/* ---------------------------- REACT CUSTOM HOOK --------------------------- */
-import useContact from "../utils/useContact";
+/* ---------------------------------- REACT --------------------------------- */
+import { useState } from "react";
 
 /* ------------------------------- COMPONENTS ------------------------------- */
 import { ModalContact } from "./ModalContact";
@@ -17,8 +17,8 @@ import styles from "../styles/Header.module.scss";
 /*                                  COMPONENT                                 */
 /* -------------------------------------------------------------------------- */
 export const Header = () => {
-  /* ---------------------------- REACT CUSTOM HOOK --------------------------- */
-  const { showModalContact, setShowModalContact } = useContact();
+  /* ------------------------------- REACT STATE ------------------------------ */
+  const [showModalContact, setShowModalContact] = useState<boolean>(false);
 
   /* -------------------------------------------------------------------------- */
   /*                                  TEMPLATE                                  */

@@ -2,10 +2,23 @@
 /*                                   IMPORTS                                  */
 /* -------------------------------------------------------------------------- */
 /* ---------------------------------- REACT --------------------------------- */
-import { ChangeEvent, FormEvent, useMemo, useState } from "react";
+import {
+  ChangeEvent,
+  FormEvent,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 /* -------------------------------- COMPONENT ------------------------------- */
 import { Spinner } from "./Spinner";
+
+/* -------------------------------- FUNCTION -------------------------------- */
+import {
+  addBodyOverflowClass,
+  removeBodyOverflowClass,
+} from "../utils/setBodyOverflowClass";
 
 /* --------------------------------- STYLES --------------------------------- */
 import styles from "../styles/Contact.module.scss";
@@ -49,11 +62,54 @@ export const ModalContact = ({
   const [isSending, setIsSending] = useState<boolean>(false);
 
   /* -------------------------------------------------------------------------- */
+  /*                               REACT CALLBACK                               */
+  /* -------------------------------------------------------------------------- */
+  /**
+   * Close modal contact
+   */
+  const closeModalContact = useCallback(() => {
+    removeBodyOverflowClass();
+    setShowModalContact(false);
+  }, [setShowModalContact]);
+
+  /* -------------------------------------------------------------------------- */
   /*                                 REACT MEMO                                 */
   /* -------------------------------------------------------------------------- */
   const isFormValid = useMemo(() => {
     return !fullname.error && !email.error && !message.error;
   }, [fullname, email, message]);
+
+  /* -------------------------------------------------------------------------- */
+  /*                                REACT EFFECT                                */
+  /* -------------------------------------------------------------------------- */
+  /**
+   * Apply overflowYHidden class on body
+   */
+  useEffect(() => addBodyOverflowClass(), []);
+
+  /**
+   * Detect when user : clicks outside service or presses esc key
+   */
+  useEffect(() => {
+    const overlay = document.getElementsByClassName("overlay")[0];
+    if (overlay) {
+      // Click listener
+      overlay.addEventListener("click", (e: any) => {
+        const target = e.target;
+        if (target) {
+          if (target.classList.contains("overlay")) {
+            closeModalContact();
+          }
+        }
+      });
+      // Keydown listener
+      document.addEventListener("keydown", (e: any) => {
+        if (e.key === "Escape") {
+          closeModalContact();
+        }
+      });
+    }
+  }, [closeModalContact]);
 
   /* -------------------------------------------------------------------------- */
   /*                                  FUNCTIONS                                 */
@@ -88,17 +144,6 @@ export const ModalContact = ({
       return;
     }
     console.log("done !");
-  }
-
-  /**
-   * Close contact modal
-   */
-  function closeModal() {
-    const body = document.querySelector("body");
-    if (body) {
-      body.classList.remove("overflowYHidden");
-    }
-    setShowModalContact(false);
   }
 
   /**
@@ -173,7 +218,7 @@ export const ModalContact = ({
     <div className="overlay">
       <div className={styles.container}>
         <div className={styles.header}>
-          <div className={styles.closeButton} onClick={closeModal}>
+          <div className={styles.closeButton} onClick={closeModalContact}>
             &#10005;
           </div>
           <h3>Demande de contact</h3>
