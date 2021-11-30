@@ -59,7 +59,7 @@ export const ModalContact = ({
   /*                                REACT EFFECT                                */
   /* -------------------------------------------------------------------------- */
   /**
-   * Close service when user : click outside service or press esc key
+   * Close contact when user : click outside service or press esc key
    */
   useEffect(() => {
     const overlay = document.getElementsByClassName("overlay")[0];
