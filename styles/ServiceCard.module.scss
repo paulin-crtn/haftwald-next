@@ -1,0 +1,24 @@
+.serviceContainer {
+  width: 360px;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  border-radius: 10px;
+  figure {
+    width: 80px;
+    margin: 0 auto;
+  }
+  h4 {
+    margin: 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  p {
+    min-height: 125px;
+    margin-bottom: 30px;
+  }
+  button {
+    width: 100%;
+  }
+}

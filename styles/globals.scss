@@ -58,6 +58,10 @@ button {
   cursor: pointer;
 }
 
+button:disabled {
+  opacity: 0.6;
+}
+
 #services,
 #organisation,
 #commitments,
@@ -67,7 +71,7 @@ button {
   // scroll-snap-margin-top: 81px; // Header height + Safari & iOS fix
 }
 
-.contactOverlay.active {
+.overlay {
   position: fixed; /* Sit on top of the page content */
   width: 100%; /* Full width (cover the whole page) */
   height: 100%; /* Full height (cover the whole page) */
@@ -77,4 +81,23 @@ button {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.6); /* Black background with opacity */
   z-index: 20; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+// SERVICE
+.serviceContainer {
+  position: fixed;
+  top: 0;
+  right: -800px;
+  width: 90%;
+  max-width: 800px;
+  min-height: 100%;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 10px 0 0 10px;
+  z-index: 100;
+  transition: right 0.7s; // 0.7s match 700ms setTimeout in components/Service.tsx
+}
+
+.serviceContainer.active {
+  right: 0px;
+  transition: right 0.7s; // 0.7s match 700ms setTimeout in components/Service.tsx
 }

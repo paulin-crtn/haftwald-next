@@ -73,6 +73,36 @@ $maxWidth: 1200px;
   }
 }
 
+// SERVICE
+
+.serviceContainer {
+  height: calc(100vh - 174px); // 95 + 79 (heights of buttons + header)
+  padding: 30px 50px;
+  overflow: scroll;
+  h4,
+  ul,
+  p {
+    margin: 20px 0;
+  }
+  h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+}
+
+.pictoContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  figure {
+    width: 120px;
+    margin-right: 20px;
+  }
+  .pictoXs {
+    padding: 12px;
+  }
+}
+
 // ORGANISATION
 .organisationsContainer {
   background: linear-gradient(0.25turn, $primary-color, $primary-color-medium);

@@ -1,24 +1,32 @@
-.serviceContainer {
-  width: 360px;
-  padding: 30px;
-  background-color: #ffffff;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
-  border-radius: 10px;
-  figure {
-    width: 80px;
-    margin: 0 auto;
+@import "./variables.module.scss";
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  .closeService {
+    text-transform: uppercase;
+    font-weight: 400;
+    cursor: pointer;
   }
-  h4 {
-    margin: 20px;
-    font-size: 1.2rem;
-    font-weight: 500;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: $primary-color;
+  .pictoContainer {
+    display: flex;
+    width: 65px;
+    margin-left: -7px;
   }
-  p {
-    min-height: 125px;
-    margin-bottom: 30px;
-  }
-  button {
-    width: 100%;
+  h3 {
+    margin-left: 15px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
   }
 }

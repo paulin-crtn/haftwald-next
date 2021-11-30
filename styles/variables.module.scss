@@ -1,11 +1,15 @@
 $primary-color: #3845de;
 $primary-color-medium: #5ea2d7;
 $primary-color-light: #f8f7ff;
+
 $secondary-color: #dc1e61;
 $secondary-color-light: #ff6a48;
+
+$info-color: #dbeaff;
 
 :export {
   primaryColor: $primary-color;
   primaryColorMedium: $primary-color-medium;
-  primaryColorLight: $primary-color-light;
+  primaryColorXLight: $primary-color-light;
+  infoColor: $info-color;
 }
