@@ -11,7 +11,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 5px 50px;
+    margin: 20px 50px;
+    z-index: 10;
   }
   .logo {
     font-family: "Righteous", cursive;
@@ -20,30 +21,42 @@
     cursor: pointer;
     user-select: none;
   }
-
   .dot {
     margin-left: 5px;
     font-size: 3rem;
     line-height: 0;
     color: $primary-color;
   }
-
   .navigation {
     ul {
       display: flex;
       align-items: center;
+      margin: 0;
       li {
         margin-left: 25px;
         list-style-type: none;
       }
     }
   }
+  .menuBurgerIcon {
+    display: none;
+    cursor: pointer;
+  }
+}
 
-  .cta {
-    background: linear-gradient(
-      0.25turn,
-      $primary-color,
-      $primary-color-medium
-    );
+.cta {
+  padding: 5px 15px;
+  font-weight: 300;
+  background: linear-gradient(0.25turn, $primary-color, $primary-color-medium);
+}
+
+@media (max-width: 1100px) {
+  .container {
+    .navigation {
+      display: none;
+    }
+    .menuBurgerIcon {
+      display: block;
+    }
   }
 }

@@ -71,6 +71,32 @@ button:disabled {
   // scroll-snap-margin-top: 81px; // Header height + Safari & iOS fix
 }
 
+// NAVIGATION MOBILE
+.navigationMobile {
+  position: fixed;
+  top: -180px;
+  right: 0;
+  width: 100%;
+  text-align: right;
+  background-color: #ffffff;
+  z-index: 5;
+  transition: top 0.5s;
+  ul {
+    margin: 20px 0;
+    padding-right: 50px;
+    li {
+      margin-bottom: 10px;
+      list-style-type: none;
+    }
+  }
+}
+
+.navigationMobile.active {
+  top: 81px; // Add 81px to top because of fixed position header (80px + 1px border)
+  transition: top 0.5s;
+}
+
+// OVERLAY
 .overlay {
   position: fixed; /* Sit on top of the page content */
   width: 100%; /* Full width (cover the whole page) */
