@@ -19,8 +19,10 @@ const useContact = () => {
   /* ------------------------------ REACT EFFECT ------------------------------ */
   useEffect(() => {
     const body = document.querySelector("body");
-    if (showModalContact && body) {
-      body.classList.add("overflowYHidden");
+    if (body) {
+      showModalContact
+        ? body.classList.add("overflowYHidden")
+        : body.classList.remove("overflowYHidden");
     }
   }, [showModalContact]);
 

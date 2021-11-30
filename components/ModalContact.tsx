@@ -2,7 +2,7 @@
 /*                                   IMPORTS                                  */
 /* -------------------------------------------------------------------------- */
 /* ---------------------------------- REACT --------------------------------- */
-import { ChangeEvent, FormEvent, useMemo, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from "react";
 
 /* -------------------------------- COMPONENT ------------------------------- */
 import { Spinner } from "./Spinner";
@@ -56,6 +56,33 @@ export const ModalContact = ({
   }, [fullname, email, message]);
 
   /* -------------------------------------------------------------------------- */
+  /*                                REACT EFFECT                                */
+  /* -------------------------------------------------------------------------- */
+  /**
+   * Close service when user : click outside service or press esc key
+   */
+  useEffect(() => {
+    const overlay = document.getElementsByClassName("overlay")[0];
+    if (overlay) {
+      // Click listener
+      overlay.addEventListener("click", (e: any) => {
+        const target = e.target;
+        if (target) {
+          if (target.classList.contains("overlay")) {
+            setShowModalContact(false);
+          }
+        }
+      });
+      // Keydown listener
+      document.addEventListener("keydown", (e: any) => {
+        if (e.key === "Escape") {
+          setShowModalContact(false);
+        }
+      });
+    }
+  }, []);
+
+  /* -------------------------------------------------------------------------- */
   /*                                  FUNCTIONS                                 */
   /* -------------------------------------------------------------------------- */
   /**
@@ -88,17 +115,6 @@ export const ModalContact = ({
       return;
     }
     console.log("done !");
-  }
-
-  /**
-   * Close contact modal
-   */
-  function closeModal() {
-    const body = document.querySelector("body");
-    if (body) {
-      body.classList.remove("overflowYHidden");
-    }
-    setShowModalContact(false);
   }
 
   /**
@@ -173,7 +189,10 @@ export const ModalContact = ({
     <div className="overlay">
       <div className={styles.container}>
         <div className={styles.header}>
-          <div className={styles.closeButton} onClick={closeModal}>
+          <div
+            className={styles.closeButton}
+            onClick={() => setShowModalContact(false)}
+          >
             &#10005;
           </div>
           <h3>Demande de contact</h3>
