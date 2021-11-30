@@ -582,7 +582,7 @@ const Home: NextPage = () => {
               <strong>facilité de compréhension et d’utilisation</strong>.
               L’objectif est de{" "}
               <strong>construire un parcours fluide et cohérent</strong> afin de
-              maximiser l'<strong>expérience utilisateur</strong>.
+              maximiser l’<strong>expérience utilisateur</strong>.
             </p>
 
             <p>
