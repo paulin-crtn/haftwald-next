@@ -5,7 +5,7 @@
 import Image from "next/image";
 
 /* ---------------------------------- REACT --------------------------------- */
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 
 /* --------------------------------- STYLES --------------------------------- */
 import styles from "../styles/Service.module.scss";
@@ -27,8 +27,43 @@ export const Service = ({
   setShowModalContact: (arg: boolean) => void;
 }) => {
   /* -------------------------------------------------------------------------- */
+  /*                                REACT EFFECT                                */
+  /* -------------------------------------------------------------------------- */
+  /**
+   * Close service when user click outside
+   */
+  useEffect(() => {
+    const overlay = document.getElementsByClassName("overlay")[0];
+    if (overlay) {
+      overlay.addEventListener("click", (e: any) => {
+        const target = e.target;
+        if (target) {
+          if (target.classList.contains("overlay")) {
+            closeService();
+          }
+        }
+      });
+    }
+  }, []);
+
+  /* -------------------------------------------------------------------------- */
   /*                                  FUNCTION                                  */
   /* -------------------------------------------------------------------------- */
+  /**
+   * Close service
+   *
+   * @param showModalContact - Option to display contact form
+   */
+  function closeService(showModalContact = false) {
+    removeClassActive();
+    setTimeout(() => {
+      setShowService(false);
+      if (showModalContact) {
+        setShowModalContact(true);
+      }
+    }, 700); // 700ms match 0.7s transition in .serviceContainer (globals.scss)
+  }
+
   /**
    * Remove css class "active"
    * Transition is set in styles/global.scss file
@@ -47,28 +82,10 @@ export const Service = ({
     <div className="overlay">
       <div className="serviceContainer">
         <div className={styles.buttons}>
-          <div
-            className={styles.closeService}
-            onClick={() => {
-              removeClassActive();
-              setTimeout(() => {
-                setShowService(false);
-              }, 700); // 700ms match 0.7s transition in .serviceContainer (globals.scss)
-            }}
-          >
+          <div className={styles.closeService} onClick={() => closeService()}>
             Fermer
           </div>
-          <button
-            onClick={() => {
-              removeClassActive();
-              setTimeout(() => {
-                setShowService(false);
-                setShowModalContact(true);
-              }, 700); // 700ms match 0.7s transition in .serviceContainer (globals.scss)
-            }}
-          >
-            Demander un devis
-          </button>
+          <button onClick={() => closeService(true)}>Demander un devis</button>
         </div>
         <div className={styles.header}>
           <figure className={styles.pictoContainer}>

@@ -60,6 +60,9 @@ const Home: NextPage = () => {
   const [showServiceUi, setShowServiceUi] = useState<boolean>(false);
 
   /* ------------------------------ REACT EFFECT ------------------------------ */
+  /**
+   * Toggle service visibility
+   */
   useEffect(() => {
     const body = document.querySelector("body");
     const serviceContainer =
