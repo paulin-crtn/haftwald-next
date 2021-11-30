@@ -2,7 +2,14 @@
 /*                                   IMPORTS                                  */
 /* -------------------------------------------------------------------------- */
 /* ---------------------------------- REACT --------------------------------- */
-import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from "react";
+import {
+  ChangeEvent,
+  FormEvent,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 /* -------------------------------- COMPONENT ------------------------------- */
 import { Spinner } from "./Spinner";
@@ -55,6 +62,17 @@ export const ModalContact = ({
   const [isSending, setIsSending] = useState<boolean>(false);
 
   /* -------------------------------------------------------------------------- */
+  /*                               REACT CALLBACK                               */
+  /* -------------------------------------------------------------------------- */
+  /**
+   * Close modal contact
+   */
+  const closeModalContact = useCallback(() => {
+    removeBodyOverflowClass();
+    setShowModalContact(false);
+  }, [setShowModalContact]);
+
+  /* -------------------------------------------------------------------------- */
   /*                                 REACT MEMO                                 */
   /* -------------------------------------------------------------------------- */
   const isFormValid = useMemo(() => {
@@ -91,7 +109,7 @@ export const ModalContact = ({
         }
       });
     }
-  }, []);
+  }, [closeModalContact]);
 
   /* -------------------------------------------------------------------------- */
   /*                                  FUNCTIONS                                 */
@@ -191,14 +209,6 @@ export const ModalContact = ({
       value,
       error,
     });
-  }
-
-  /**
-   * Close modal contact
-   */
-  function closeModalContact() {
-    removeBodyOverflowClass();
-    setShowModalContact(false);
   }
 
   /* -------------------------------------------------------------------------- */

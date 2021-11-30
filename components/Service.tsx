@@ -5,7 +5,7 @@
 import Image from "next/image";
 
 /* ---------------------------------- REACT --------------------------------- */
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useCallback, useEffect } from "react";
 
 /* -------------------------------- FUNCTION -------------------------------- */
 import {
@@ -32,6 +32,28 @@ export const Service = ({
   setShowService: (arg: boolean) => void;
   setShowModalContact: (arg: boolean) => void;
 }) => {
+  /* -------------------------------------------------------------------------- */
+  /*                               REACT CALLBACK                               */
+  /* -------------------------------------------------------------------------- */
+  /**
+   * Close service
+   *
+   * @param showModalContact - Option to display contact form
+   */
+  const closeService = useCallback(
+    (showModalContact = false) => {
+      removeClassActive();
+      setTimeout(() => {
+        removeBodyOverflowClass();
+        setShowService(false);
+        if (showModalContact) {
+          setShowModalContact(true);
+        }
+      }, 700); // 700ms match 0.7s transition in .serviceContainer (globals.scss)
+    },
+    [setShowService, setShowModalContact]
+  );
+
   /* -------------------------------------------------------------------------- */
   /*                                REACT EFFECT                                */
   /* -------------------------------------------------------------------------- */
@@ -73,27 +95,11 @@ export const Service = ({
         }
       });
     }
-  }, []);
+  }, [closeService]);
 
   /* -------------------------------------------------------------------------- */
   /*                                  FUNCTION                                  */
   /* -------------------------------------------------------------------------- */
-  /**
-   * Close service
-   *
-   * @param showModalContact - Option to display contact form
-   */
-  function closeService(showModalContact = false) {
-    removeClassActive();
-    setTimeout(() => {
-      removeBodyOverflowClass();
-      setShowService(false);
-      if (showModalContact) {
-        setShowModalContact(true);
-      }
-    }, 700); // 700ms match 0.7s transition in .serviceContainer (globals.scss)
-  }
-
   /**
    * Remove css class "active"
    * Transition is set in styles/global.scss file
