@@ -67,7 +67,7 @@ export const Service = ({
               }, 700); // 700ms match 0.7s transition in .serviceContainer (globals.scss)
             }}
           >
-            Demande de devis
+            Demander un devis
           </button>
         </div>
         <div className={styles.header}>

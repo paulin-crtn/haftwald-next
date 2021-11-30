@@ -18,6 +18,7 @@ import useContact from "../utils/useContact";
 import { Header } from "../components/Header";
 import { ServiceCard } from "../components/ServiceCard";
 import { Service } from "../components/Service";
+import { Info } from "../components/Info";
 import { OrganisationCard } from "../components/OrganisationCard";
 import { Commitment } from "../components/Commitment";
 import { Question } from "../components/Question";
@@ -358,54 +359,74 @@ const Home: NextPage = () => {
           setShowService={setShowServiceSeo}
           setShowModalContact={setShowModalContact}
         >
-          <div>
-            <p>
-              Le référencement naturel, aussi connu sous l’acronyme SEO pour
-              Search Engine Optimization, permet à votre site internet
-              d’apparaitre dans les résultats des moteurs de recherche comme
-              Google, Yahoo! ou Bing.
-            </p>
+          <p>
+            Le référencement naturel, aussi connu sous l’acronyme SEO pour{" "}
+            <strong>Search Engine Optimization</strong>, permet à votre site
+            internet d’apparaitre dans les résultats des{" "}
+            <strong>moteurs de recherche</strong> comme Google, Yahoo! ou Bing.
+          </p>
 
-            <p>
-              La position dans les moteurs de recherche dépend de plusieurs
-              facteurs, dont notamment :
-            </p>
+          <p>
+            La position dans les moteurs de recherche dépend de plusieurs
+            facteurs, dont notamment :
+          </p>
 
-            <ul>
-              <li>la structure HTML des pages</li>
-              <li>la présence de méta-balises (title, description)</li>
-              <li>la rapidité de chargement du site</li>
-              <li>un design adaptatif (responsive)</li>
-              <li>la présence d’un fichier Sitemap</li>
-              <li>l’utilisation de CDN et du protocole HTTPS</li>
-              <li>etc.</li>
-            </ul>
+          <ul>
+            <li>
+              la <strong>structure HTML</strong> des pages
+            </li>
+            <li>
+              la présence de <strong>méta-balises</strong> (title, description)
+            </li>
+            <li>
+              la <strong>rapidité de chargement</strong> du site
+            </li>
+            <li>
+              un design <strong>responsive</strong> (adaptatif)
+            </li>
+            <li>
+              la présence d’un fichier <strong>Sitemap</strong>
+            </li>
+            <li>
+              l’utilisation de <strong>CDN</strong> et du protocole{" "}
+              <strong>HTTPS</strong>
+            </li>
+            <li>etc.</li>
+          </ul>
 
-            <p>
-              Vous pouvez également prendre une part active dans le
-              référencement de votre site en suivant certaines bonnes pratiques,
-              dont notamment :
-            </p>
+          <p>
+            Vous pouvez également prendre une part active dans le référencement
+            de votre site en suivant certaines bonnes pratiques, dont notamment
+            :
+          </p>
 
-            <ul>
-              <li>le partage sur les réseaux sociaux</li>
-              <li>
-                le contenus de vos pages (longueur, présence de certains
-                mot-clés)
-              </li>
-              <li>
-                la publication régulière de nouveaux contenus (via un blog par
-                exemple)
-              </li>
-              <li>le nombre de liens pointant vers votre site</li>
-              <li>etc.</li>
-            </ul>
+          <ul>
+            <li>
+              le partage sur les <strong>réseaux sociaux</strong>
+            </li>
+            <li>
+              le contenus de vos pages : longueur, présence de certains{" "}
+              <strong>mot-clés</strong>
+            </li>
+            <li>
+              la publication régulière de <strong>nouveaux contenus</strong>{" "}
+              (via un blog par exemple)
+            </li>
+            <li>
+              le <strong>nombre de liens</strong> pointant vers votre site
+            </li>
+            <li>etc.</li>
+          </ul>
 
-            <p>
-              Prestataire et client ont donc tous les deux un rôle clé dans la
-              réussite du référencement naturel d’un site.{" "}
-            </p>
-          </div>
+          <p>
+            Prestataire et client ont donc tous les deux un rôle clé dans la
+            réussite du référencement naturel d’un site.{" "}
+          </p>
+
+          <Info>
+            En fonction de vos besoins il est possible de faire rédiger vos
+            contenus par un <strong>rédacteur web</strong> de notre réseau.
+          </Info>
         </Service>
       )}
 
@@ -419,7 +440,51 @@ const Home: NextPage = () => {
           setShowService={setShowServiceUi}
           setShowModalContact={setShowModalContact}
         >
-          <div>Content ui</div>
+          <p>
+            Les maquettes graphiques permettent de définir en amont l’
+            <strong>interface</strong> du site. C’est une phase indispensable
+            avant de commencer la création ou la refonte d’un site web.
+          </p>
+
+          <p>
+            En effet, en plus d’appliquer la <strong>charte graphique</strong>{" "}
+            de votre organisation (couleurs, typographies), la réalisation de{" "}
+            <strong>maquettes fonctionnelles</strong> oblige à se poser un
+            certain nombre de questions sur les éléments qui vont composer les
+            pages (texte, image, icône, bouton, boite de dialogue, etc.) ainsi
+            que la manière dont ces éléments seront agencés entre eux.
+          </p>
+
+          <p>
+            Les choix qui seront fait impacteront directement l’
+            <strong>ergonomie</strong> du site et donc sa{" "}
+            <strong>facilité de compréhension et d’utilisation</strong>.
+            L’objectif est de{" "}
+            <strong>construire un parcours fluide et cohérent</strong> afin de
+            maximiser l'<strong>expérience utilisateur</strong>.
+          </p>
+
+          <p>
+            Une fois les maquettes graphiques conçues il est possible et
+            souhaitable de réaliser un <strong>prototypage</strong> afin de{" "}
+            <strong>simuler une navigation</strong>. Cela permet de s’assurer
+            que l’<strong>arborescence</strong> du site et l’interface des pages
+            sont bien comprises par l’utilisateur et permettent de réaliser
+            facilement les actions voulues : recherche d’information,
+            souscription, achat, etc.
+          </p>
+
+          <Info>
+            En fonction de vos besoins et de l’envergure du projet cette
+            prestation pourra être réalisée par un <strong>webdesigner</strong>{" "}
+            de notre réseau.
+          </Info>
+
+          <Info>
+            En fonction de votre budget il est également possible d’acheter des{" "}
+            <strong>maquettes prête à l’emploi</strong> via une plateforme
+            spécialisée.
+          </Info>
         </Service>
       )}
     </div>
