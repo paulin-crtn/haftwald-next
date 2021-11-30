@@ -30,17 +30,24 @@ export const Service = ({
   /*                                REACT EFFECT                                */
   /* -------------------------------------------------------------------------- */
   /**
-   * Close service when user click outside
+   * Close service when user : click outside service or press esc key
    */
   useEffect(() => {
     const overlay = document.getElementsByClassName("overlay")[0];
     if (overlay) {
+      // Click listener
       overlay.addEventListener("click", (e: any) => {
         const target = e.target;
         if (target) {
           if (target.classList.contains("overlay")) {
             closeService();
           }
+        }
+      });
+      // Keydown listener
+      document.addEventListener("keydown", (e: any) => {
+        if (e.key === "Escape") {
+          closeService();
         }
       });
     }
