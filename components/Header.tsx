@@ -43,11 +43,36 @@ export const Header = () => {
     }
   }, [showMobileNav]);
 
+  /**
+   * Detect when user : clicks outside mobile nav or presses esc key
+   */
+  useEffect(() => {
+    const body = document.querySelector("body");
+    const header = document.getElementsByClassName("header")[0];
+    if (body && header) {
+      // Click listener
+      body.addEventListener("click", (e: any) => {
+        const target = e.target;
+        if (target) {
+          if (!header.contains(target)) {
+            setShowMobileNav(false);
+          }
+        }
+      });
+      // Keydown listener
+      document.addEventListener("keydown", (e: any) => {
+        if (e.key === "Escape") {
+          setShowMobileNav(false);
+        }
+      });
+    }
+  }, []);
+
   /* -------------------------------------------------------------------------- */
   /*                                  TEMPLATE                                  */
   /* -------------------------------------------------------------------------- */
   return (
-    <header>
+    <header className="header">
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <Link href="/" passHref>
@@ -87,34 +112,47 @@ export const Header = () => {
             onClick={() => setShowMobileNav(!showMobileNav)}
           >
             {showMobileNav ? (
-              <Image src={mark} alt="VSCode screenshot" />
+              <Image src={mark} alt="close menu icon" />
             ) : (
-              <Image src={menu} alt="VSCode screenshot" />
+              <Image src={menu} alt="menu burger icon" />
             )}
           </figure>
         </div>
       </div>
       <nav className="mobileNav">
-        <ul onClick={() => setShowMobileNav(false)}>
+        <ul>
           <li>
-            <a href="#services">Prestations</a>
+            <a href="#services" onClick={() => setShowMobileNav(false)}>
+              Prestations
+            </a>
           </li>
           <li>
-            <a href="#organisation">Organisation</a>
+            <a href="#organisation" onClick={() => setShowMobileNav(false)}>
+              Organisation
+            </a>
           </li>
           <li>
-            <a href="#questions">Questions</a>
+            <a href="#questions" onClick={() => setShowMobileNav(false)}>
+              Questions
+            </a>
           </li>
           <li>
-            <a href="#commitments">Engagements</a>
+            <a href="#commitments" onClick={() => setShowMobileNav(false)}>
+              Engagements
+            </a>
           </li>
           <li>
-            <a href="#about">Qui suis-je ?</a>
+            <a href="#about" onClick={() => setShowMobileNav(false)}>
+              Qui suis-je ?
+            </a>
           </li>
           <li>
             <button
               className={styles.cta}
-              onClick={() => setShowModalContact(true)}
+              onClick={() => {
+                setShowMobileNav(false);
+                setShowModalContact(true);
+              }}
             >
               Contact
             </button>
