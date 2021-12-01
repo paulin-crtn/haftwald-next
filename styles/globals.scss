@@ -72,13 +72,14 @@ button:disabled {
 }
 
 // NAVIGATION MOBILE
-.navigationMobile {
+.mobileNav {
   position: fixed;
-  top: -180px;
+  top: -200px;
   right: 0;
   width: 100%;
   text-align: right;
   background-color: #ffffff;
+  box-shadow: 1px 1px 20px;
   z-index: 5;
   transition: top 0.5s;
   ul {
@@ -91,9 +92,15 @@ button:disabled {
   }
 }
 
-.navigationMobile.active {
+.mobileNav.active {
   top: 81px; // Add 81px to top because of fixed position header (80px + 1px border)
   transition: top 0.5s;
+}
+
+@media (min-width: 1101px) {
+  .mobileNav {
+    display: none;
+  }
 }
 
 // OVERLAY

@@ -5,7 +5,7 @@
 import Link from "next/link";
 
 /* ---------------------------------- REACT --------------------------------- */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 /* ------------------------------- COMPONENTS ------------------------------- */
 import { ModalContact } from "./ModalContact";
@@ -20,25 +20,22 @@ export const Header = () => {
   /* -------------------------------------------------------------------------- */
   /*                                 REACT STATE                                */
   /* -------------------------------------------------------------------------- */
+  const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
   const [showModalContact, setShowModalContact] = useState<boolean>(false);
 
   /* -------------------------------------------------------------------------- */
-  /*                                  FUNCTIONS                                 */
+  /*                                REACT EFFECT                                */
   /* -------------------------------------------------------------------------- */
-  /**
-   *
-   */
-  function toggleNavigationMobile() {
-    const navigationMobile =
-      document.getElementsByClassName("navigationMobile")[0];
-    if (navigationMobile) {
-      if (navigationMobile.classList.contains("active")) {
-        navigationMobile.classList.remove("active");
-      } else {
-        navigationMobile.classList.add("active");
-      }
+  useEffect(() => {
+    console.log("useeffct call");
+
+    const mobileNav = document.getElementsByClassName("mobileNav")[0];
+    if (mobileNav) {
+      showMobileNav
+        ? mobileNav.classList.add("active")
+        : mobileNav.classList.remove("active");
     }
-  }
+  }, [showMobileNav]);
 
   /* -------------------------------------------------------------------------- */
   /*                                  TEMPLATE                                  */
@@ -48,7 +45,7 @@ export const Header = () => {
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <Link href="/" passHref>
-            <a className={styles.logo}>
+            <a className={styles.logo} onClick={() => setShowMobileNav(false)}>
               Haftwald<span className={styles.dot}>.</span>
             </a>
           </Link>
@@ -81,14 +78,14 @@ export const Header = () => {
           </nav>
           <div
             className={styles.menuBurgerIcon}
-            onClick={toggleNavigationMobile}
+            onClick={() => setShowMobileNav(!showMobileNav)}
           >
             menu
           </div>
         </div>
       </div>
-      <nav className="navigationMobile">
-        <ul onClick={toggleNavigationMobile}>
+      <nav className="mobileNav">
+        <ul onClick={() => setShowMobileNav(false)}>
           <li>
             <a href="#services">Prestations</a>
           </li>
