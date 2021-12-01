@@ -3,6 +3,7 @@
 /* -------------------------------------------------------------------------- */
 /* --------------------------------- NEXT JS -------------------------------- */
 import Link from "next/link";
+import Image from "next/image";
 
 /* ---------------------------------- REACT --------------------------------- */
 import { useEffect, useState } from "react";
@@ -12,6 +13,10 @@ import { ModalContact } from "./ModalContact";
 
 /* --------------------------------- STYLES --------------------------------- */
 import styles from "../styles/Header.module.scss";
+
+/* --------------------------------- IMAGES --------------------------------- */
+import menu from "../public/img/menu.svg";
+import mark from "../public/img/mark.svg";
 
 /* -------------------------------------------------------------------------- */
 /*                                  COMPONENT                                 */
@@ -76,12 +81,16 @@ export const Header = () => {
               </li>
             </ul>
           </nav>
-          <div
+          <figure
             className={styles.menuBurgerIcon}
             onClick={() => setShowMobileNav(!showMobileNav)}
           >
-            menu
-          </div>
+            {showMobileNav ? (
+              <Image src={mark} alt="VSCode screenshot" />
+            ) : (
+              <Image src={menu} alt="VSCode screenshot" />
+            )}
+          </figure>
         </div>
       </div>
       <nav className="mobileNav">
