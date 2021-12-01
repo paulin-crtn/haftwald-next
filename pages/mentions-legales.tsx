@@ -221,17 +221,15 @@ const MentionsLegales: NextPage = () => {
               </p>
 
               <h2 id="credit">8. Crédits</h2>
-              <ul>
-                <li>
-                  <a
-                    href="https://www.flaticon.com/fr/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Flaticon
-                  </a>
-                </li>
-              </ul>
+              <p>
+                <a
+                  href="https://www.flaticon.com/fr/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Flaticon
+                </a>
+              </p>
             </section>
           </div>
         </div>
