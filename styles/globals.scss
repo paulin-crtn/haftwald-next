@@ -93,7 +93,7 @@ button:disabled {
 }
 
 .mobileNav.active {
-  top: 81px; // Add 81px to top because of fixed position header (80px + 1px border)
+  top: $header-margin; // because of fixed position header
   transition: top 0.5s;
 }
 

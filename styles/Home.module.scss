@@ -1,7 +1,5 @@
 @import "./variables.module.scss";
 
-$maxWidth: 1200px;
-
 .container {
   position: relative;
 }
@@ -11,8 +9,11 @@ $maxWidth: 1200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: $maxWidth;
-  margin: 200px auto 120px auto; // Add 80px to top because of fixed position header
+  max-width: $max-width;
+  margin-top: calc(120px + $header-margin);
+  margin-bottom: 120px;
+  margin-right: auto;
+  margin-left: auto;
   h1 {
     margin: 0;
     font-size: 2.6rem;
@@ -68,7 +69,7 @@ $maxWidth: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    max-width: $maxWidth;
+    max-width: $max-width;
   }
 }
 
@@ -112,7 +113,7 @@ $maxWidth: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    max-width: $maxWidth;
+    max-width: $max-width;
   }
 }
 
@@ -141,7 +142,7 @@ $maxWidth: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    max-width: $maxWidth;
+    max-width: $max-width;
     .cta {
       flex: 0 0 550px;
       margin-left: 50px;

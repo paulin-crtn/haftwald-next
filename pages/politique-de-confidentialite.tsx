@@ -44,7 +44,15 @@ const PolitiqueDeConfidentialite: NextPage = () => {
       {/* ------------------------------------------------------------------------- */
       /*                                    MAIN                                    */
       /* -------------------------------------------------------------------------- */}
-      <main></main>
+      <main className={styles.container}>
+        <div className={styles.pageTitle}>
+          <h1>Politique de confidentialité & Cookies</h1>
+        </div>
+        <div className={styles.layout}>
+          <nav></nav>
+          <section></section>
+        </div>
+      </main>
 
       {/* ------------------------------------------------------------------------- */
       /*                                   FOOTER                                   */
