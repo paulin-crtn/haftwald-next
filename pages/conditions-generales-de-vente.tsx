@@ -661,24 +661,24 @@ const ConditionsGeneralesDeVente: NextPage = () => {
 
               <h2 id="warranty">19. Garantie</h2>
               <p>
-                Les livrables bénéficient d'une garantie contractuelle d'une
+                Les livrables bénéficient d’une garantie contractuelle d’une
                 durée de trois mois, à compter de la date de livraison, couvrant
                 la non-conformité à la commande et tout vice caché, provenant
-                d'un défaut de conception les rendant impropres à l’utilisation.
+                d’un défaut de conception les rendant impropres à l’utilisation.
               </p>
               <p>
                 Cette garantie est limitée à la correction, aux frais du
                 Prestataire, des livrables non conformes.
               </p>
               <p>
-                La correction d’un livrable n'aura pas pour effet de prolonger
+                La correction d’un livrable n’aura pas pour effet de prolonger
                 la durée de la garantie ci-dessus fixée.
               </p>
               <p>
-                La garantie ne peut intervenir si les livrables ont fait l'objet
-                d'un usage anormal, ou ont été employés dans des conditions
+                La garantie ne peut intervenir si les livrables ont fait l’objet
+                d’un usage anormal, ou ont été employés dans des conditions
                 différentes de celles pour lesquelles ils ont été fournis. Elle
-                ne s'applique pas non plus en cas de négligence ou modification
+                ne s’applique pas non plus en cas de négligence ou modification
                 du livrable par le Client ou par un tiers.
               </p>
 

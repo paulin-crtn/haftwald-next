@@ -67,13 +67,13 @@ const PolitiqueDeConfidentialite: NextPage = () => {
               <p>
                 Les données personnelles sont notamment protégées par la loi n°
                 78-87 du 6 janvier 1978, la loi n° 2004-801 du 6 août 2004,
-                l'article L. 226-13 du Code pénal et la Directive Européenne du
+                l’article L. 226-13 du Code pénal et la Directive Européenne du
                 24 octobre 1995.
               </p>
 
               <p>
                 Sur le site haftwald.com, le propriétaire du site collecte
-                certaines informations personnelles relatives à l'utilisateur
+                certaines informations personnelles relatives à l’utilisateur
                 afin de donner suite aux demandes de contact, de devis ou autres
                 demandes relatives aux services proposées sur le site
                 haftwald.com.
@@ -83,8 +83,8 @@ const PolitiqueDeConfidentialite: NextPage = () => {
                 Les informations nominatives requises sont notamment : le
                 prénom, le nom de famille et l’adresse email de l’utilisateur.
                 Sans ces informations, il sera impossible de donner suite à la
-                demande de contact. L'utilisateur fournit ces informations en
-                toute connaissance de cause, notamment lorsqu'il procède par
+                demande de contact. L’utilisateur fournit ces informations en
+                toute connaissance de cause, notamment lorsqu’il procède par
                 lui-même à leur saisie.
               </p>
 
@@ -96,8 +96,8 @@ const PolitiqueDeConfidentialite: NextPage = () => {
               </p>
 
               <p>
-                Aucune information personnelle de l'utilisateur du site
-                haftwald.com n'est publiée à l'insu de l'utilisateur, échangée,
+                Aucune information personnelle de l’utilisateur du site
+                haftwald.com n’est publiée à l’insu de l’utilisateur, échangée,
                 transférée, cédée ou vendue sur un support quelconque à des
                 tiers.
               </p>
@@ -133,10 +133,10 @@ const PolitiqueDeConfidentialite: NextPage = () => {
               <p>
                 Le site haftwald.com utilise des cookies analytiques. Ces
                 cookies permettent de recueillir des données relatives à votre
-                utilisation du site haftwald.com afin d'améliorer la performance
+                utilisation du site haftwald.com afin d’améliorer la performance
                 et la conception de celui-ci. Ces cookies peuvent être fournis
-                par un fournisseur d'outil analytique de tierce partie, mais ne
-                sont utilisés qu'à des fins liées au site haftwald.com.
+                par un fournisseur d’outil analytique de tierce partie, mais ne
+                sont utilisés qu’à des fins liées au site haftwald.com.
               </p>
 
               <p>
