@@ -48,9 +48,11 @@ const PolitiqueDeConfidentialite: NextPage = () => {
         <div className={styles.pageTitle}>
           <h1>Politique de confidentialité & Cookies</h1>
         </div>
-        <div className={styles.layout}>
-          <nav></nav>
-          <section></section>
+        <div className={styles.wrapper}>
+          <div className={styles.layout}>
+            <nav></nav>
+            <section></section>
+          </div>
         </div>
       </main>
 

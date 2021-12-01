@@ -28,8 +28,11 @@ h4,
 h5,
 h6,
 p,
-figure {
+figure,
+ol,
+ul {
   margin: 0;
+  padding: 0;
 }
 
 a {
@@ -62,13 +65,9 @@ button:disabled {
   opacity: 0.6;
 }
 
-#services,
-#organisation,
-#commitments,
-#questions,
-#about {
-  scroll-margin-top: 81px; // Header height
-  // scroll-snap-margin-top: 81px; // Header height + Safari & iOS fix
+[id] {
+  scroll-margin-top: $header-margin;
+  // scroll-snap-margin-top: $header-margin;
 }
 
 // NAVIGATION MOBILE

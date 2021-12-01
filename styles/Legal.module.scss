@@ -13,4 +13,57 @@
       color: #ffffff;
     }
   }
+  .wrapper {
+    padding: 60px 0;
+    border-bottom: 1px solid #cccccc;
+  }
+  .layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: $max-width;
+    margin: 0 auto;
+    nav {
+      position: sticky;
+      top: 130px;
+      flex: 0 0 300px;
+      margin-right: 50px;
+      padding: 30px;
+      background-color: $primary-color-light;
+      border-radius: 10px;
+      ol {
+        padding-inline-start: 20px;
+      }
+      li {
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+        font-weight: 400;
+      }
+      li:last-child {
+        margin-bottom: 0;
+      }
+    }
+    section {
+      ol,
+      p {
+        margin-bottom: 15px;
+      }
+      h2 {
+        margin-top: 25px;
+        margin-bottom: 20px;
+      }
+      button {
+        padding: 5px 15px;
+        font-weight: 300;
+      }
+      .creditsContainer {
+        li {
+          list-style-type: none;
+        }
+        a {
+          color: $primary-color;
+        }
+      }
+    }
+  }
 }
