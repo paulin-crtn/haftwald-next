@@ -27,6 +27,8 @@
       position: sticky;
       top: 130px;
       flex: 0 0 300px;
+      max-height: 400px;
+      overflow-y: scroll;
       margin-right: 50px;
       padding: 30px;
       background-color: $primary-color-light;
