@@ -12,7 +12,7 @@ export const ScrollToTopButton = () => {
   return (
     <div className="scrollToTopButton">
       <div>&uarr;</div>
-      <Script src="js/displayScrollTopButton.js"></Script>
+      <Script src="js/scrollTopButton.js"></Script>
     </div>
   );
 };
