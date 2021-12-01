@@ -63,10 +63,7 @@ class MyDocument extends Document {
             property="og:description"
             content="Haftwald est un développeur web freelance maîtrisant les langages Javascript et Typescript ainsi que les frameworks React, NextJS et Angular"
           />
-          <meta
-            property="og:image"
-            content="haftwald.vercel.app/img/haftwald.jpg"
-          />
+          <meta property="og:image" content="/img/haftwald.jpg" />
 
           {/*Twitter Meta Tags */}
           <meta name="twitter:card" content="summary_large_image" />
@@ -80,10 +77,7 @@ class MyDocument extends Document {
             name="twitter:description"
             content="Haftwald est un développeur web freelance maîtrisant les langages Javascript et Typescript ainsi que les frameworks React, NextJS et Angular"
           />
-          <meta
-            name="twitter:image"
-            content="haftwald.vercel.app/img/haftwald.jpg"
-          />
+          <meta name="twitter:image" content="/img/haftwald.jpg" />
         </Head>
         <body>
           <Main />
