@@ -39,7 +39,6 @@ $maxWidth: 1200px;
 }
 
 // SHARED
-
 .sectionContainer {
   padding: 80px 0;
   text-align: center;
@@ -178,22 +177,4 @@ $maxWidth: 1200px;
     background: #ffffff;
     color: #000000;
   }
-}
-
-// SCROLL TO TOP BUTTON
-// See "js/displayScrollTopButton.js" file
-.scrollToTopButton {
-  display: none;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  font-size: 1.3rem;
-  text-align: center;
-  color: #ffffff;
-  background: #000000;
-  border-radius: 50px;
-  cursor: pointer;
 }

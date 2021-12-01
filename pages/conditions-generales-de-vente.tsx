@@ -16,7 +16,7 @@ import styles from "../styles/Legal.module.scss";
 /* -------------------------------------------------------------------------- */
 /*                                  COMPONENT                                 */
 /* -------------------------------------------------------------------------- */
-const MentionsLegales: NextPage = () => {
+const ConditionsGeneralesDeVente: NextPage = () => {
   /* -------------------------------------------------------------------------- */
   /*                                  TEMPLATE                                  */
   /* -------------------------------------------------------------------------- */
@@ -59,4 +59,4 @@ const MentionsLegales: NextPage = () => {
   );
 };
 
-export default MentionsLegales;
+export default ConditionsGeneralesDeVente;

@@ -5,8 +5,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
-import Script from "next/script";
 
 /* ---------------------------------- REACT --------------------------------- */
 import { useState } from "react";
@@ -21,6 +19,7 @@ import { Commitment } from "../components/Commitment";
 import { Question } from "../components/Question";
 import { Footer } from "../components/Footer";
 import { ModalContact } from "../components/ModalContact";
+import { ScrollToTopButton } from "../components/ScrollToTopButton";
 
 /* ------------------------------- INTERFACES ------------------------------- */
 import { IQuestion } from "../interfaces/IQuestion";
@@ -303,14 +302,7 @@ const Home: NextPage = () => {
       {/* ------------------------------------------------------------------------- */
       /*                            SCROLL TO TOP BUTTON                            */
       /* -------------------------------------------------------------------------- */}
-      <div id="scrollToTopButton" className={styles.scrollToTopButton}>
-        <Link href="/" passHref>
-          <a>
-            <div>&uarr;</div>
-          </a>
-        </Link>
-      </div>
-      <Script src="js/displayScrollTopButton.js"></Script>
+      <ScrollToTopButton />
 
       {/* ------------------------------------------------------------------------- */
       /*                                MODAL CONTACT                               */

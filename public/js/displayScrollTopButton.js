@@ -1,18 +1,22 @@
 /* -------------------------------------------------------------------------- */
-/*                        DISPLAY SCROLL TO TOP BUTTON                        */
+/*                            SCROLL TO TOP BUTTON                            */
 /* -------------------------------------------------------------------------- */
 
-// Get the button
-const mybutton = document.getElementById("scrollToTopButton");
+const scrollToTopButton =
+  document.getElementsByClassName("scrollToTopButton")[0];
 
-// When the user scrolls down 600px from the top of the document, show the button
 window.onscroll = function () {
-  if (
-    document.body.scrollTop > 600 ||
-    document.documentElement.scrollTop > 600
-  ) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
+  if (scrollToTopButton) {
+    if (
+      document.body.scrollTop > 600 ||
+      document.documentElement.scrollTop > 600
+    ) {
+      scrollToTopButton.style.display = "block";
+      scrollToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    } else {
+      scrollToTopButton.style.display = "none";
+    }
   }
 };
