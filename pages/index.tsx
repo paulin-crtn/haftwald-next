@@ -9,7 +9,7 @@ import Link from "next/link";
 import Script from "next/script";
 
 /* ---------------------------------- REACT --------------------------------- */
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 /* ------------------------------- COMPONENTS ------------------------------- */
 import { Header } from "../components/Header";
