@@ -31,9 +31,10 @@ export const Header = () => {
   /* -------------------------------------------------------------------------- */
   /*                                REACT EFFECT                                */
   /* -------------------------------------------------------------------------- */
+  /**
+   * Toggle class active on mobile navigation element
+   */
   useEffect(() => {
-    console.log("useeffct call");
-
     const mobileNav = document.getElementsByClassName("mobileNav")[0];
     if (mobileNav) {
       showMobileNav
