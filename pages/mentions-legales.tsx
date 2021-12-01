@@ -221,7 +221,7 @@ const MentionsLegales: NextPage = () => {
               </p>
 
               <h2 id="credit">8. Crédits</h2>
-              <ul className={styles.list}>
+              <ul>
                 <li>
                   <a
                     href="https://www.flaticon.com/fr/"

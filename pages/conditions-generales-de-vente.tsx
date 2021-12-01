@@ -270,31 +270,31 @@ const ConditionsGeneralesDeVente: NextPage = () => {
                   d’information et permettre au Prestataire de les utiliser
                   librement et sans contrainte dans le cadre de sa prestation.
                 </li>
-
-                <p>
-                  Si le Client ne fournit pas de cahier des charges avant le
-                  début de la réalisation de la commande, ou lorsque le cahier
-                  des charges ne donne pas d’indications ou de recommandations
-                  suffisamment précises sur la façon dont doit être abordée le
-                  développement et/ou la création graphique d’un élément inclus
-                  dans la commande, les deux parties s’accordent sur le fait que
-                  le choix de la conception est laissé à la libre interprétation
-                  du Prestataire.
-                </p>
-                <p>
-                  Le Client s’engage à fournir des informations justes et
-                  sincères et s’engage à prévenir le Prestataire de tout
-                  changement concernant les données fournies et sera seul
-                  responsable des éventuels dysfonctionnements qui pourraient
-                  résulter d’informations erronées. Le Client doit maintenir une
-                  adresse e-mail et une adresse postale valides.
-                </p>
-                <p>
-                  Tout texte fourni par le Client doit être préalablement relu
-                  et corrigé par le Client lui-même, aucune modification ou
-                  faute d’orthographe ne sera corrigée par le Prestataire.
-                </p>
               </ul>
+
+              <p>
+                Si le Client ne fournit pas de cahier des charges avant le début
+                de la réalisation de la commande, ou lorsque le cahier des
+                charges ne donne pas d’indications ou de recommandations
+                suffisamment précises sur la façon dont doit être abordée le
+                développement et/ou la création graphique d’un élément inclus
+                dans la commande, les deux parties s’accordent sur le fait que
+                le choix de la conception est laissé à la libre interprétation
+                du Prestataire.
+              </p>
+              <p>
+                Le Client s’engage à fournir des informations justes et sincères
+                et s’engage à prévenir le Prestataire de tout changement
+                concernant les données fournies et sera seul responsable des
+                éventuels dysfonctionnements qui pourraient résulter
+                d’informations erronées. Le Client doit maintenir une adresse
+                e-mail et une adresse postale valides.
+              </p>
+              <p>
+                Tout texte fourni par le Client doit être préalablement relu et
+                corrigé par le Client lui-même, aucune modification ou faute
+                d’orthographe ne sera corrigée par le Prestataire.
+              </p>
 
               <h3>6.2 Responsabilité et engagement du Prestataire</h3>
 
@@ -677,11 +677,9 @@ const ConditionsGeneralesDeVente: NextPage = () => {
               <p>
                 La garantie ne peut intervenir si les livrables ont fait l'objet
                 d'un usage anormal, ou ont été employés dans des conditions
-                différentes de celles pour lesquelles ils ont été fournis.
-              </p>
-              <p>
-                Elle ne s'applique pas non plus en cas de négligence ou
-                modification du livrable par le Client ou par un tiers.
+                différentes de celles pour lesquelles ils ont été fournis. Elle
+                ne s'applique pas non plus en cas de négligence ou modification
+                du livrable par le Client ou par un tiers.
               </p>
 
               <h2 id="force-majeure">20. Force majeure</h2>

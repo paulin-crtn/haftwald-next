@@ -4,7 +4,7 @@
   margin-top: $header-margin;
   .pageTitle {
     background-color: $primary-color;
-    padding: 20px 0;
+    padding: 20px 30px;
     h1 {
       max-width: $max-width;
       margin: 0 auto;
@@ -14,7 +14,7 @@
     }
   }
   .wrapper {
-    padding: 60px 0;
+    padding: 60px 30px;
     border-bottom: 1px solid #cccccc;
   }
   .layout {
@@ -39,37 +39,55 @@
       li {
         margin-bottom: 15px;
         font-size: 0.9rem;
-        font-weight: 400;
+        font-weight: 500;
       }
       li:last-child {
         margin-bottom: 0;
       }
     }
     section {
+      h3,
       ol,
       ul,
       p,
       button {
-        margin-bottom: 15px;
+        margin-bottom: 20px;
       }
       h2 {
-        margin-top: 25px;
-        margin-bottom: 20px;
+        margin-top: 30px;
+        margin-bottom: 25px;
+        font-size: 1.5rem;
+        font-weight: 600;
       }
       .h2data {
         margin-top: 0; // Exception for first h2 in politique-de-confidentialite.tsx file
+      }
+      h3 {
+        margin-top: 25px;
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+      li {
+        margin-left: 40px;
       }
       button {
         padding: 5px 15px;
         font-weight: 300;
       }
-      .list {
-        li {
-          list-style-type: none;
-        }
-        a {
-          color: $primary-color;
-        }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    .pageTitle {
+      h1 {
+        font-size: 1.4rem;
+      }
+    }
+    .layout {
+      nav {
+        display: none;
       }
     }
   }
