@@ -2,10 +2,12 @@
 /*                            SCROLL TO TOP BUTTON                            */
 /* -------------------------------------------------------------------------- */
 
-const scrollToTopButton =
-  document.getElementsByClassName("scrollToTopButton")[0];
-
 window.onscroll = function () {
+  // Get button
+  const scrollToTopButton =
+    document.getElementsByClassName("scrollToTopButton")[0];
+
+  // Check scroll position
   if (scrollToTopButton) {
     if (
       document.body.scrollTop > 600 ||
