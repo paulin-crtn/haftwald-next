@@ -133,16 +133,15 @@ const MentionsLegales: NextPage = () => {
 
               <h2 id="description">4. Description des services fournis</h2>
               <p>
-                Le site haftwald.com a pour objet de fournir une information
+                Le site haftwald.com a pour objet de fournir des informations
                 concernant l’ensemble des activités de la société.{" "}
               </p>
               <p>
-                Le propriétaire du site s’efforce de fournir sur le site
-                haftwald.com des informations aussi précises que possible.
-                Toutefois, il ne pourra être tenu responsable des omissions, des
-                inexactitudes et des carences dans la mise à jour, qu’elles
-                soient de son fait ou du fait des tiers partenaires qui lui
-                fournissent ces informations.{" "}
+                Le propriétaire du site s’efforce de fournir des informations
+                aussi précises que possible. Toutefois, il ne pourra être tenu
+                responsable des omissions, des inexactitudes et des carences
+                dans la mise à jour, qu’elles soient de son fait ou du fait des
+                tiers partenaires qui lui fournissent ces informations.{" "}
               </p>
               <p>
                 Toutes les informations proposées sur le site haftwald.com sont
@@ -217,12 +216,12 @@ const MentionsLegales: NextPage = () => {
                 Internet sont régis par les lois françaises. Vous acceptez
                 d’être liés par ces lois et de vous en remettre à la compétence
                 des tribunaux français en ce qui a trait à l’interprétation ou à
-                l’application des termes et conditions d’utilisation de ce
+                l’application des termes et conditions d’utilisation du présent
                 site internet.
               </p>
 
               <h2 id="credit">8. Crédits</h2>
-              <ul className={styles.creditsContainer}>
+              <ul className={styles.list}>
                 <li>
                   <a
                     href="https://www.flaticon.com/fr/"

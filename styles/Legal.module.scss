@@ -45,18 +45,23 @@
     }
     section {
       ol,
-      p {
+      ul,
+      p,
+      button {
         margin-bottom: 15px;
       }
       h2 {
         margin-top: 25px;
         margin-bottom: 20px;
       }
+      .h2data {
+        margin-top: 0; // Exception for first h2 in politique-de-confidentialite.tsx file
+      }
       button {
         padding: 5px 15px;
         font-weight: 300;
       }
-      .creditsContainer {
+      .list {
         li {
           list-style-type: none;
         }
