@@ -367,18 +367,18 @@ const Home: NextPage = () => {
             </p>
 
             <p>
-              <strong>Typescript</strong> : React, Angular, NextJS
+              <strong>Typescript</strong> : React, NextJS, Angular
             </p>
 
             <div className={styles.pictoContainer}>
               <figure>
                 <Image src={reactjs} alt="picto librairie react" />
               </figure>
-              <figure>
-                <Image src={angular} alt="picto angular 2+" />
-              </figure>
               <figure className={styles.pictoXs}>
                 <Image src={nextjs} alt="picto framework nextjs" />
+              </figure>
+              <figure>
+                <Image src={angular} alt="picto angular 2+" />
               </figure>
             </div>
 
