@@ -27,3 +27,22 @@
     }
   }
 }
+
+@media (max-width: 1250px) {
+  .organisationContainer {
+    margin: 30px auto 0 auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .organisationContainer {
+    display: block;
+    width: 100%;
+    .cta {
+      margin-left: 0;
+      figure {
+        display: none;
+      }
+    }
+  }
+}
