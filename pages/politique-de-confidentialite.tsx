@@ -27,12 +27,10 @@ const PolitiqueDeConfidentialite: NextPage = () => {
       /*                                  HTML HEAD                                 */
       /* -------------------------------------------------------------------------- */}
       <Head>
-        <title>
-          Développeur Web Freelance React, NextJS, Angular | Haftwald
-        </title>
+        <title>Politique de confidentialité & Cookies | Haftwald</title>
         <meta
           name="description"
-          content="Haftwald est un développeur web freelance maîtrisant les langages Javascript et Typescript ainsi que les frameworks React, NextJS et Angular"
+          content="Découvrez la politique de gestion des données personnelles et des cookies de Haftwald, développeur web freelance React, NextJS et Angular."
         />
       </Head>
 

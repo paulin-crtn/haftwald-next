@@ -27,12 +27,10 @@ const ConditionsGeneralesDeVente: NextPage = () => {
       /*                                  HTML HEAD                                 */
       /* -------------------------------------------------------------------------- */}
       <Head>
-        <title>
-          Développeur Web Freelance React, NextJS, Angular | Haftwald
-        </title>
+        <title>Conditions générales de vente | Haftwald</title>
         <meta
           name="description"
-          content="Haftwald est un développeur web freelance maîtrisant les langages Javascript et Typescript ainsi que les frameworks React, NextJS et Angular"
+          content="Retrouvez les conditions générales de vente de Haftwald, développeur web freelance Javascript et Typescript."
         />
       </Head>
 
@@ -46,7 +44,7 @@ const ConditionsGeneralesDeVente: NextPage = () => {
       /* -------------------------------------------------------------------------- */}
       <main className={styles.container}>
         <div className={styles.pageTitle}>
-          <h1>Conditions Générales de Vente</h1>
+          <h1>Conditions générales de vente</h1>
         </div>
         <div className={styles.wrapper}>
           <div className={styles.layout}>

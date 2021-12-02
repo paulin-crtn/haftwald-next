@@ -27,13 +27,8 @@ const Custom404: NextPage = () => {
       /*                                  HTML HEAD                                 */
       /* -------------------------------------------------------------------------- */}
       <Head>
-        <title>
-          Développeur Web Freelance React, NextJS, Angular | Haftwald
-        </title>
-        <meta
-          name="description"
-          content="Haftwald est un développeur web freelance maîtrisant les langages Javascript et Typescript ainsi que les frameworks React, NextJS et Angular"
-        />
+        <title>Erreur serveur | Haftwald</title>
+        <meta name="description" content="Le serveur ne répond pas." />
       </Head>
 
       {/* ------------------------------------------------------------------------- */

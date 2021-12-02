@@ -72,7 +72,7 @@ const Home: NextPage = () => {
         </title>
         <meta
           name="description"
-          content="Haftwald est un développeur web freelance maîtrisant les langages Javascript et Typescript ainsi que les frameworks React, NextJS et Angular"
+          content="Haftwald est un développeur web freelance utilisant les frameworks React, NextJS et Angular via les languages Javascript et Typescript."
         />
       </Head>
 
