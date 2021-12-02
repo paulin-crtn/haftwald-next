@@ -3,6 +3,7 @@
 /* -------------------------------------------------------------------------- */
 import type { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
+import { buildEmailTemplate } from "../../utils/buildEmailTemplate";
 
 /* -------------------------------------------------------------------------- */
 /*                                SET PASSWORD                                */
@@ -14,8 +15,8 @@ const password = process.env.EMAIL_PASSWORD;
 /* -------------------------------------------------------------------------- */
 
 /**
- * Send email to contact@haftwald.com
- * Data comes from ModalContact.tsx file
+ * Send email to contact@haftwald.com (data comes from ModalContact.tsx file)
+ * https://medium.com/nerd-for-tech/coding-a-contact-form-with-next-js-and-nodemailer-d3a8dc6cd645
  *
  * @param req
  * @param res
@@ -33,12 +34,18 @@ async function contact(req: NextApiRequest, res: NextApiResponse) {
   });
 
   /* ----------------------------- SET EMAIL DATA ----------------------------- */
+  const fullname = req.body.fullname;
+  const email = req.body.email;
+  const message = req.body.message;
+
+  const html = buildEmailTemplate(fullname, email, message);
+
   const mailData = {
     from: "Haftwald <contact@haftwald.com>",
     to: "contact@haftwald.com",
-    subject: `Message de ${req.body.fullname}`,
-    text: req.body.message,
-    html: req.body.email,
+    subject: `Message de ${fullname}`,
+    text: `${fullname} - ${email} - ${message}`,
+    html,
   };
 
   /* ------------------------------- SEND EMAIL ------------------------------- */
