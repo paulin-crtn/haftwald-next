@@ -1,6 +1,8 @@
 /* -------------------------------------------------------------------------- */
 /*                                   IMPORTS                                  */
 /* -------------------------------------------------------------------------- */
+/* --------------------------------- NEXT JS -------------------------------- */
+import Link from "next/link";
 
 /* --------------------------------- STYLES --------------------------------- */
 import styles from "../styles/Footer.module.scss";
@@ -18,9 +20,22 @@ export const Footer = () => {
         développement de vos projets web réalisés sous React, NextJS ou Angular.
       </p>
       <p className={styles.legal}>
-        <span>Mentions légales</span> |{" "}
-        <span>Politique de confidentialité & Cookies</span> |{" "}
-        <span>Conditions générales de vente</span>
+        <span>
+          <Link href="/mentions-legales">Mentions légales</Link>
+        </span>{" "}
+        |{" "}
+        <span>
+          <Link href="/politique-de-confidentialite">
+            Politique de confidentialité & Cookies
+          </Link>
+        </span>{" "}
+        |{" "}
+        <span>
+          {" "}
+          <Link href="/conditions-generales-de-vente">
+            Conditions générales de vente
+          </Link>
+        </span>
       </p>
       <p className={styles.copyright}>
         &copy; {new Date().getFullYear()} Haftwald

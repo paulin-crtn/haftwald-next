@@ -5,11 +5,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
-import Script from "next/script";
 
 /* ---------------------------------- REACT --------------------------------- */
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 /* ------------------------------- COMPONENTS ------------------------------- */
 import { Header } from "../components/Header";
@@ -21,6 +19,7 @@ import { Commitment } from "../components/Commitment";
 import { Question } from "../components/Question";
 import { Footer } from "../components/Footer";
 import { ModalContact } from "../components/ModalContact";
+import { ScrollToTopButton } from "../components/ScrollToTopButton";
 
 /* ------------------------------- INTERFACES ------------------------------- */
 import { IQuestion } from "../interfaces/IQuestion";
@@ -63,7 +62,7 @@ const Home: NextPage = () => {
   /*                                  TEMPLATE                                  */
   /* -------------------------------------------------------------------------- */
   return (
-    <div className={styles.container}>
+    <div>
       {/* ------------------------------------------------------------------------- */
       /*                                  HTML HEAD                                 */
       /* -------------------------------------------------------------------------- */}
@@ -73,7 +72,7 @@ const Home: NextPage = () => {
         </title>
         <meta
           name="description"
-          content="Haftwald est un développeur web freelance maîtrisant les langages Javascript et Typescript ainsi que les frameworks React, NextJS et Angular"
+          content="Haftwald est un développeur web freelance utilisant les frameworks React, NextJS et Angular via les languages Javascript et Typescript."
         />
       </Head>
 
@@ -85,7 +84,7 @@ const Home: NextPage = () => {
       {/* ------------------------------------------------------------------------- */
       /*                                    MAIN                                    */
       /* -------------------------------------------------------------------------- */}
-      <main>
+      <main className={styles.container}>
         {/* -------------------------------- HEADLINES ------------------------------- */}
         <section>
           <div className={styles.headlinesContainer}>
@@ -303,14 +302,7 @@ const Home: NextPage = () => {
       {/* ------------------------------------------------------------------------- */
       /*                            SCROLL TO TOP BUTTON                            */
       /* -------------------------------------------------------------------------- */}
-      <div id="scrollToTopButton" className={styles.scrollToTopButton}>
-        <Link href="/" passHref>
-          <a>
-            <div>&uarr;</div>
-          </a>
-        </Link>
-      </div>
-      <Script src="js/displayScrollTopButton.js"></Script>
+      <ScrollToTopButton />
 
       {/* ------------------------------------------------------------------------- */
       /*                                MODAL CONTACT                               */
@@ -375,18 +367,18 @@ const Home: NextPage = () => {
             </p>
 
             <p>
-              <strong>Typescript</strong> : React, Angular, NextJS
+              <strong>Typescript</strong> : React, NextJS, Angular
             </p>
 
             <div className={styles.pictoContainer}>
               <figure>
                 <Image src={reactjs} alt="picto librairie react" />
               </figure>
-              <figure>
-                <Image src={angular} alt="picto angular 2+" />
-              </figure>
               <figure className={styles.pictoXs}>
                 <Image src={nextjs} alt="picto framework nextjs" />
+              </figure>
+              <figure>
+                <Image src={angular} alt="picto angular 2+" />
               </figure>
             </div>
 

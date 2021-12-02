@@ -1,7 +1,5 @@
 @import "./variables.module.scss";
 
-$maxWidth: 1200px;
-
 .container {
   position: relative;
 }
@@ -11,8 +9,12 @@ $maxWidth: 1200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: $maxWidth;
-  margin: 200px auto 120px auto; // Add 80px to top because of fixed position header
+  max-width: $max-width;
+  margin-top: calc(120px + $header-margin);
+  margin-bottom: 120px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: $container-padding;
   h1 {
     margin: 0;
     font-size: 2.6rem;
@@ -29,7 +31,8 @@ $maxWidth: 1200px;
     padding: 10px 30px;
   }
   .headlinesScreenshotWrapper {
-    margin-left: 70px;
+    margin-left: 50px;
+    margin-right: 20px; // pecause of perspective
     flex: 0 0 550px;
     perspective: 550px;
   }
@@ -38,8 +41,42 @@ $maxWidth: 1200px;
   }
 }
 
-// SHARED
+@media (max-width: 1300px) {
+  .headlinesContainer {
+    padding: 0 100px;
+    h1 {
+      font-size: 2.2rem;
+    }
+    h2 {
+      font-size: 1.1rem;
+    }
+    .headlinesScreenshotWrapper {
+      flex: 0 0 450px;
+      perspective: 450px;
+    }
+  }
+}
 
+@media (max-width: 1060px) {
+  .headlinesContainer {
+    margin-top: calc(80px + $header-margin);
+    margin-bottom: 80px;
+    .headlinesScreenshotWrapper {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .headlinesContainer {
+    padding: $container-padding;
+    h1 {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+// SHARED
 .sectionContainer {
   padding: 80px 0;
   text-align: center;
@@ -62,6 +99,15 @@ $maxWidth: 1200px;
   text-align: center;
 }
 
+@media (max-width: 1060px) {
+  .title {
+    font-size: 1.6rem;
+  }
+  .subTitle {
+    width: 80%;
+  }
+}
+
 // SERVICES
 .servicesContainer {
   background-color: $primary-color-light;
@@ -69,7 +115,16 @@ $maxWidth: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    max-width: $maxWidth;
+    max-width: $max-width;
+    padding: $container-padding;
+  }
+}
+
+@media (max-width: 1200px) {
+  .servicesContainer {
+    .servicesWrapper {
+      display: block;
+    }
   }
 }
 
@@ -98,7 +153,7 @@ $maxWidth: 1200px;
     margin-right: 20px;
   }
   .pictoXs {
-    width: 90px;
+    width: 85px;
   }
 }
 
@@ -113,14 +168,24 @@ $maxWidth: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    max-width: $maxWidth;
+    max-width: $max-width;
+    padding: $container-padding;
+  }
+}
+
+@media (max-width: 1250px) {
+  .organisationsContainer {
+    .organisationsWrapper {
+      display: block;
+    }
   }
 }
 
 // QUESTIONS
 .questionsContainer {
   .questionsWrapper {
-    max-width: 950px;
+    max-width: 1000px;
+    padding: $container-padding;
   }
   .cta {
     display: flex;
@@ -135,19 +200,49 @@ $maxWidth: 1200px;
   }
 }
 
+@media (max-width: 1250px) {
+  .questionsContainer {
+    .cta {
+      display: block;
+      p {
+        margin-right: 0;
+        padding: $container-padding;
+      }
+      button {
+        margin: 20px auto 0 auto;
+      }
+    }
+  }
+}
+
 // COMMITMENTS
 .commitmentsContainer {
   background-color: $primary-color-light;
   .commitmentsWrapper {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    max-width: $maxWidth;
+    align-items: center;
+    max-width: 1150px;
+    padding: $container-padding;
     .cta {
-      flex: 0 0 550px;
-      margin-left: 50px;
+      flex: 0 0 406px;
+      margin-left: 70px;
       button {
-        margin-top: 30px;
+        margin: 30px auto 0 auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .commitmentsContainer {
+    .commitmentsWrapper {
+      display: block;
+      .cta {
+        margin-left: 0;
+        figure {
+          display: none;
+        }
       }
     }
   }
@@ -168,32 +263,14 @@ $maxWidth: 1200px;
     background-color: #ffffff;
   }
   p {
-    max-width: 850px;
+    max-width: 950px;
     margin: 0 auto;
-    padding: 0 30px;
+    padding: $container-padding;
     color: #ffffff;
   }
   button {
-    margin-top: 60px;
+    margin: 60px auto 0 auto;
     background: #ffffff;
     color: #000000;
   }
-}
-
-// SCROLL TO TOP BUTTON
-// See "js/displayScrollTopButton.js" file
-.scrollToTopButton {
-  display: none;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  font-size: 1.3rem;
-  text-align: center;
-  color: #ffffff;
-  background: #000000;
-  border-radius: 50px;
-  cursor: pointer;
 }

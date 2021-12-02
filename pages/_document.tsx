@@ -61,7 +61,7 @@ class MyDocument extends Document {
           />
           <meta
             property="og:description"
-            content="Haftwald est un développeur web freelance maîtrisant les langages Javascript et Typescript ainsi que les frameworks React, NextJS et Angular"
+            content="Haftwald est un développeur web freelance utilisant les frameworks React, NextJS et Angular via les languages Javascript et Typescript."
           />
           <meta property="og:image" content="/img/haftwald.jpg" />
 
@@ -75,7 +75,7 @@ class MyDocument extends Document {
           />
           <meta
             name="twitter:description"
-            content="Haftwald est un développeur web freelance maîtrisant les langages Javascript et Typescript ainsi que les frameworks React, NextJS et Angular"
+            content="Haftwald est un développeur web freelance utilisant les frameworks React, NextJS et Angular via les languages Javascript et Typescript."
           />
           <meta name="twitter:image" content="/img/haftwald.jpg" />
         </Head>

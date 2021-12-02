@@ -30,6 +30,7 @@ h6,
 p,
 figure {
   margin: 0;
+  padding: 0;
 }
 
 a {
@@ -43,6 +44,7 @@ strong {
 }
 
 button {
+  display: block;
   padding: 7px 17px;
   font-family: inherit;
   font-size: 1rem;
@@ -62,13 +64,9 @@ button:disabled {
   opacity: 0.6;
 }
 
-#services,
-#organisation,
-#commitments,
-#questions,
-#about {
-  scroll-margin-top: 81px; // Header height
-  // scroll-snap-margin-top: 81px; // Header height + Safari & iOS fix
+[id] {
+  scroll-margin-top: $header-margin;
+  // scroll-snap-margin-top: $header-margin;
 }
 
 // NAVIGATION MOBILE
@@ -89,11 +87,14 @@ button:disabled {
       margin-bottom: 10px;
       list-style-type: none;
     }
+    button {
+      margin-left: auto;
+    }
   }
 }
 
 .mobileNav.active {
-  top: 81px; // Add 81px to top because of fixed position header (80px + 1px border)
+  top: $header-margin; // because of fixed position header
   transition: top 0.5s;
 }
 
@@ -133,4 +134,22 @@ button:disabled {
 .serviceContainer.active {
   right: 0px;
   transition: right 0.7s; // 0.7s match 700ms setTimeout in components/Service.tsx
+}
+
+// SCROLL TO TOP BUTTON
+// See "js/displayScrollTopButton.js" file
+.scrollToTopButton {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 1.3rem;
+  text-align: center;
+  color: #ffffff;
+  background: #000000;
+  border-radius: 50px;
+  cursor: pointer;
 }

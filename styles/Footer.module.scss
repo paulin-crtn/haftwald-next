@@ -1,6 +1,9 @@
+@import "./variables.module.scss";
+
 .container {
   max-width: 850px;
   margin: 60px auto;
+  padding: $container-padding;
   text-align: center;
   h6 {
     font-family: "Righteous", cursive;

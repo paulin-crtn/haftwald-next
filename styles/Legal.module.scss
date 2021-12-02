@@ -1,0 +1,91 @@
+@import "./variables.module.scss";
+
+.container {
+  margin-top: $header-margin;
+  .pageTitle {
+    background-color: $primary-color;
+    padding: 20px 30px;
+    h1 {
+      max-width: $max-width;
+      margin: 0 auto;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+  }
+  .wrapper {
+    padding: 60px 30px;
+    border-bottom: 1px solid #cccccc;
+  }
+  .layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: $max-width;
+    margin: 0 auto;
+    nav {
+      position: sticky;
+      top: 130px;
+      flex: 0 0 300px;
+      max-height: 400px;
+      overflow-y: scroll;
+      margin-right: 50px;
+      padding: 30px;
+      background-color: $primary-color-light;
+      border-radius: 10px;
+      ol {
+        padding-inline-start: 20px;
+      }
+      li {
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+      li:last-child {
+        margin-bottom: 0;
+      }
+    }
+    section {
+      h3,
+      ol,
+      ul,
+      p,
+      button {
+        margin: 0 0 20px 0;
+      }
+      h2 {
+        margin-top: 30px;
+        margin-bottom: 25px;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+      .h2data {
+        margin-top: 0; // Exception for first h2 in politique-de-confidentialite.tsx file
+      }
+      h3 {
+        margin-top: 25px;
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+      button {
+        padding: 5px 15px;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    .pageTitle {
+      h1 {
+        font-size: 1.4rem;
+      }
+    }
+    .layout {
+      nav {
+        display: none;
+      }
+    }
+  }
+}
