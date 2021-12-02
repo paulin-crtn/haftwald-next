@@ -125,7 +125,7 @@ export const ModalContact = ({
 
     setIsSending(true);
 
-    const res = await fetch("/api/sendgrid", {
+    const res = await fetch("/api/contact", {
       body: JSON.stringify({
         fullname: fullname.value,
         email: email.value,
