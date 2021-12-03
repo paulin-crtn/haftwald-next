@@ -83,19 +83,19 @@ export const Header = () => {
           <nav className={styles.navigation}>
             <ul>
               <li>
-                <a href="/#services">Prestations</a>
+                <Link href="/#services">Prestations</Link>
               </li>
               <li>
-                <a href="/#organisation">Organisation</a>
+                <Link href="/#organisation">Organisation</Link>
               </li>
               <li>
-                <a href="/#questions">Questions</a>
+                <Link href="/#questions">Questions</Link>
               </li>
               <li>
-                <a href="/#commitments">Engagements</a>
+                <Link href="/#commitments">Engagements</Link>
               </li>
               <li>
-                <a href="/#about">Qui suis-je ?</a>
+                <Link href="/#about">Qui suis-je ?</Link>
               </li>
               <li>
                 <button
@@ -121,32 +121,22 @@ export const Header = () => {
       </div>
       <nav className="mobileNav">
         <ul>
-          <li>
-            <a href="/#services" onClick={() => setShowMobileNav(false)}>
-              Prestations
-            </a>
+          <li onClick={() => setShowMobileNav(false)}>
+            <Link href="/#services">Prestations</Link>
           </li>
-          <li>
-            <a href="/#organisation" onClick={() => setShowMobileNav(false)}>
-              Organisation
-            </a>
+          <li onClick={() => setShowMobileNav(false)}>
+            <Link href="/#organisation">Organisation</Link>
           </li>
-          <li>
-            <a href="/#questions" onClick={() => setShowMobileNav(false)}>
-              Questions
-            </a>
+          <li onClick={() => setShowMobileNav(false)}>
+            <Link href="/#questions">Questions</Link>
           </li>
-          <li>
-            <a href="/#commitments" onClick={() => setShowMobileNav(false)}>
-              Engagements
-            </a>
+          <li onClick={() => setShowMobileNav(false)}>
+            <Link href="/#commitments">Engagements</Link>
           </li>
-          <li>
-            <a href="/#about" onClick={() => setShowMobileNav(false)}>
-              Qui suis-je ?
-            </a>
+          <li onClick={() => setShowMobileNav(false)}>
+            <Link href="/#about">Qui suis-je ?</Link>
           </li>
-          <li>
+          <li onClick={() => setShowMobileNav(false)}>
             <button
               className={styles.cta}
               onClick={() => {
