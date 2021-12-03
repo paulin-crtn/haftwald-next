@@ -37,7 +37,7 @@ import search from "../public/img/picto/search.png";
 import pantone from "../public/img/picto/pantone.png";
 import team from "../public/img/team.svg";
 import videocall from "../public/img/videocall.svg";
-import sendingemail from "../public/img/sendingemail.svg";
+import commitment from "../public/img/commitment.svg";
 import emoji from "../public/img/emoji.png";
 import reactjs from "../public/img/techno/reactjs.svg";
 import nextjs from "../public/img/techno/nextjs.svg";
@@ -238,7 +238,7 @@ const Home: NextPage = () => {
             </div>
             <div className={styles.cta}>
               <figure>
-                <Image src={sendingemail} alt="sending email illustration" />
+                <Image src={commitment} alt="commitment illustration" />
               </figure>
               <button onClick={() => setShowModalContact(true)}>
                 Prendre contact

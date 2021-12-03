@@ -7,7 +7,7 @@ import styles from "../styles/Spinner.module.scss";
 /* -------------------------------------------------------------------------- */
 /*                                  COMPONENT                                 */
 /* -------------------------------------------------------------------------- */
-export const Spinner = () => {
+export const Loader = () => {
   return (
     <div className={styles.container}>
       <div className={styles.spinner}></div>

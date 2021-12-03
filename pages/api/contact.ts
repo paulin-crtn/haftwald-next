@@ -1,9 +1,21 @@
 /* -------------------------------------------------------------------------- */
 /*                                   IMPORTS                                  */
 /* -------------------------------------------------------------------------- */
+/* --------------------------------- NEXTJS --------------------------------- */
 import type { NextApiRequest, NextApiResponse } from "next";
+
+/* ----------------------------------- NPM ---------------------------------- */
 import nodemailer from "nodemailer";
+import SMTPTransport from "nodemailer/lib/smtp-transport";
+import sanitizeHtml from "sanitize-html";
+
+/* -------------------------------- FUNCTIONS ------------------------------- */
 import { buildEmailTemplate } from "../../utils/buildEmailTemplate";
+import {
+  validateFullname,
+  validateEmail,
+  validateMessage,
+} from "../../utils/formInputValidation";
 
 /* -------------------------------------------------------------------------- */
 /*                                SET PASSWORD                                */
@@ -21,7 +33,24 @@ const password = process.env.EMAIL_PASSWORD;
  * @param req
  * @param res
  */
-async function contact(req: NextApiRequest, res: NextApiResponse) {
+export default async function sendMail(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  /* ------------------------------ SANITIZATION ------------------------------ */
+  const fullname: string = sanitizeHtml(req.body.fullname);
+  const email: string = sanitizeHtml(req.body.email);
+  const message: string = sanitizeHtml(req.body.message);
+
+  /* ------------------------------- VALIDATION ------------------------------- */
+  const fullnameError = validateFullname(fullname);
+  const emailError = validateEmail(email);
+  const messageError = validateMessage(message);
+
+  if (!!fullnameError || !!emailError || !!messageError) {
+    return res.status(500).send({});
+  }
+
   /* ----------------------------- SET CREDENTIALS ---------------------------- */
   const transporter = nodemailer.createTransport({
     port: 465,
@@ -34,29 +63,19 @@ async function contact(req: NextApiRequest, res: NextApiResponse) {
   });
 
   /* ----------------------------- SET EMAIL DATA ----------------------------- */
-  const fullname = req.body.fullname;
-  const email = req.body.email;
-  const message = req.body.message;
-
-  const html = buildEmailTemplate(fullname, email, message);
-
   const mailData = {
     from: "Haftwald <contact@haftwald.com>",
     to: "contact@haftwald.com",
     subject: `Message de ${fullname}`,
     text: `${fullname} - ${email} - ${message}`,
-    html,
+    html: buildEmailTemplate(fullname, email, message),
   };
 
   /* ------------------------------- SEND EMAIL ------------------------------- */
-  transporter.sendMail(mailData, function (err: any, info: any) {
-    if (err) console.log(err);
-    else console.log(info);
-  });
+  transporter.sendMail(
+    mailData,
+    function (err: Error | null, info: SMTPTransport.SentMessageInfo) {
+      return err ? res.status(500).send({}) : res.status(200).send({});
+    }
+  );
 }
-
-/* -------------------------------------------------------------------------- */
-/*                               EXPORT FUNCTION                              */
-/* -------------------------------------------------------------------------- */
-
-export default contact;

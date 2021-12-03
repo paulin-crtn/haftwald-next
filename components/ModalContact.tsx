@@ -12,16 +12,21 @@ import {
 } from "react";
 
 /* -------------------------------- COMPONENT ------------------------------- */
-import { Spinner } from "./Spinner";
+import { Loader } from "./Loader";
 
-/* -------------------------------- FUNCTION -------------------------------- */
+/* -------------------------------- FUNCTIONS ------------------------------- */
 import {
   addBodyOverflowClass,
   removeBodyOverflowClass,
 } from "../utils/setBodyOverflowClass";
+import {
+  validateFullname,
+  validateEmail,
+  validateMessage,
+} from "../utils/formInputValidation";
 
 /* --------------------------------- STYLES --------------------------------- */
-import styles from "../styles/Contact.module.scss";
+import styles from "../styles/ModalContact.module.scss";
 
 /* -------------------------------------------------------------------------- */
 /*                                 INTERFACES                                 */
@@ -60,6 +65,7 @@ export const ModalContact = ({
     error: "",
   });
   const [isSending, setIsSending] = useState<boolean>(false);
+  const [apiResponseStatus, setApiResponseStatus] = useState<number>();
 
   /* -------------------------------------------------------------------------- */
   /*                               REACT CALLBACK                               */
@@ -117,15 +123,17 @@ export const ModalContact = ({
   /**
    * Send email
    *
-   * @param data
-   * @returns
+   * @param e
    */
   async function sendMail(e: FormEvent<HTMLFormElement>) {
+    // Avoid form submission
     e.preventDefault();
 
+    // Set loader on submit button
     setIsSending(true);
 
-    const res = await fetch("/api/contact", {
+    // API call
+    await fetch("/api/contact", {
       body: JSON.stringify({
         fullname: fullname.value,
         email: email.value,
@@ -135,32 +143,26 @@ export const ModalContact = ({
         "Content-Type": "application/json",
       },
       method: "POST",
-    });
-
-    const { error } = await res.json();
-    if (error) {
-      console.log(error);
-      setIsSending(false);
-      return;
-    }
-    console.log("done !");
+    })
+      .then((res) => {
+        setApiResponseStatus(res.status);
+        setIsSending(false);
+      })
+      .catch((error) => console.log(error));
   }
 
   /**
-   * Check fullname input
+   * Validate and set fullname input
+   *
+   * @param e
    */
   function handleFullnameChange(e: ChangeEvent<HTMLInputElement>) {
     // Initialization
     const value: string = e.target.value;
-    let error: string = "";
+
     // Validation
-    if (value.length === 0) {
-      error = "Vous devez remplir ce champs";
-    } else if (value.length < 3) {
-      error = "Le champs doit faire au moins 3 caractères";
-    } else if (value.length > 29) {
-      error = "Le champs doit faire moins de 30 caractères";
-    }
+    const error = validateFullname(value);
+
     // Set state
     setFullname({
       ...fullname,
@@ -170,20 +172,17 @@ export const ModalContact = ({
   }
 
   /**
-   * Check email input
+   * Validate and set email input
+   *
+   * @param e
    */
   function handleEmailChange(e: ChangeEvent<HTMLInputElement>) {
     // Initialization
     const value: string = e.target.value;
-    let error: string = "";
+
     // Validation
-    if (value.length === 0) {
-      error = "Vous devez remplir ce champs";
-    } else if (value.length > 29) {
-      error = "Le champs doit faire moins de 30 caractères";
-    } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
-      error = "Veuillez renseigner une adresse email valide";
-    }
+    const error = validateEmail(value);
+
     // Set state
     setEmail({
       ...email,
@@ -193,16 +192,17 @@ export const ModalContact = ({
   }
 
   /**
-   * Check message textarea
+   * Validate and set message textarea
+   *
+   * @param e
    */
   function handleMessageChange(e: ChangeEvent<HTMLTextAreaElement>) {
     // Initialization
     const value: string = e.target.value;
-    let error: string = "";
+
     // Validation
-    if (value.length > 9999) {
-      error = "Le champs doit faire moins de 1000 caractères";
-    }
+    const error = validateMessage(value);
+
     // Set state
     setMessage({
       ...message,
@@ -223,70 +223,106 @@ export const ModalContact = ({
           </div>
           <h3>Demande de contact</h3>
         </div>
-        <form onSubmit={(e) => sendMail(e)}>
+
+        <div className={styles.content}>
+          {/* ------------------------------- API ERROR ------------------------------- */}
+          {apiResponseStatus === 500 && (
+            <div className={styles.apiError}>
+              <strong>Erreur serveur</strong> : vous pouvez rééssayer ou me
+              contacter par téléphone au 06 51 54 25 31
+            </div>
+          )}
+
+          {/* ------------------------------- API SUCCESS ------------------------------ */}
+          {apiResponseStatus === 200 && (
+            <div className={styles.apiSuccess}>
+              <div className={styles.successCheckmark}>
+                <div className={styles.checkIcon}>
+                  <span
+                    className={[styles.iconLine, styles.lineTip].join(" ")}
+                  ></span>
+                  <span
+                    className={[styles.iconLine, styles.lineLong].join(" ")}
+                  ></span>
+                  <div className={styles.iconCircle}></div>
+                  <div className={styles.iconFix}></div>
+                </div>
+              </div>
+              <h4>Demande envoyée</h4>
+              <p>Une réponse vous sera apportée dans les 2 jours ouvrés</p>
+              <button onClick={closeModalContact}>Fermer</button>
+            </div>
+          )}
+
           {/* -------------------------------- FULLNAME -------------------------------- */}
-          <div className={styles.formGroup}>
-            <label htmlFor="fullname">Prénom et nom</label>
-            <input
-              type="text"
-              id="fullname"
-              className={
-                fullname.touched && fullname.error ? styles.inputError : ""
-              }
-              value={fullname.value}
-              onChange={(e) => handleFullnameChange(e)}
-              onBlur={() => setFullname({ ...fullname, touched: true })}
-            />
-            {fullname.touched && (
-              <div className={styles.textError}>{fullname.error}</div>
-            )}
-          </div>
+          {apiResponseStatus != 200 && (
+            <form onSubmit={(e) => sendMail(e)}>
+              <div className={styles.formGroup}>
+                <label htmlFor="fullname">Prénom et nom</label>
+                <input
+                  type="text"
+                  id="fullname"
+                  className={
+                    fullname.touched && fullname.error ? styles.inputError : ""
+                  }
+                  value={fullname.value}
+                  onChange={(e) => handleFullnameChange(e)}
+                  onBlur={() => setFullname({ ...fullname, touched: true })}
+                />
+                {fullname.touched && (
+                  <div className={styles.textError}>{fullname.error}</div>
+                )}
+              </div>
 
-          {/* ---------------------------------- EMAIL --------------------------------- */}
-          <div className={styles.formGroup}>
-            <label htmlFor="email">Email professionnel</label>
-            <input
-              type="email"
-              id="email"
-              className={email.touched && email.error ? styles.inputError : ""}
-              value={email.value}
-              onChange={(e) => handleEmailChange(e)}
-              onBlur={() => setEmail({ ...email, touched: true })}
-            />
-            {email.touched && (
-              <div className={styles.textError}>{email.error}</div>
-            )}
-          </div>
+              {/* ---------------------------------- EMAIL --------------------------------- */}
+              <div className={styles.formGroup}>
+                <label htmlFor="email">Email professionnel</label>
+                <input
+                  type="email"
+                  id="email"
+                  className={
+                    email.touched && email.error ? styles.inputError : ""
+                  }
+                  value={email.value}
+                  onChange={(e) => handleEmailChange(e)}
+                  onBlur={() => setEmail({ ...email, touched: true })}
+                />
+                {email.touched && (
+                  <div className={styles.textError}>{email.error}</div>
+                )}
+              </div>
 
-          {/* --------------------------------- MESSAGE -------------------------------- */}
-          <div className={styles.formGroup}>
-            <label htmlFor="message">
-              <div>Votre besoin</div>
-              <div className={styles.optional}>Facultatif</div>
-            </label>
-            <textarea
-              id="message"
-              className={
-                message.touched && message.error ? styles.inputError : ""
-              }
-              value={message.value}
-              onChange={(e) => handleMessageChange(e)}
-              onBlur={() => setMessage({ ...message, touched: true })}
-            ></textarea>
-            {message.touched && (
-              <div className={styles.textError}>{message.error}</div>
-            )}
-          </div>
+              {/* --------------------------------- MESSAGE -------------------------------- */}
+              <div className={styles.formGroup}>
+                <label htmlFor="message">
+                  <div>Votre besoin</div>
+                  <div className={styles.optional}>Facultatif</div>
+                </label>
+                <textarea
+                  id="message"
+                  className={
+                    message.touched && message.error ? styles.inputError : ""
+                  }
+                  value={message.value}
+                  onChange={(e) => handleMessageChange(e)}
+                  onBlur={() => setMessage({ ...message, touched: true })}
+                ></textarea>
+                {message.touched && (
+                  <div className={styles.textError}>{message.error}</div>
+                )}
+              </div>
 
-          {/* ------------------------------ SUBMIT BUTTON ----------------------------- */}
-          <button type="submit" disabled={isSending || !isFormValid}>
-            {isSending ? <Spinner /> : "Envoyer"}
-          </button>
-          {/*<p className={styles.legal}>
+              {/* ------------------------------ SUBMIT BUTTON ----------------------------- */}
+              <button type="submit" disabled={isSending || !isFormValid}>
+                {isSending ? <Loader /> : "Envoyer"}
+              </button>
+              {/*<p className={styles.legal}>
             Vos données ne seront utilisées que dans le seul but de vous
             recontacter. Voir la politique de confidentialité.
           </p>*/}
-        </form>
+            </form>
+          )}
+        </div>
       </div>
     </div>
   );
