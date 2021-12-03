@@ -5,9 +5,13 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
+/* ---------------------------------- REACT --------------------------------- */
+import { useState } from "react";
+
 /* ------------------------------- COMPONENTS ------------------------------- */
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { ModalContact } from "../components/ModalContact";
 import { ScrollToTopButton } from "../components/ScrollToTopButton";
 
 /* --------------------------------- STYLES --------------------------------- */
@@ -18,9 +22,12 @@ import styles from "../styles/Legal.module.scss";
 /* -------------------------------------------------------------------------- */
 const MentionsLegales: NextPage = () => {
   /* -------------------------------------------------------------------------- */
+  /*                                 REACT STATE                                */
+  /* -------------------------------------------------------------------------- */
+  const [showModalContact, setShowModalContact] = useState<boolean>(false);
+  /* -------------------------------------------------------------------------- */
   /*                                  TEMPLATE                                  */
   /* -------------------------------------------------------------------------- */
-
   return (
     <div>
       {/* ------------------------------------------------------------------------- */
@@ -98,7 +105,9 @@ const MentionsLegales: NextPage = () => {
               <p>
                 Haftwald est une micro-entreprise en cours d’immatriculation.
               </p>
-              <button>Contacter l’éditeur</button>
+              <button onClick={() => setShowModalContact(true)}>
+                Contacter l’éditeur
+              </button>
 
               <h2 id="host">2. Hébergement</h2>
               <p>
@@ -242,6 +251,15 @@ const MentionsLegales: NextPage = () => {
       /*                            SCROLL TO TOP BUTTON                            */
       /* -------------------------------------------------------------------------- */}
       <ScrollToTopButton />
+
+      {/* ------------------------------------------------------------------------- */
+      /*                                MODAL CONTACT                               */
+      /* -------------------------------------------------------------------------- */}
+      {showModalContact && (
+        <div className={styles.modalContainer}>
+          <ModalContact setShowModalContact={setShowModalContact} />
+        </div>
+      )}
     </div>
   );
 };
