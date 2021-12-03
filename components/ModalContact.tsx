@@ -226,7 +226,7 @@ export const ModalContact = ({
 
         <div className={styles.content}>
           {/* ------------------------------- API ERROR ------------------------------- */}
-          {apiResponseStatus === 500 && (
+          {apiResponseStatus && apiResponseStatus >= 500 && (
             <div className={styles.apiError}>
               <strong>Erreur serveur</strong> : vous pouvez rééssayer ou me
               contacter par téléphone au 06 51 54 25 31
