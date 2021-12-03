@@ -17,6 +17,7 @@
   p {
     min-height: 125px;
     margin-bottom: 30px;
+    font-size: 1rem;
   }
   button {
     width: 100%;
@@ -36,9 +37,5 @@
 @media (max-width: 700px) {
   .serviceContainer {
     width: 100%;
-    margin: 30px auto 0 auto;
-    p {
-      min-height: auto;
-    }
   }
 }
