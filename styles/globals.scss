@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 html,
 body {
   padding: 0;
@@ -19,6 +15,11 @@ body {
 
 body.overflowYHidden {
   overflow-y: hidden; // Use when displaying modal
+}
+
+// Because there is a bug with firefox when targeting html tag
+#__next {
+  scroll-behavior: smooth;
 }
 
 h1,
