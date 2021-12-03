@@ -83,19 +83,19 @@ export const Header = () => {
           <nav className={styles.navigation}>
             <ul>
               <li>
-                <a href="#services">Prestations</a>
+                <a href="/#services">Prestations</a>
               </li>
               <li>
-                <a href="#organisation">Organisation</a>
+                <a href="/#organisation">Organisation</a>
               </li>
               <li>
-                <a href="#questions">Questions</a>
+                <a href="/#questions">Questions</a>
               </li>
               <li>
-                <a href="#commitments">Engagements</a>
+                <a href="/#commitments">Engagements</a>
               </li>
               <li>
-                <a href="#about">Qui suis-je ?</a>
+                <a href="/#about">Qui suis-je ?</a>
               </li>
               <li>
                 <button
@@ -122,27 +122,27 @@ export const Header = () => {
       <nav className="mobileNav">
         <ul>
           <li>
-            <a href="#services" onClick={() => setShowMobileNav(false)}>
+            <a href="/#services" onClick={() => setShowMobileNav(false)}>
               Prestations
             </a>
           </li>
           <li>
-            <a href="#organisation" onClick={() => setShowMobileNav(false)}>
+            <a href="/#organisation" onClick={() => setShowMobileNav(false)}>
               Organisation
             </a>
           </li>
           <li>
-            <a href="#questions" onClick={() => setShowMobileNav(false)}>
+            <a href="/#questions" onClick={() => setShowMobileNav(false)}>
               Questions
             </a>
           </li>
           <li>
-            <a href="#commitments" onClick={() => setShowMobileNav(false)}>
+            <a href="/#commitments" onClick={() => setShowMobileNav(false)}>
               Engagements
             </a>
           </li>
           <li>
-            <a href="#about" onClick={() => setShowMobileNav(false)}>
+            <a href="/#about" onClick={() => setShowMobileNav(false)}>
               Qui suis-je ?
             </a>
           </li>
