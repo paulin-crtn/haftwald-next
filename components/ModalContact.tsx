@@ -12,7 +12,7 @@ import {
 } from "react";
 
 /* -------------------------------- COMPONENT ------------------------------- */
-import { Spinner } from "./Spinner";
+import { Loader } from "./Loader";
 
 /* -------------------------------- FUNCTIONS ------------------------------- */
 import {
@@ -314,7 +314,7 @@ export const ModalContact = ({
 
               {/* ------------------------------ SUBMIT BUTTON ----------------------------- */}
               <button type="submit" disabled={isSending || !isFormValid}>
-                {isSending ? <Spinner /> : "Envoyer"}
+                {isSending ? <Loader /> : "Envoyer"}
               </button>
               {/*<p className={styles.legal}>
             Vos données ne seront utilisées que dans le seul but de vous

@@ -53,7 +53,7 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#ffffff"></meta>
 
           {/*Facebook Meta Tags */}
-          <meta property="og:url" content="https://haftwald.vercel.app/" />
+          <meta property="og:url" content="https://www.haftwald.com/" />
           <meta property="og:type" content="website" />
           <meta
             property="og:title"
@@ -68,7 +68,7 @@ class MyDocument extends Document {
           {/*Twitter Meta Tags */}
           <meta name="twitter:card" content="summary_large_image" />
           <meta property="twitter:domain" content="haftwald.vercel.app" />
-          <meta property="twitter:url" content="https://haftwald.vercel.app/" />
+          <meta property="twitter:url" content="https://www.haftwald.com/" />
           <meta
             name="twitter:title"
             content="Développeur Web Freelance React, NextJS, Angular | Haftwald"
