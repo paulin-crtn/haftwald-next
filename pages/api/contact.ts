@@ -33,7 +33,10 @@ const password = process.env.EMAIL_PASSWORD;
  * @param req
  * @param res
  */
-export default async function (req: NextApiRequest, res: NextApiResponse) {
+export default async function sendMail(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   /* ------------------------------ SANITIZATION ------------------------------ */
   const fullname: string = sanitizeHtml(req.body.fullname);
   const email: string = sanitizeHtml(req.body.email);
