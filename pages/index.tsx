@@ -122,11 +122,11 @@ const Home: NextPage = () => {
             " "
           )}
         >
-          <h3 className={styles.title}>Prestations de service</h3>
+          <h3 className={styles.title}>Offres de service</h3>
           <p className={styles.subTitle}>
-            Les prestations proposées couvrent l’ensemble des besoins auxquels
-            vous pourriez être confronté dans le cadre de la création ou de la
-            modification d’un site.
+            Pour couvrir l’ensemble des besoins auxquels vous pourriez être
+            confronté dans le cadre de la création ou de la modification d’un
+            site.
           </p>
           <div className={[styles.wrapper, styles.servicesWrapper].join(" ")}>
             <ServiceCard

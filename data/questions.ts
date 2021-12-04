@@ -30,7 +30,7 @@ export const questions: IQuestion[] = [
   {
     title: "Quels sont vos tarifs ?",
     answer:
-      "En fonction de la durée et de la complexité de la mission, je facture entre 320€ et 380€ HT par jour de travail.",
+      "En fonction de la durée et de la complexité de la mission, je facture entre 320€ et 360€ HT par jour de travail.",
   },
   {
     title:
