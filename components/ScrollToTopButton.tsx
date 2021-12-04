@@ -1,9 +1,6 @@
 /* -------------------------------------------------------------------------- */
 /*                                   IMPORTS                                  */
 /* -------------------------------------------------------------------------- */
-/* --------------------------------- NEXT JS -------------------------------- */
-import Script from "next/script";
-
 /* ---------------------------------- REACT --------------------------------- */
 import { useEffect } from "react";
 
@@ -22,7 +19,6 @@ export const ScrollToTopButton = () => {
   return (
     <div className="scrollToTopButton">
       <div>&uarr;</div>
-      <Script src="js/scrollTopButton.js"></Script>
     </div>
   );
 };
