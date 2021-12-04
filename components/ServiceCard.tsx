@@ -7,6 +7,9 @@ import Image from "next/image";
 /* --------------------------------- STYLES --------------------------------- */
 import styles from "../styles/ServiceCard.module.scss";
 
+/* --------------------------------- IMAGES --------------------------------- */
+import plus from "../public/img/plus.svg";
+
 /* -------------------------------------------------------------------------- */
 /*                                  COMPONENT                                 */
 /* -------------------------------------------------------------------------- */
@@ -32,7 +35,12 @@ export const ServiceCard = ({
       </figure>
       <h4>{title}</h4>
       <p>{text}</p>
-      <button onClick={() => setShowService(true)}>Découvrir</button>
+      <button onClick={() => setShowService(true)}>
+        <div>Découvrir</div>
+        <div className={styles.plusContainer}>
+          <Image src={plus} alt="plus sign" />
+        </div>
+      </button>
     </div>
   );
 };

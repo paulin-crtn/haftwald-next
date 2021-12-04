@@ -21,7 +21,15 @@
     font-size: 1rem;
   }
   button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    .plusContainer {
+      display: flex;
+      width: 18px;
+      margin-left: 7px;
+    }
   }
 }
 

@@ -203,8 +203,10 @@ const Home: NextPage = () => {
             ))}
           </div>
           <div className={styles.cta}>
-            <p>Votre question n’apparait pas ?</p>
-            <button onClick={() => setShowModalContact(true)}>Posez-là</button>
+            <p>Besoin de davantage d’information ?</p>
+            <button onClick={() => setShowModalContact(true)}>
+              Poser votre question
+            </button>
           </div>
         </section>
 
