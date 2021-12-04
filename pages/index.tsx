@@ -31,7 +31,7 @@ import { questions } from "../data/questions";
 import styles from "../styles/Home.module.scss";
 
 /* --------------------------------- IMAGES --------------------------------- */
-import headlinesScreenshot from "../public/img/homepage.png";
+import stack from "../public/img/homepage.png";
 import coding from "../public/img/picto/coding.png";
 import search from "../public/img/picto/search.png";
 import pantone from "../public/img/picto/pantone.png";
@@ -102,17 +102,15 @@ const Home: NextPage = () => {
               </button>
             </div>
 
-            <div className={styles.headlinesScreenshotWrapper}>
-              <div className={styles.headlinesScreenshotInner}>
-                <figure className={styles.headlinesScreenshot}>
-                  <Image
-                    src={headlinesScreenshot}
-                    alt="VSCode screenshot"
-                    placeholder="blur"
-                    quality={100}
-                  />
-                </figure>
-              </div>
+            <div className={styles.stackContainer}>
+              <figure>
+                <Image
+                  src={stack}
+                  alt="stack haftwald"
+                  placeholder="blur"
+                  quality={100}
+                />
+              </figure>
             </div>
           </div>
         </section>
@@ -134,7 +132,7 @@ const Home: NextPage = () => {
             <ServiceCard
               title="Développement web"
               picto={coding}
-              text="Intégration et développement web pour création ou modification de site internet, d’application métier ou de solution SaaS réalisé sous React, NextJS ou Angular."
+              text="Intégration et développement web pour création ou modification de site internet, d’application métier ou de solution SaaS réalisé sous Javascript, Typescript ou PHP."
               setShowService={setShowServiceDev}
             />
             <ServiceCard
@@ -367,7 +365,7 @@ const Home: NextPage = () => {
             </p>
 
             <p>
-              <strong>Typescript</strong> : React, NextJS, Angular
+              <strong>Typescript, Javascript</strong> : React, NextJS, Angular
             </p>
 
             <div className={styles.pictoContainer}>
