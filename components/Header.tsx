@@ -76,7 +76,7 @@ export const Header = () => {
     <header className="header">
       <div className={styles.container}>
         <div className={styles.wrapper}>
-          <Link href="/">
+          <Link href="/" passHref>
             <figure className={styles.logo}>
               <Image
                 src={logo}
