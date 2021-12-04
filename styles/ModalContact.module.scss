@@ -9,6 +9,8 @@ $errorColor: #e64545;
   transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
   width: 90%;
   max-width: 450px;
+  max-height: 100vh;
+  overflow: scroll;
   background-color: hsl(0, 0%, 100%);
   border-radius: 10px;
   z-index: 100;

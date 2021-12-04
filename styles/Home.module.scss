@@ -1,9 +1,5 @@
 @import "./variables.module.scss";
 
-.container {
-  position: relative;
-}
-
 // HEADLINES
 .headlinesContainer {
   display: flex;
@@ -29,6 +25,7 @@
   button {
     font-size: $large-button-fs;
     padding: $large-button-padding;
+    box-shadow: $box-shadow;
   }
   .headlinesScreenshotWrapper {
     margin-left: 50px;
@@ -38,6 +35,21 @@
   }
   .headlinesScreenshotInner {
     transform: rotateY(-10deg);
+    -webkit-animation: pulse ease-in-out 6s infinite;
+    -moz-animation: pulse ease-in-out 6s infinite;
+    -o-animation: pulse ease-in-out 6s infinite;
+    animation: pulse ease-in-out 6s infinite;
+  }
+  @keyframes pulse {
+    from {
+      transform: rotateY(-15deg);
+    }
+    50% {
+      transform: rotateY(-8deg);
+    }
+    to {
+      transform: rotateY(-15deg);
+    }
   }
 }
 
@@ -200,6 +212,7 @@
     button {
       padding: $large-button-padding;
       font-size: $large-button-fs;
+      box-shadow: $box-shadow;
     }
   }
 }
@@ -235,6 +248,7 @@
         margin: 30px auto 0 auto;
         padding: $large-button-padding;
         font-size: $large-button-fs;
+        box-shadow: $box-shadow;
       }
     }
   }
@@ -273,6 +287,7 @@
     margin: 0 auto;
     padding: $container-padding;
     color: #ffffff;
+    font-size: 1rem;
   }
   button {
     margin: 60px auto 0 auto;
@@ -280,5 +295,6 @@
     font-size: $large-button-fs;
     background: #ffffff;
     color: #000000;
+    box-shadow: $box-shadow;
   }
 }
