@@ -15,6 +15,7 @@ import { ModalContact } from "./ModalContact";
 import styles from "../styles/Header.module.scss";
 
 /* --------------------------------- IMAGES --------------------------------- */
+import logo from "../public/img/logo.png";
 import menu from "../public/img/menu.svg";
 import mark from "../public/img/mark.svg";
 
@@ -75,10 +76,16 @@ export const Header = () => {
     <header className="header">
       <div className={styles.container}>
         <div className={styles.wrapper}>
-          <Link href="/" passHref>
-            <a className={styles.logo} onClick={() => setShowMobileNav(false)}>
-              Haftwald<span className={styles.dot}>.</span>
-            </a>
+          <Link href="/">
+            <figure className={styles.logo}>
+              <Image
+                src={logo}
+                alt="logo haftwald développeur web freelance"
+                priority={true}
+                quality={100}
+                onClick={() => setShowMobileNav(false)}
+              />
+            </figure>
           </Link>
           <nav className={styles.navigation}>
             <ul>
