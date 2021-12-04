@@ -42,18 +42,17 @@
     h2 {
       font-size: 1.1rem;
     }
-    .headlinesScreenshotWrapper {
-      flex: 0 0 450px;
-      perspective: 450px;
+    .stackContainer {
+      flex: 0 0 400px;
     }
   }
 }
 
 @media (max-width: 1060px) {
   .headlinesContainer {
-    margin-top: calc(80px + $header-margin);
-    margin-bottom: 80px;
-    .headlinesScreenshotWrapper {
+    margin-top: calc(60px + $header-margin);
+    margin-bottom: 60px;
+    .stackContainer {
       display: none;
     }
   }
