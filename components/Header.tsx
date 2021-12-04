@@ -77,15 +77,16 @@ export const Header = () => {
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <Link href="/" passHref>
-            <figure className={styles.logo}>
-              <Image
-                src={logo}
-                alt="logo haftwald développeur web freelance"
-                priority={true}
-                quality={100}
-                onClick={() => setShowMobileNav(false)}
-              />
-            </figure>
+            <a>
+              <figure className={styles.logo}>
+                <Image
+                  src={logo}
+                  alt="logo haftwald développeur web freelance"
+                  quality={100}
+                  onClick={() => setShowMobileNav(false)}
+                />
+              </figure>
+            </a>
           </Link>
           <nav className={styles.navigation}>
             <ul>
