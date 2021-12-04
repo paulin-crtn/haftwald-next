@@ -8,8 +8,6 @@ window.onscroll = function () {
     "header div:first-child" // NextJS uses dynamic class so we target the container with :first-child
   );
 
-  console.log(headerContainer);
-
   // Check scroll position
   if (headerContainer) {
     headerContainer.style.borderBottomWidth = "1px";
