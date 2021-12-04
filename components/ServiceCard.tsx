@@ -36,10 +36,10 @@ export const ServiceCard = ({
       <h4>{title}</h4>
       <p>{text}</p>
       <button onClick={() => setShowService(true)}>
-        <div>Découvrir</div>
-        <div className={styles.plusContainer}>
+        <span>Découvrir</span>
+        <span className={styles.plusContainer}>
           <Image src={plus} alt="plus sign" />
-        </div>
+        </span>
       </button>
     </div>
   );
