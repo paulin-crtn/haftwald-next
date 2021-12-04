@@ -91,7 +91,7 @@ export const Header = () => {
           <nav className={styles.navigation}>
             <ul>
               <li>
-                <Link href="/#services">Prestations</Link>
+                <Link href="/#services">Offres</Link>
               </li>
               <li>
                 <Link href="/#organisation">Organisation</Link>
@@ -130,7 +130,7 @@ export const Header = () => {
       <nav className="mobileNav">
         <ul>
           <li onClick={() => setShowMobileNav(false)}>
-            <Link href="/#services">Prestations</Link>
+            <Link href="/#services">Offres</Link>
           </li>
           <li onClick={() => setShowMobileNav(false)}>
             <Link href="/#organisation">Organisation</Link>
