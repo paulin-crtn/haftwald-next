@@ -35,7 +35,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           sizes="16x16"
           href="/favicon/favicon-16x16.png"
         />
-        <link rel="manifest" href="/favicon/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff"></meta>
 
