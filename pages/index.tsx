@@ -144,7 +144,7 @@ const Home: NextPage = () => {
             <ServiceCard
               title="Maquettes graphiques"
               picto={pantone}
-              text="Conception d’interfaces et d’expériences utilisateur adaptés à votre cible, à vos objectifs et en cohérence avec votre charte graphique."
+              text="Conception d’interfaces et d’expériences utilisateur adaptées à votre cible, à vos objectifs et en cohérence avec votre charte graphique."
               setShowService={setShowServiceUi}
             />
           </div>
@@ -175,7 +175,7 @@ const Home: NextPage = () => {
             <OrganisationCard
               title="Distanciel"
               img={videocall}
-              text="Pour les mission de plus courte durée, moins complexe ou nécessitant de collaborer avec des équipes déjà connues, le télétravail est une solution à envisager. Je suis disponible sur vos outils tout au long du projet."
+              text="Pour les missions de plus courte durée, moins complexes ou nécessitant de collaborer avec des équipes déjà connues, le télétravail est une solution à envisager. Je suis disponible sur vos outils tout au long du projet."
               setShowModalContact={setShowModalContact}
             />
           </div>
@@ -203,7 +203,7 @@ const Home: NextPage = () => {
             ))}
           </div>
           <div className={styles.cta}>
-            <p>Besoin de davantage d’information ?</p>
+            <p>Besoin d’informations supplémentaires ?</p>
             <button onClick={() => setShowModalContact(true)}>
               Poser votre question
             </button>
