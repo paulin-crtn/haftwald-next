@@ -10,6 +10,8 @@ $errorColor: #e64545;
   width: 90%;
   max-width: 450px;
   max-height: 100vh;
+  overflow-x: none;
+  overflow-y: auto;
   background-color: hsl(0, 0%, 100%);
   border-radius: 10px;
   z-index: 100;
@@ -239,7 +241,7 @@ $errorColor: #e64545;
         height: 80px;
         resize: none;
         overflow-x: none;
-        overflow-y: scroll;
+        overflow-y: auto;
       }
       .inputError {
         border-color: $errorColor;
@@ -260,12 +262,5 @@ $errorColor: #e64545;
   button {
     width: 100%;
     margin: 10px 0 0 0;
-  }
-}
-
-@media (max-height: 550px) {
-  .container {
-    overflow-x: none;
-    overflow-y: scroll;
   }
 }
