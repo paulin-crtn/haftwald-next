@@ -35,7 +35,7 @@
     .logoContainer {
       display: inline-block;
       padding: 15px;
-      margin-bottom: 30px;
+      margin-bottom: 50px;
       background-color: #ffffff;
       border-radius: 10px;
       .logo {
@@ -48,7 +48,7 @@
       font-weight: 600;
     }
     p {
-      margin: 20px 0 30px 0;
+      margin: 20px 0 40px 0;
       font-size: 1.3rem;
     }
     .buttons {
@@ -61,6 +61,18 @@
         background: #ffffff;
         color: #000000;
       }
+    }
+  }
+}
+
+footer {
+  .legal {
+    padding: 20px 30px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    text-align: right;
+    span {
+      cursor: pointer;
     }
   }
 }
