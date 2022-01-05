@@ -66,13 +66,13 @@ export function validateMessage(str: string) {
  * @param str
  * @returns
  */
-export function validatePhone(str: string) {
+export function validatePhoneNumber(str: string) {
   // Initialization
   const value: string = str.trim();
   let error: string = "";
   // Validation
   if (value.length != 10) {
-    error = "Le numéro de téléphone doit contenir 10 caractères";
+    error = "Le numéro de téléphone doit contenir 10 chiffres";
   } else if (!/[0-9]{10}/.test(value)) {
     error = "Veuillez renseigner un numéro de téléphone valide";
   }

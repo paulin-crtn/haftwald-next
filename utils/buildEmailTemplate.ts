@@ -10,6 +10,7 @@
 export function buildEmailTemplate(
   fullname: string,
   email: string,
+  phoneNumber: string,
   message: string
 ) {
   return `<!DOCTYPE html>
@@ -126,8 +127,7 @@ export function buildEmailTemplate(
             font-family: sans-serif;
             font-weight: 400;
             line-height: 1.4;
-            margin: 0;
-            margin-bottom: 30px;
+            margin: 10px 0px;
           }
     
           h1 {
@@ -361,46 +361,15 @@ export function buildEmailTemplate(
                       >
                         <tr>
                           <td>
-                            <h2>${message}</h2>
-                            <h1>${fullname}</h1>
-                            <table
-                              role="presentation"
-                              border="0"
-                              cellpadding="0"
-                              cellspacing="0"
-                              class="btn btn-primary"
-                            >
-                              <tbody>
-                                <tr>
-                                  <td align="left">
-                                    <table
-                                      role="presentation"
-                                      border="0"
-                                      cellpadding="0"
-                                      cellspacing="0"
-                                    >
-                                      <tbody>
-                                        <tr>
-                                          <td>
-                                            <a
-                                              href="mailto:${email}"
-                                              target="_blank"
-                                              >Répondre</a
-                                            >
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
+                            <h1><strong>Prénom et nom :</strong> ${fullname}</h1>
+                            <h1><strong>Email :</strong> ${email}</h1>
+                            <h1><strong>Téléphone :</strong> ${phoneNumber}</h1>
+                            <h1><strong>Message :</strong> ${message}</h1>
                           </td>
                         </tr>
                       </table>
                     </td>
                   </tr>
-    
                   <!-- END MAIN CONTENT AREA -->
                 </table>
                 <!-- END CENTERED WHITE CONTAINER -->

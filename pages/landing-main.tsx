@@ -3,6 +3,7 @@
 /* -------------------------------------------------------------------------- */
 /* --------------------------------- NEXT JS -------------------------------- */
 import type { NextPage } from "next";
+import Router from "next/router";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
@@ -17,7 +18,7 @@ import { Loader } from "../components/Loader";
 import {
   validateEmail,
   validateFullname,
-  validatePhone,
+  validatePhoneNumber,
 } from "../utils/formInputValidation";
 
 /* ------------------------------- INTERFACES ------------------------------- */
@@ -53,7 +54,7 @@ const LandingMain: NextPage = () => {
     error: "",
   });
   const [isSending, setIsSending] = useState<boolean>(false);
-  const [apiResponseStatus, setApiResponseStatus] = useState<number>();
+  const [apiHasError, setApiHasError] = useState<boolean>(false);
 
   /* -------------------------------------------------------------------------- */
   /*                                 REACT MEMO                                 */
@@ -77,12 +78,16 @@ const LandingMain: NextPage = () => {
     // Set loader on submit button
     setIsSending(true);
 
+    // Reset API has error
+    setApiHasError(false);
+
     // API call
     await fetch("/api/contact", {
       body: JSON.stringify({
         fullname: fullname.value,
         email: email.value,
-        message: "DEMANDE DE CONTACT ISSUE DE LA LANDING PAGE",
+        phoneNumber: phoneNumber.value,
+        message: "Non demandé (LANDING PAGE)",
       }),
       headers: {
         "Content-Type": "application/json",
@@ -90,8 +95,10 @@ const LandingMain: NextPage = () => {
       method: "POST",
     })
       .then((res) => {
-        setApiResponseStatus(res.status);
         setIsSending(false);
+        res.status === 200
+          ? Router.push("/landing-confirmation")
+          : setApiHasError(true);
       })
       .catch((error) => console.log(error));
   }
@@ -146,7 +153,7 @@ const LandingMain: NextPage = () => {
     const value: string = e.target.value;
 
     // Validation
-    const error = validatePhone(value);
+    const error = validatePhoneNumber(value);
 
     // Set state
     setPhoneNumber({
@@ -226,6 +233,14 @@ const LandingMain: NextPage = () => {
         <form className={styles.form} onSubmit={(e) => sendMail(e)}>
           <h2>Demande de contact</h2>
           <p className={styles.subTitle}>Gratuite et sans engagement</p>
+
+          {/* ------------------------------- API ERROR ------------------------------- */}
+          {apiHasError && (
+            <div className={styles.apiError}>
+              <strong>Erreur serveur</strong> : vous pouvez rééssayer ou me
+              contacter par téléphone au 06 51 54 25 31
+            </div>
+          )}
 
           <div className={styles.formGroupContainer}>
             {/* -------------------------------- FULLNAME -------------------------------- */}

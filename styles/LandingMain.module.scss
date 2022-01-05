@@ -93,6 +93,13 @@
     .subTitle {
       font-size: 1.2rem;
     }
+    .apiError {
+      margin: 25px 0;
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      border-left: 7px solid $errorColor;
+      background-color: #fff7f7;
+    }
     label,
     input {
       display: block;

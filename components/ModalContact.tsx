@@ -130,6 +130,7 @@ export const ModalContact = ({
       body: JSON.stringify({
         fullname: fullname.value,
         email: email.value,
+        phoneNumber: "Non demandé (MODAL CONTACT)",
         message: message.value,
       }),
       headers: {

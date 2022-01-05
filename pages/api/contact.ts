@@ -15,6 +15,7 @@ import {
   validateFullname,
   validateEmail,
   validateMessage,
+  validatePhoneNumber,
 } from "../../utils/formInputValidation";
 
 /* -------------------------------------------------------------------------- */
@@ -40,6 +41,7 @@ export default async function sendMail(
   /* ------------------------------ SANITIZATION ------------------------------ */
   const fullname: string = sanitizeHtml(req.body.fullname);
   const email: string = sanitizeHtml(req.body.email);
+  const phoneNumber: string = sanitizeHtml(req.body.phoneNumber);
   const message: string = sanitizeHtml(req.body.message);
 
   /* ------------------------------- VALIDATION ------------------------------- */
@@ -67,8 +69,8 @@ export default async function sendMail(
     from: "Haftwald <contact@haftwald.com>",
     to: "contact@haftwald.com",
     subject: `Message de ${fullname}`,
-    text: `${fullname} - ${email} - ${message}`,
-    html: buildEmailTemplate(fullname, email, message),
+    text: `${fullname} - ${email} - ${phoneNumber} - ${message}`,
+    html: buildEmailTemplate(fullname, email, phoneNumber, message),
   };
 
   /* ------------------------------- SEND EMAIL ------------------------------- */
