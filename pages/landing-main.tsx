@@ -282,8 +282,8 @@ const LandingMain: NextPage = () => {
             {/* ------------------------------ PHONE NUMBER ------------------------------ */}
             <div className={styles.formGroup}>
               <label htmlFor="phone">
-                <div>Téléphone</div>
-                <div className={styles.optional}>Facultatif</div>
+                <span>Téléphone</span>
+                <span className={styles.optional}>Facultatif</span>
               </label>
               <input
                 type="text"

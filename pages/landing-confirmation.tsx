@@ -58,16 +58,16 @@ const LandingConfirmation: NextPage = () => {
             votre projet.
           </p>
           <div className={styles.buttons}>
-            <button>
+            <div className="button">
               <Link href="/" passHref>
                 Visiter le site
               </Link>
-            </button>
-            <button>
+            </div>
+            <div className="button">
               <Link href="https://www.google.com" passHref>
                 Google
               </Link>
-            </button>
+            </div>
           </div>
         </section>
       </main>
