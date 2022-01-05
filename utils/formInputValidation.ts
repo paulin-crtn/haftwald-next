@@ -59,3 +59,23 @@ export function validateMessage(str: string) {
   // Return
   return error;
 }
+
+/**
+ * Validate phone number
+ *
+ * @param str
+ * @returns
+ */
+export function validatePhone(str: string) {
+  // Initialization
+  const value: string = str.trim();
+  let error: string = "";
+  // Validation
+  if (value.length != 10) {
+    error = "Le numéro de téléphone doit contenir 10 caractères";
+  } else if (!/[0-9]{10}/.test(value)) {
+    error = "Veuillez renseigner un numéro de téléphone valide";
+  }
+  // Return
+  return error;
+}
