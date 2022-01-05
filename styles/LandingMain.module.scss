@@ -75,6 +75,7 @@
   }
   .form {
     flex-basis: 400px;
+    flex-shrink: 0;
     padding: 30px 40px;
     color: #000000;
     background-color: #ffffff;
@@ -160,28 +161,29 @@ footer {
   }
 }
 
-@media (max-width: 900px) {
-  .pageBackground::after {
-    opacity: 0;
-  }
+@media (max-width: 1150px) {
   .container {
-    justify-content: center;
-    .wrapper {
-      margin-left: 0;
+    .arguments {
+      h1 {
+        font-size: 2rem;
+      }
+      ul {
+        li {
+          font-size: 1.1rem;
+        }
+      }
     }
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 950px) {
   .container {
-    .wrapper {
-      .buttons {
-        display: block;
-        button {
-          margin-right: 0px;
-          margin-bottom: 10px;
-        }
-      }
+    display: block;
+    .arguments {
+      margin-right: 0;
+    }
+    .form {
+      margin-top: 50px;
     }
   }
 }
