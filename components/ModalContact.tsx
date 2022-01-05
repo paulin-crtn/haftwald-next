@@ -25,18 +25,11 @@ import {
   validateMessage,
 } from "../utils/formInputValidation";
 
+/* ------------------------------- INTERFACES ------------------------------- */
+import { IInput } from "../interfaces/IInput";
+
 /* --------------------------------- STYLES --------------------------------- */
 import styles from "../styles/ModalContact.module.scss";
-
-/* -------------------------------------------------------------------------- */
-/*                                 INTERFACES                                 */
-/* -------------------------------------------------------------------------- */
-
-interface IInput {
-  touched: boolean;
-  value: string;
-  error: string;
-}
 
 /* -------------------------------------------------------------------------- */
 /*                                  COMPONENT                                 */
