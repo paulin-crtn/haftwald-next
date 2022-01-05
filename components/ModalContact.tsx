@@ -25,18 +25,11 @@ import {
   validateMessage,
 } from "../utils/formInputValidation";
 
+/* ------------------------------- INTERFACES ------------------------------- */
+import { IInput } from "../interfaces/IInput";
+
 /* --------------------------------- STYLES --------------------------------- */
 import styles from "../styles/ModalContact.module.scss";
-
-/* -------------------------------------------------------------------------- */
-/*                                 INTERFACES                                 */
-/* -------------------------------------------------------------------------- */
-
-interface IInput {
-  touched: boolean;
-  value: string;
-  error: string;
-}
 
 /* -------------------------------------------------------------------------- */
 /*                                  COMPONENT                                 */
@@ -137,6 +130,7 @@ export const ModalContact = ({
       body: JSON.stringify({
         fullname: fullname.value,
         email: email.value,
+        phoneNumber: "Non demandé (MODAL CONTACT)",
         message: message.value,
       }),
       headers: {

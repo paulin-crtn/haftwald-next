@@ -1,0 +1,103 @@
+@import "./variables.module.scss";
+
+.pageBackground {
+  background: linear-gradient(0.25turn, $primary-color, #340ace);
+}
+
+.pageBackground::after {
+  content: "";
+  position: absolute;
+  background-image: url("/img/landing.svg");
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position-x: right;
+  background-position-y: center;
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  color: #ffffff;
+  .wrapper {
+    max-width: 680px;
+    padding: 30px;
+    margin-left: 10%;
+    .logoContainer {
+      display: inline-block;
+      padding: 15px;
+      margin-bottom: 50px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      .logo {
+        display: flex;
+        width: 160px;
+      }
+    }
+    h1 {
+      font-size: 2.3rem;
+      font-weight: 600;
+    }
+    p {
+      margin: 20px 0 40px 0;
+      font-size: 1.3rem;
+    }
+    .buttons {
+      display: flex;
+      align-items: center;
+      div {
+        margin-right: 15px;
+        padding: $large-button-padding;
+        font-size: $large-button-fs;
+        background: #ffffff;
+        color: #000000;
+      }
+    }
+  }
+}
+
+footer {
+  .legal {
+    padding: 20px 30px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    text-align: right;
+    span {
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .pageBackground::after {
+    opacity: 0;
+  }
+  .container {
+    justify-content: center;
+    .wrapper {
+      margin-left: 0;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    .wrapper {
+      .buttons {
+        display: block;
+        button {
+          margin-right: 0px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
