@@ -124,11 +124,11 @@ const ConditionsGeneralesDeVente: NextPage = () => {
               <p>
                 Paulin CARATINI, agissant également sous le nom commercial
                 « Haftwald », est une micro-entreprise dont le siège social est
-                située 320 route de l’Auribelle, 26150 Montmaur-en-Diois,
-                immatriculée au registre du commerce et des sociétés de LYON
-                sous le numéro XXX XX XXX, spécialisée dans la prestation de
-                services web, dont notamment la conception de sites internet, la
-                conception de maquettes graphiques, ou encore la formation.
+                situé 10 rue Succursale, 33000 Bordeaux, immatriculée au
+                registre du commerce et des sociétés de Bordeaux sous le numéro
+                819 156 910, spécialisée dans la prestation de services web,
+                dont notamment la conception de sites internet, la conception de
+                maquettes graphiques, ou encore la formation.
               </p>
               <p>
                 Les présentes conditions générales régissent les relations entre
@@ -145,7 +145,7 @@ const ConditionsGeneralesDeVente: NextPage = () => {
                 de produits ou services réalisés par le Prestataire pour ses
                 Clients dans le cadre de son activité commerciale. L’ensemble
                 des caractéristiques de ses prestations se trouve détaillé sur
-                le site accessible à l’adresse « https://www.haftwald.com ».
+                le site accessible à l’adresse « haftwald.com ».
               </p>
 
               <h2 id="application">3. Champs d’application</h2>
