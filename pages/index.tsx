@@ -67,12 +67,10 @@ const Home: NextPage = () => {
       /*                                  HTML HEAD                                 */
       /* -------------------------------------------------------------------------- */}
       <Head>
-        <title>
-          Développeur Web Freelance React, NextJS, Angular | Haftwald
-        </title>
+        <title>Développeur Web Freelance Fullstack | Haftwald</title>
         <meta
           name="description"
-          content="Haftwald est un développeur web freelance utilisant les frameworks React, NextJS et Angular via les languages Javascript et Typescript."
+          content="Développement d'applications web réalisées sous Javascript, Typescript ou PHP : Angular, React, NextJS, NodeJS et Laravel"
         />
       </Head>
 

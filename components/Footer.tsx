@@ -15,9 +15,9 @@ export const Footer = () => {
     <footer className={styles.container}>
       <h6>Haftwald</h6>
       <p className={styles.presentation}>
-        Paulin Caratini, a.k.a. Haftwald, est un développeur web freelance à
-        Paris et ailleurs qui vous accompagne dans la conception et le
-        développement de vos projets web réalisés sous React, NextJS ou Angular.
+        Paulin Caratini, a.k.a. Haftwald, est un développeur web freelance qui
+        accompagne les organisations dans la conception et le développement de
+        projets web réalisés sous React, NextJS, Angular, NestJS ou Laravel.
       </p>
       <p className={styles.legal}>
         <span>
