@@ -136,19 +136,19 @@ const Home: NextPage = () => {
             <ServiceCard
               title="Front-end"
               picto={picture}
-              text="Conception d’interfaces dynamiques pour offrir une expérience de navigation fluide et rapide à vos utilisateurs : intégration de maquettes responsive, optimisation du référencement, consommation d’API publiques ou privées, etc."
+              text="Conception d’interfaces dynamiques pour offrir une expérience de navigation fluide et rapide à vos utilisateurs : intégration de maquettes responsive, consommation d’API, etc."
               setShowService={setShowServiceDevFront}
             />
             <ServiceCard
               title="Back-end"
               picto={fire}
-              text="Construction d’applications métiers ou de solutions SaaS via des API RESTful pour vous permettre de répondre à un besoin spécifique : outil de suivi ou de gestion, interaction avec une base de données, business intelligence, etc."
+              text="Construction d’applications métiers ou de solutions SaaS via des API pour vous permettre de répondre à un besoin spécifique : outil de suivi ou de gestion, interaction avec une base de données, business intelligence, etc."
               setShowService={setShowServiceDevBack}
             />
             <ServiceCard
               title="DevOps"
               picto={setting}
-              text="Automatisation de certains processus afin de lancer de nouvelles fonctionnalités plus rapidement tout en réduisant le risque d’erreurs et de bugs : versionning, tests unitaires, intégration et développement continue, monitoring, etc."
+              text="Automatisation de certains processus afin de lancer de nouvelles fonctionnalités plus rapidement tout en réduisant le risque d’erreurs et de bugs : versionning, tests unitaires, pipeline CI/CD, monitoring, etc."
               setShowService={setShowServiceDevOps}
             />
           </div>
@@ -525,14 +525,11 @@ const Home: NextPage = () => {
               <strong>service d’hébergement open source</strong> comme GitHub ou
               BitBucket. Cela permet de <strong>modifier le site</strong>{" "}
               (corrections, ajout de nouvelles fonctionnalités mise à jour,
-              etc.) ou de{" "}
-              <strong>
-                collaborer avec d’autres développeurs en toute sécurité
-              </strong>
-              .
+              etc.), de <strong>collaborer avec d’autres développeurs</strong>{" "}
+              et d’adopter une approche d’<strong>intégration continue</strong>.
             </p>
 
-            <h4>Test unitaires</h4>
+            <h4>Tests unitaires</h4>
 
             <p>
               Les tests unitaires permettent de <strong>tester le code</strong>{" "}
