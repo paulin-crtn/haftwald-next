@@ -501,6 +501,20 @@ const Home: NextPage = () => {
                 <Image src={mongodb} alt="picto mongodb database" />
               </figure>
             </div>
+
+            <h4>Outils d’analyse</h4>
+
+            <p>
+              En fonction du type de site développé, il sera possible
+              d’installer un ou plusieurs outils de{" "}
+              <strong>suivi statistiques</strong> (Google Analytics, Facebook
+              Pixel…) afin de pouvoir disposer d’informations concernant la{" "}
+              <strong>fréquentation</strong> du site, le <strong>profil</strong>{" "}
+              et l’
+              <strong>origine des visiteurs</strong>, le{" "}
+              <strong>taux de conversion</strong>, etc. Ces outils pourront vous
+              aider dans votre <strong>stratégie de marketing digital</strong>.
+            </p>
           </div>
         </Service>
       )}
@@ -573,20 +587,6 @@ const Home: NextPage = () => {
                 entraîner une <strong>réduction des coûts</strong>
               </li>
             </ul>
-
-            <h4>Outils d’analyse</h4>
-
-            <p>
-              En fonction du type de site développé, il sera possible
-              d’installer un ou plusieurs outils de{" "}
-              <strong>suivi statistiques</strong> (Google Analytics, Facebook
-              Pixel…) afin de pouvoir disposer d’informations concernant la{" "}
-              <strong>fréquentation</strong> du site, le <strong>profil</strong>{" "}
-              et l’
-              <strong>origine des visiteurs</strong>, le{" "}
-              <strong>taux de conversion</strong>, etc. Ces outils pourront vous
-              aider dans votre <strong>stratégie de marketing digital</strong>.
-            </p>
           </div>
         </Service>
       )}
