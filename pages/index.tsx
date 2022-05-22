@@ -136,13 +136,13 @@ const Home: NextPage = () => {
             <ServiceCard
               title="Front-end"
               picto={picture}
-              text="Conception d’interfaces dynamiques pour offrir une expérience de navigation fluide et rapide à vos utilisateurs : intégration de maquettes responsive, consommation d’API, etc."
+              text="Développement d’interfaces dynamiques afin d’offrir une expérience de navigation fluide et rapide à vos utilisateurs : intégration de maquettes responsive, consommation d’API, etc."
               setShowService={setShowServiceDevFront}
             />
             <ServiceCard
               title="Back-end"
               picto={fire}
-              text="Construction d’applications métiers ou de solutions SaaS via des API pour vous permettre de répondre à un besoin spécifique : outil de suivi ou de gestion, interaction avec une base de données, business intelligence, etc."
+              text="Développement d’API afin de vous permettre de construire des applications métiers ou des solutions SaaS : outil de suivi ou de gestion, interaction avec une base de données, business intelligence, etc."
               setShowService={setShowServiceDevBack}
             />
             <ServiceCard
@@ -534,21 +534,22 @@ const Home: NextPage = () => {
 
             <p>
               Le code source produit, <strong>performant</strong>,{" "}
-              <strong>commenté</strong> et <strong>évolutif</strong>, est
+              <strong>commenté</strong> et <strong>évolutif</strong>, sera
               disponible sur un{" "}
               <strong>service d’hébergement open source</strong> comme GitHub ou
-              BitBucket. Cela permet de <strong>modifier le site</strong>{" "}
-              (corrections, ajout de nouvelles fonctionnalités mise à jour,
-              etc.), de <strong>collaborer avec d’autres développeurs</strong>{" "}
-              et d’adopter une approche d’<strong>intégration continue</strong>.
+              BitBucket. Cela permettra de <strong>modifier le site</strong>{" "}
+              facilement (corrections, ajout de nouvelles fonctionnalités, mise
+              à jour, etc.), de{" "}
+              <strong>collaborer avec d’autres développeurs</strong> et
+              d’adopter une approche d’<strong>intégration continue</strong>.
             </p>
 
             <h4>Tests unitaires</h4>
 
             <p>
               Les tests unitaires permettent de <strong>tester le code</strong>{" "}
-              afin de s’assurer qu’il fait correctement ce qu’on lui demande.
-              Surtout, les tests permettent de{" "}
+              afin de s’assurer qu’il fait correctement ce qu’on lui demande en
+              toute situation. Surtout, les tests permettent de{" "}
               <strong>détecter d’éventuels problèmes ou bugs en amont</strong>,
               avant la mise en production, et{" "}
               <strong>alertent en cas d’introduction d’une régression</strong>{" "}
