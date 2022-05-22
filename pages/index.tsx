@@ -13,6 +13,7 @@ import { useState } from "react";
 import { Header } from "../components/Header";
 import { ServiceCard } from "../components/ServiceCard";
 import { Service } from "../components/Service";
+import { Chip } from "../components/Chip";
 import { Info } from "../components/Info";
 import { OrganisationCard } from "../components/OrganisationCard";
 import { Commitment } from "../components/Commitment";
@@ -349,9 +350,9 @@ const Home: NextPage = () => {
               <strong>solution la plus adaptée et performante</strong>.
             </p>
 
-            <p>
+            <h5>
               <strong>Typescript, Javascript</strong> : React, NextJS, Angular
-            </p>
+            </h5>
 
             <div className={styles.pictoContainer}>
               <figure>
@@ -464,9 +465,9 @@ const Home: NextPage = () => {
               <strong>architecture logicielle solide et évolutive</strong>.
             </p>
 
-            <p>
+            <h5>
               <strong>PHP</strong> : Laravel
-            </p>
+            </h5>
 
             <div className={styles.pictoContainer}>
               <figure className={styles.pictoXs}>
@@ -474,11 +475,11 @@ const Home: NextPage = () => {
               </figure>
             </div>
 
-            <p>
+            <h5>
               <strong>Typescript</strong> : NodeJS & NestJS
-              <br />
-              <span className="italic">Montée en compétences en cours</span>
-            </p>
+            </h5>
+
+            <Chip icon={hour}>Montée en compétences en cours</Chip>
 
             <div className={styles.pictoContainer}>
               <figure>
@@ -489,9 +490,9 @@ const Home: NextPage = () => {
               </figure>
             </div>
 
-            <p>
+            <h5>
               <strong>Base de données</strong> : MySQL, MongoDB
-            </p>
+            </h5>
 
             <div className={styles.pictoContainer}>
               <figure>
@@ -562,7 +563,7 @@ const Home: NextPage = () => {
 
             <h4>Hébergement</h4>
 
-            <span className="italic">Montée en compétences en cours</span>
+            <Chip icon={hour}>Montée en compétences en cours</Chip>
 
             <p>
               Héberger une application web nécessite le plus souvent de{" "}
