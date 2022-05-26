@@ -26,7 +26,7 @@ export const questions: IQuestion[] = [
   {
     title: "Quels sont vos tarifs ?",
     answer:
-      "En fonction de la durée et de la complexité de la mission, je facture entre 300€ et 360€ HT par jour. Des forfaits ou des embauches en CDD (à temps plein ou temps partiel) sont possibles pour certains projets.",
+      "En fonction de la durée et de la complexité de la mission, je facture entre 300€ et 360€ HT par jour. Des forfaits sont possibles pour certains projets.",
   },
   {
     title:

@@ -40,7 +40,7 @@ import team from "../public/img/team.svg";
 import videocall from "../public/img/videocall.svg";
 import commitment from "../public/img/commitment.svg";
 import emoji from "../public/img/emoji.png";
-import hour from "../public/img/hour.png";
+import hour from "../public/img/hour.svg";
 import reactjs from "../public/img/techno/reactjs.svg";
 import nextjs from "../public/img/techno/nextjs.svg";
 import angular from "../public/img/techno/angular.svg";
@@ -127,11 +127,10 @@ const Home: NextPage = () => {
         >
           <h3 className={styles.title}>Offres de service</h3>
           <p className={styles.subTitle}>
-            Ces prestations concernent aussi bien la{" "}
-            <strong>création d’un nouveau site</strong> que la{" "}
-            <strong>modification d’un site existant</strong> : correction de
-            bugs, ajout de nouvelles fonctionnalités, modifications des contenus
-            ou de la présentation, mise à jour de la base de données, etc.
+            Faites créer ou modifier votre site internet ou votre application
+            web : ajout de nouvelles fonctionnalités, correction de bugs,
+            modification des contenus ou de la présentation, intervention sur la
+            base de données, mise à jour, etc.
           </p>
           <div className={[styles.wrapper, styles.servicesWrapper].join(" ")}>
             <ServiceCard
@@ -397,10 +396,9 @@ const Home: NextPage = () => {
               réalisée par un <strong>webdesigner</strong> de notre réseau.
             </Info>
             <Info>
-              Dans certains cas et afin de diminuer le coût final il peut être
-              suffisant d’acheter des{" "}
-              <strong>maquettes prête à l’emploi</strong> via une plateforme
-              spécialisée.
+              Dans certains cas et afin de diminuer le coût final il parfois
+              possible d’acheter des <strong>maquettes prête à l’emploi</strong>{" "}
+              via une plateforme spécialisée.
             </Info>
 
             <h4>Référencement naturel</h4>
@@ -458,7 +456,7 @@ const Home: NextPage = () => {
 
             <p>
               Haftwald développe des <strong>applications web</strong> (site
-              internet statique ou dynamqiue, logiciel métier, plateforme Saas)
+              internet statique ou dynamqiue, logiciel métier, plateforme SaaS)
               dans le respect des <strong>bonnes pratiques</strong> de
               l’industrie : principes SOLID, fonctions pures, découplage...
               autant de <strong>concepts fondamentaux</strong> pour assurer une{" "}
@@ -531,11 +529,23 @@ const Home: NextPage = () => {
           setShowModalContact={setShowModalContact}
         >
           <div className={styles.serviceContainer}>
+            <p>
+              Le DevOps est une <strong>approche organisationnelle</strong>{" "}
+              cherchant à <strong>combiner les équipes</strong> de
+              développements et opérationnels afin d’
+              <strong>
+                augmenter la vitesse, la qualité et l’efficience
+              </strong>{" "}
+              du développement d’un logiciel. Cette approche se traduit par des{" "}
+              <strong>méthodes et des outils communs</strong> : méthodologie
+              Agile, intégration et développement continue, automatisation, etc.
+            </p>
+
             <h4>Code source et contrôle de version</h4>
 
             <p>
               Le code source produit, <strong>performant</strong>,{" "}
-              <strong>commenté</strong> et <strong>évolutif</strong>, sera
+              <strong>commenté</strong> et <strong>évolutif</strong>, est
               disponible sur un{" "}
               <strong>service d’hébergement open source</strong> comme GitHub ou
               BitBucket. Cela permettra de <strong>modifier le site</strong>{" "}
