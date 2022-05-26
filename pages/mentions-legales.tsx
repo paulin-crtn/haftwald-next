@@ -98,12 +98,13 @@ const MentionsLegales: NextPage = () => {
 
               <h2 id="editor">1. Éditeur</h2>
               <p>
-                Le site haftwald.com est la propriété exclusive de Paulin
-                CARATINI, agissant également sous le nom commercial
-                « Haftwald », qui l’édite.
+                Le site haftwald.com est la propriété exclusive de Paulin
+                CARATINI, agissant également sous le nom commercial « Haftwald
+                », qui l’édite.
               </p>
               <p>
-                Haftwald est une micro-entreprise en cours d’immatriculation.
+                Haftwald est une micro-entreprise immatriculée sous le numéro
+                SIRET 819 156 910 00021.
               </p>
               <button onClick={() => setShowModalContact(true)}>
                 Contacter l’éditeur
@@ -111,7 +112,7 @@ const MentionsLegales: NextPage = () => {
 
               <h2 id="host">2. Hébergement</h2>
               <p>
-                Le site haftwald.com est hébergé par Vercel dont le siège
+                Le site haftwald.com est hébergé par Vercel dont le siège
                 sociale est situé :
               </p>
               <p>
@@ -175,7 +176,7 @@ const MentionsLegales: NextPage = () => {
                 de ces éléments qu’il contient sera considérée comme
                 constitutive d’une contrefaçon et poursuivie conformément aux
                 dispositions des articles L.335-2 et suivants du Code de
-                Propriété Intellectuelle.  
+                Propriété Intellectuelle.
               </p>
 
               <h2 id="responsability">
@@ -224,7 +225,7 @@ const MentionsLegales: NextPage = () => {
                 d’être liés par ces lois et de vous en remettre à la compétence
                 des tribunaux français en ce qui a trait à l’interprétation ou à
                 l’application des termes et conditions d’utilisation du présent
-                site internet.
+                site internet.
               </p>
 
               <h2 id="credit">8. Crédits</h2>
