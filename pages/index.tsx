@@ -13,6 +13,7 @@ import { useState } from "react";
 import { Header } from "../components/Header";
 import { ServiceCard } from "../components/ServiceCard";
 import { Service } from "../components/Service";
+import { Chip } from "../components/Chip";
 import { Info } from "../components/Info";
 import { OrganisationCard } from "../components/OrganisationCard";
 import { Commitment } from "../components/Commitment";
@@ -32,17 +33,20 @@ import styles from "../styles/Home.module.scss";
 
 /* --------------------------------- IMAGES --------------------------------- */
 import stack from "../public/img/homepage.png";
-import coding from "../public/img/picto/coding.png";
-import search from "../public/img/picto/search.png";
-import pantone from "../public/img/picto/pantone.png";
+import picture from "../public/img/picto/picture.png";
+import fire from "../public/img/picto/fire.png";
+import setting from "../public/img/picto/setting.png";
 import team from "../public/img/team.svg";
 import videocall from "../public/img/videocall.svg";
 import commitment from "../public/img/commitment.svg";
 import emoji from "../public/img/emoji.png";
+import hour from "../public/img/hour.svg";
 import reactjs from "../public/img/techno/reactjs.svg";
 import nextjs from "../public/img/techno/nextjs.svg";
 import angular from "../public/img/techno/angular.svg";
 import laravel from "../public/img/techno/laravel.svg";
+import nodejs from "../public/img/techno/nodejs.svg";
+import nestjs from "../public/img/techno/nestjs.svg";
 import mysql from "../public/img/techno/mysql.svg";
 import mongodb from "../public/img/techno/mongodb.svg";
 
@@ -54,9 +58,10 @@ const Home: NextPage = () => {
   /*                                 REACT STATE                                */
   /* -------------------------------------------------------------------------- */
   const [showModalContact, setShowModalContact] = useState<boolean>(false);
-  const [showServiceDev, setShowServiceDev] = useState<boolean>(false);
-  const [showServiceSeo, setShowServiceSeo] = useState<boolean>(false);
-  const [showServiceUi, setShowServiceUi] = useState<boolean>(false);
+  const [showServiceDevFront, setShowServiceDevFront] =
+    useState<boolean>(false);
+  const [showServiceDevBack, setShowServiceDevBack] = useState<boolean>(false);
+  const [showServiceDevOps, setShowServiceDevOps] = useState<boolean>(false);
 
   /* -------------------------------------------------------------------------- */
   /*                                  TEMPLATE                                  */
@@ -70,7 +75,7 @@ const Home: NextPage = () => {
         <title>Développeur Web Freelance Fullstack | Haftwald</title>
         <meta
           name="description"
-          content="Développement d'applications web réalisées sous Javascript, Typescript ou PHP : Angular, React, NextJS, NodeJS et Laravel"
+          content="Développement d’applications web réalisées sous Javascript, Typescript ou PHP : Angular, React, NextJS, NodeJS et Laravel"
         />
       </Head>
 
@@ -122,28 +127,29 @@ const Home: NextPage = () => {
         >
           <h3 className={styles.title}>Offres de service</h3>
           <p className={styles.subTitle}>
-            Pour couvrir l’ensemble des besoins auxquels vous pourriez être
-            confronté dans le cadre de la création ou de la modification d’un
-            site.
+            Faites créer ou modifier votre site internet ou votre application
+            web : ajout de nouvelles fonctionnalités, correction de bugs,
+            modification des contenus ou de la présentation, intervention sur la
+            base de données, mise à jour, etc.
           </p>
           <div className={[styles.wrapper, styles.servicesWrapper].join(" ")}>
             <ServiceCard
-              title="Développement web"
-              picto={coding}
-              text="Intégration et développement web pour création ou modification de site internet, d’application métier ou de solution SaaS réalisé sous Javascript, Typescript ou PHP."
-              setShowService={setShowServiceDev}
+              title="Front-end"
+              picto={picture}
+              text="Développement d’interfaces dynamiques afin d’offrir une expérience de navigation fluide et rapide à vos utilisateurs : intégration de maquettes responsive, consommation d’API, etc."
+              setShowService={setShowServiceDevFront}
             />
             <ServiceCard
-              title="Référencement naturel"
-              picto={search}
-              text="Optimisation du référencement afin de faire remonter le site dans les résultats des moteurs de recherche et faire progresser son traffic."
-              setShowService={setShowServiceSeo}
+              title="Back-end"
+              picto={fire}
+              text="Développement d’API afin de vous permettre de construire des applications métiers ou des solutions SaaS : outil de suivi ou de gestion, interaction avec une base de données, business intelligence, etc."
+              setShowService={setShowServiceDevBack}
             />
             <ServiceCard
-              title="Maquettes graphiques"
-              picto={pantone}
-              text="Conception d’interfaces et d’expériences utilisateur adaptées à votre cible, à vos objectifs et en cohérence avec votre charte graphique."
-              setShowService={setShowServiceUi}
+              title="DevOps"
+              picto={setting}
+              text="Automatisation de certains processus afin de lancer de nouvelles fonctionnalités plus rapidement tout en réduisant le risque d’erreurs et de bugs : versionning, tests unitaires, pipeline CI/CD, monitoring, etc."
+              setShowService={setShowServiceDevOps}
             />
           </div>
         </section>
@@ -269,9 +275,9 @@ const Home: NextPage = () => {
             <br />
             <br />
             Cette curiosité m’a poussé à passer les certifications « 
-            <strong>Techniques de développement web</strong> » et « 
-            <strong>Techniques d’intégration web</strong> » puis à rejoindre
-            tour à tour deux start-up pour les accompagner dans la conception de
+            <strong>Techniques de développement web</strong>» et « 
+            <strong>Techniques d’intégration web</strong>» puis à rejoindre tour
+            à tour deux start-up pour les accompagner dans la conception de
             leurs <strong>applications métiers</strong> réalisées sous{" "}
             <strong>TypeScript</strong>, respectivement dans le secteur médical
             et de la grande distribution.
@@ -310,63 +316,42 @@ const Home: NextPage = () => {
       )}
 
       {/* ------------------------------------------------------------------------- */
-      /*                                 SERVICE DEV                                */
+      /*                              SERVICE FRONT-END                             */
       /* -------------------------------------------------------------------------- */}
-      {showServiceDev && (
+      {showServiceDevFront && (
         <Service
-          title="Développement web"
-          picto={coding}
-          setShowService={setShowServiceDev}
+          title="Développement Front-end"
+          picto={picture}
+          setShowService={setShowServiceDevFront}
           setShowModalContact={setShowModalContact}
         >
           <div className={styles.serviceContainer}>
-            <h4>Logiciel, application métier et solution SaaS</h4>
-
             <p>
-              Pour les professionnels qui ont un besoin en lien avec leur
-              activité : <strong>outil de suivi ou de gestion</strong>{" "}
-              (monitoring), visualisation de données, contrôle des flux,
-              détection d’anomalie, <strong>analyse décisionnelle</strong>{" "}
-              (business intelligence), <strong>solution SaaS</strong>, etc.
+              Le <strong>développement front-end</strong> a beaucoup évolué au
+              cours des dernières années. D’abord exclusivement concentré sur l’
+              <strong>intégration de maquettes graphiques</strong> en HTML et
+              CSS il a ensuite pris en charge la gestion des{" "}
+              <strong>intéractions avec les utilisateurs</strong> par le biais
+              de Javascript. Cela a donné naissance à un certain nombre
+              d’outils, chacun permettant de répondre à un{" "}
+              <strong>besoin métier spécifique</strong>.
             </p>
-
-            <h4>Site internet statique et dynamique</h4>
-
-            <p>
-              Pour les entreprises, entrepreneurs, organisations ou associations
-              qui souhaitent <strong>présenter leurs activités</strong> mais
-              également <strong>administrer leurs contenus</strong> en toute
-              autonomie : offre de produits et de services, activités, horaires,
-              équipe, etc.
-            </p>
-
-            <Info>
-              Les prestations de développement web concernent aussi bien la{" "}
-              <strong>création d’un nouveau site</strong> que l’
-              <strong>évolution d’un site existant</strong> : correction de
-              bugs, ajout de nouvelles fonctionnalités, modifications des
-              contenus ou de la présentation, mise à jour de la base de données,
-              etc.
-            </Info>
 
             <h4>Langages et outils de développement</h4>
 
             <p>
-              Un bon développeur web doit être capable d’adapter ses compétences
-              au projet, et non l’inverse. Cependant, au fur et à mesure de ses
-              expériences, et en fonction de ses propres affinités, il enrichira
-              son expertise sur certains{" "}
-              <strong>langages et outils de développement</strong> en
-              particulier. Haftwald s’applique à{" "}
-              <strong>
-                concevoir, développer ou refondre des applications web
-              </strong>{" "}
-              via les technologies modernes et évolutives suivantes :
+              Haftwald développe aussi bien des{" "}
+              <strong>Single Page Application</strong> (SPA) dont le rendu
+              s’effectue <strong>côté client</strong> (Client Side Rendering)
+              que des applications dont le rendu s’effectue{" "}
+              <strong>côté serveur</strong> (Server Side Rendering ou Static
+              Site Generation) afin de proposer la{" "}
+              <strong>solution la plus adaptée et performante</strong>.
             </p>
 
-            <p>
+            <h5>
               <strong>Typescript, Javascript</strong> : React, NextJS, Angular
-            </p>
+            </h5>
 
             <div className={styles.pictoContainer}>
               <figure>
@@ -380,19 +365,132 @@ const Home: NextPage = () => {
               </figure>
             </div>
 
+            <h4>Maquettes graphiques</h4>
+
             <p>
-              <strong>PHP</strong> : Laravel
+              Les maquettes graphiques permettent de définir en amont l’
+              <strong>interface</strong> du site. C’est une phase indispensable
+              avant de commencer la création ou la refonte d’un site web.
             </p>
 
+            <p>
+              En effet, en plus d’appliquer la <strong>charte graphique</strong>{" "}
+              de votre organisation (couleurs, typographies), la réalisation de{" "}
+              <strong>maquettes fonctionnelles</strong> oblige à se poser un
+              certain nombre de questions sur les éléments qui vont composer les
+              pages (texte, image, icône, bouton, boite de dialogue, etc.) ainsi
+              que la manière dont ces éléments seront agencés entre eux.
+            </p>
+
+            <p>
+              Ces choix impacteront directement l’
+              <strong>ergonomie</strong> du site et donc sa{" "}
+              <strong>facilité de compréhension et d’utilisation</strong>.
+              L’objectif est de{" "}
+              <strong>construire un parcours fluide et cohérent</strong> afin de
+              maximiser l’<strong>expérience utilisateur</strong>.
+            </p>
+
+            <Info>
+              En fonction de l’envergure du projet cette prestation pourra être
+              réalisée par un <strong>webdesigner</strong> de notre réseau.
+            </Info>
+            <Info>
+              Dans certains cas et afin de diminuer le coût final il parfois
+              possible d’acheter des <strong>maquettes prête à l’emploi</strong>{" "}
+              via une plateforme spécialisée.
+            </Info>
+
+            <h4>Référencement naturel</h4>
+
+            <p>
+              Le référencement naturel, aussi connu sous l’acronyme SEO pour{" "}
+              <strong>Search Engine Optimization</strong>, permet à votre site
+              d’apparaitre dans les résultats des{" "}
+              <strong>moteurs de recherche</strong> comme Google, Yahoo! ou
+              Bing.
+            </p>
+
+            <p>
+              La position dans les moteurs de recherche dépend de plusieurs
+              facteurs, autant <strong>techniques</strong> que{" "}
+              <strong>rédactionnels</strong>. Prestataire et client ont donc
+              tous les deux un rôle clé dans la réussite du référencement
+              naturel d’un site.
+            </p>
+
+            <Info>
+              En fonction de vos besoins il est possible de faire rédiger vos
+              contenus par un <strong>rédacteur web</strong> de notre réseau.
+            </Info>
+          </div>
+        </Service>
+      )}
+
+      {/* ------------------------------------------------------------------------- */
+      /*                              SERVICE BACK-END                              */
+      /* -------------------------------------------------------------------------- */}
+      {showServiceDevBack && (
+        <Service
+          title="Développement back-end"
+          picto={fire}
+          setShowService={setShowServiceDevBack}
+          setShowModalContact={setShowModalContact}
+        >
+          <div className={styles.serviceContainer}>
+            <p>
+              Aujourd’hui les <strong>applications monolitiques</strong> tendent
+              à laisser la place à des{" "}
+              <strong>architectures plus modulaires</strong>. Sans
+              nécessairement découper le projet en{" "}
+              <strong>microservices</strong>, l’approche dominante est de{" "}
+              <strong>séparer le front-end du back-end</strong> en utilisant des{" "}
+              <strong>API</strong> (Application Programming Interface). Cela
+              offre de <strong>meilleures performances</strong>, une plus{" "}
+              <strong>grande évolutivité</strong> et la possibilité à d’autres
+              applications de{" "}
+              <strong>communiquer avec le logiciel développé</strong>.
+            </p>
+
+            <h4>Langages et outils de développement</h4>
+
+            <p>
+              Haftwald développe des <strong>applications web</strong> (site
+              internet statique ou dynamqiue, logiciel métier, plateforme SaaS)
+              dans le respect des <strong>bonnes pratiques</strong> de
+              l’industrie : principes SOLID, fonctions pures, découplage...
+              autant de <strong>concepts fondamentaux</strong> pour assurer une{" "}
+              <strong>architecture logicielle solide et évolutive</strong>.
+            </p>
+
+            <h5>
+              <strong>PHP</strong> : Laravel
+            </h5>
+
             <div className={styles.pictoContainer}>
-              <figure>
+              <figure className={styles.pictoXs}>
                 <Image src={laravel} alt="picto framework laravel" />
               </figure>
             </div>
 
-            <p>
+            <h5>
+              <strong>Typescript</strong> : NodeJS & NestJS
+            </h5>
+
+            <Chip icon={hour}>Montée en compétences en cours</Chip>
+
+            <div className={styles.pictoContainer}>
+              <figure>
+                <Image src={nodejs} alt="picto framework nodejs" />
+              </figure>
+              <figure>
+                <Image src={nestjs} alt="picto framework nestjs" />
+              </figure>
+            </div>
+
+            <h5>
               <strong>Base de données</strong> : MySQL, MongoDB
-            </p>
+            </h5>
 
             <div className={styles.pictoContainer}>
               <figure>
@@ -402,19 +500,6 @@ const Home: NextPage = () => {
                 <Image src={mongodb} alt="picto mongodb database" />
               </figure>
             </div>
-
-            <h4>Code source et versionning</h4>
-
-            <p>
-              Le code source produit, <strong>performant</strong>,{" "}
-              <strong>commenté</strong> et <strong>évolutif</strong>, est
-              enregistré sur un service de gestion de développement de logiciels
-              (GitHub ou BitBucket). Cela permet de créer une{" "}
-              <strong>nouvelle version</strong> du site à chaque modification
-              (corrections, ajout de nouvelles fonctionnalités ou mise à jour
-              par exemple) ainsi que sa <strong>réutilisation</strong> en toute
-              sécurité par n’importe quel développeur web.
-            </p>
 
             <h4>Outils d’analyse</h4>
 
@@ -434,146 +519,86 @@ const Home: NextPage = () => {
       )}
 
       {/* ------------------------------------------------------------------------- */
-      /*                                 SERVICE SEO                                */
+      /*                                   DEVOPS                                   */
       /* -------------------------------------------------------------------------- */}
-      {showServiceSeo && (
+      {showServiceDevOps && (
         <Service
-          title="Référencement naturel"
-          picto={search}
-          setShowService={setShowServiceSeo}
+          title="DevOps"
+          picto={setting}
+          setShowService={setShowServiceDevOps}
           setShowModalContact={setShowModalContact}
         >
           <div className={styles.serviceContainer}>
             <p>
-              Le référencement naturel, aussi connu sous l’acronyme SEO pour{" "}
-              <strong>Search Engine Optimization</strong>, permet à votre site
-              internet d’apparaitre dans les résultats des{" "}
-              <strong>moteurs de recherche</strong> comme Google, Yahoo! ou
-              Bing.
+              Le DevOps est une <strong>approche organisationnelle</strong>{" "}
+              cherchant à <strong>combiner les équipes</strong> de
+              développements et opérationnels afin d’
+              <strong>
+                augmenter la vitesse, la qualité et l’efficience
+              </strong>{" "}
+              du développement d’un logiciel. Cette approche se traduit par des{" "}
+              <strong>méthodes et des outils communs</strong> : méthodologie
+              Agile, intégration et développement continue, automatisation, etc.
             </p>
 
+            <h4>Code source et contrôle de version</h4>
+
             <p>
-              La position dans les moteurs de recherche dépend de plusieurs
-              facteurs, dont notamment :
+              Le code source produit, <strong>performant</strong>,{" "}
+              <strong>commenté</strong> et <strong>évolutif</strong>, est
+              disponible sur un{" "}
+              <strong>service d’hébergement open source</strong> comme GitHub ou
+              BitBucket. Cela permettra de <strong>modifier le site</strong>{" "}
+              facilement (corrections, ajout de nouvelles fonctionnalités, mise
+              à jour, etc.), de{" "}
+              <strong>collaborer avec d’autres développeurs</strong> et
+              d’adopter une approche d’<strong>intégration continue</strong>.
+            </p>
+
+            <h4>Tests unitaires</h4>
+
+            <p>
+              Les tests unitaires permettent de <strong>tester le code</strong>{" "}
+              afin de s’assurer qu’il fait correctement ce qu’on lui demande en
+              toute situation. Surtout, les tests permettent de{" "}
+              <strong>détecter d’éventuels problèmes ou bugs en amont</strong>,
+              avant la mise en production, et{" "}
+              <strong>alertent en cas d’introduction d’une régression</strong>{" "}
+              lors d’un nouveau développement. Bien qu’il soit possible d’opter
+              pour une <strong>approche TDD</strong> (Test Driven Development),
+              le simple fait de disposer de <strong>tests automatisés</strong>{" "}
+              pour les <strong>fonctions critiques</strong> est déjà une
+              excellente pratique.
+            </p>
+
+            <h4>Hébergement</h4>
+
+            <Chip icon={hour}>Montée en compétences en cours</Chip>
+
+            <p>
+              Héberger une application web nécessite le plus souvent de{" "}
+              <strong>louer des serveurs</strong> auprès d’un prestataire
+              spécialisé. Selon le type d’application le recours à un{" "}
+              <strong>hébergement dans le cloud</strong> pourra s’avérer une
+              solution efficace. En effet ce type d’hébergement apporte un
+              certain nombre d’avantages, dont notamment :
             </p>
 
             <ul>
               <li>
-                la <strong>structure HTML</strong> des pages
+                Possibilité d’
+                <strong>adapter rapidement</strong> à la hausse ou à la baisse{" "}
+                <strong>le nombre de serveurs</strong> en fonction des besoins
               </li>
               <li>
-                la présence de <strong>méta-balises</strong> (title,
-                description)
+                Configurations prêtes à l’emploi, permettant une{" "}
+                <strong>mise en production rapide</strong>
               </li>
               <li>
-                la <strong>rapidité de chargement</strong> du site
+                Facturation en fonction de l’utilisation (pay as you go) pouvant
+                entraîner une <strong>réduction des coûts</strong>
               </li>
-              <li>
-                un design <strong>responsive</strong> (adaptatif)
-              </li>
-              <li>
-                la présence d’un fichier <strong>Sitemap</strong>
-              </li>
-              <li>
-                l’utilisation de <strong>CDN</strong> et du protocole{" "}
-                <strong>HTTPS</strong>
-              </li>
-              <li>etc.</li>
             </ul>
-
-            <p>
-              Vous pouvez également prendre une part active dans le
-              référencement de votre site en suivant certaines bonnes pratiques,
-              dont notamment :
-            </p>
-
-            <ul>
-              <li>
-                le partage sur les <strong>réseaux sociaux</strong>
-              </li>
-              <li>
-                le contenus de vos pages : longueur, présence de certains{" "}
-                <strong>mot-clés</strong>
-              </li>
-              <li>
-                la publication régulière de <strong>nouveaux contenus</strong>{" "}
-                (via un blog par exemple)
-              </li>
-              <li>
-                le <strong>nombre de liens</strong> pointant vers votre site
-              </li>
-              <li>etc.</li>
-            </ul>
-
-            <p>
-              Prestataire et client ont donc tous les deux un rôle clé dans la
-              réussite du référencement naturel d’un site.{" "}
-            </p>
-
-            <Info>
-              En fonction de vos besoins il est possible de faire rédiger vos
-              contenus par un <strong>rédacteur web</strong> de notre réseau.
-            </Info>
-          </div>
-        </Service>
-      )}
-
-      {/* ------------------------------------------------------------------------- */
-      /*                                 SERVICE UI                                 */
-      /* -------------------------------------------------------------------------- */}
-      {showServiceUi && (
-        <Service
-          title="Maquettes graphiques"
-          picto={pantone}
-          setShowService={setShowServiceUi}
-          setShowModalContact={setShowModalContact}
-        >
-          <div className={styles.serviceContainer}>
-            <p>
-              Les maquettes graphiques permettent de définir en amont l’
-              <strong>interface</strong> du site. C’est une phase indispensable
-              avant de commencer la création ou la refonte d’un site web.
-            </p>
-
-            <p>
-              En effet, en plus d’appliquer la <strong>charte graphique</strong>{" "}
-              de votre organisation (couleurs, typographies), la réalisation de{" "}
-              <strong>maquettes fonctionnelles</strong> oblige à se poser un
-              certain nombre de questions sur les éléments qui vont composer les
-              pages (texte, image, icône, bouton, boite de dialogue, etc.) ainsi
-              que la manière dont ces éléments seront agencés entre eux.
-            </p>
-
-            <p>
-              Les choix qui seront fait impacteront directement l’
-              <strong>ergonomie</strong> du site et donc sa{" "}
-              <strong>facilité de compréhension et d’utilisation</strong>.
-              L’objectif est de{" "}
-              <strong>construire un parcours fluide et cohérent</strong> afin de
-              maximiser l’<strong>expérience utilisateur</strong>.
-            </p>
-
-            <p>
-              Une fois les maquettes graphiques conçues il est possible et
-              souhaitable de réaliser un <strong>prototypage</strong> afin de{" "}
-              <strong>simuler une navigation</strong>. Cela permet de s’assurer
-              que l’<strong>arborescence</strong> du site et l’interface des
-              pages sont bien comprises par l’utilisateur et permettent de
-              réaliser facilement les actions voulues : recherche d’information,
-              souscription, achat, etc.
-            </p>
-
-            <Info>
-              En fonction de vos besoins et de l’envergure du projet cette
-              prestation pourra être réalisée par un{" "}
-              <strong>webdesigner</strong> de notre réseau.
-            </Info>
-
-            <Info>
-              En fonction de votre budget il est également possible d’acheter
-              des <strong>maquettes prête à l’emploi</strong> via une plateforme
-              spécialisée.
-            </Info>
           </div>
         </Service>
       )}

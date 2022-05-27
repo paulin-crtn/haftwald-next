@@ -35,6 +35,10 @@ figure {
   padding: 0;
 }
 
+p {
+  line-height: 1.7rem;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -70,6 +74,10 @@ button:disabled {
 [id] {
   scroll-margin-top: $header-margin;
   // scroll-snap-margin-top: $header-margin;
+}
+
+.italic {
+  font-style: italic;
 }
 
 // NAVIGATION MOBILE
