@@ -22,6 +22,10 @@ _Note: you won't be able to send an email from the contact form._
 
 The website is deployed on the [Vercel Platform](https://vercel.com/).
 
+## Production
+
+To access the website in production, go to [Haftwald](https://haftwald.com/).
+
 ## Licence
 
 [Mozilla Public License 2.0](https://www.mozilla.org/en-US/MPL/2.0/)
