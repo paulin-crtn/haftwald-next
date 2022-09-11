@@ -2,7 +2,7 @@
 /*                                   IMPORT                                   */
 /* -------------------------------------------------------------------------- */
 /* --------------------------------- NEXT JS -------------------------------- */
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 /* ---------------------------------- REACT --------------------------------- */
 import { ReactNode, useCallback, useEffect } from "react";
