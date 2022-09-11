@@ -3,7 +3,7 @@
 /* -------------------------------------------------------------------------- */
 
 /* --------------------------------- NEXT JS -------------------------------- */
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 /* --------------------------------- STYLES --------------------------------- */
 import styles from "../styles/OrganisationCard.module.scss";
