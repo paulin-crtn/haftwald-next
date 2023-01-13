@@ -9,7 +9,7 @@ import Head from "next/head";
 import { useState } from "react";
 
 /* ------------------------------- COMPONENTS ------------------------------- */
-import { Header } from "../components/Header";
+import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { ModalContact } from "../components/ModalContact";
 import { ScrollToTopButton } from "../components/ScrollToTopButton";
@@ -44,7 +44,7 @@ const MentionsLegales: NextPage = () => {
       {/* ------------------------------------------------------------------------- */
       /*                                   HEADER                                   */
       /* -------------------------------------------------------------------------- */}
-      <Header />
+      <Navbar />
 
       {/* ------------------------------------------------------------------------- */
       /*                                    MAIN                                    */

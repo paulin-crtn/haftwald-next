@@ -10,6 +10,9 @@
     font-weight: 400;
     cursor: pointer;
   }
+  button {
+    padding: $large-button-padding;
+  }
 }
 
 .header {
@@ -17,7 +20,7 @@
   justify-content: flex-start;
   align-items: center;
   padding: 15px 50px;
-  background-color: $primary-color;
+  background-color: #262626;
   .pictoContainer {
     display: flex;
     width: 65px;

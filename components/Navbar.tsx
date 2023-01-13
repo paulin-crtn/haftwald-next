@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 import { ModalContact } from "./ModalContact";
 
 /* --------------------------------- STYLES --------------------------------- */
-import styles from "../styles/Header.module.scss";
+import styles from "../styles/Navbar.module.scss";
 
 /* --------------------------------- IMAGES --------------------------------- */
 import logo from "../public/img/logo.png";
@@ -22,7 +22,7 @@ import mark from "../public/img/mark.svg";
 /* -------------------------------------------------------------------------- */
 /*                                  COMPONENT                                 */
 /* -------------------------------------------------------------------------- */
-export const Header = () => {
+export const Navbar = () => {
   /* -------------------------------------------------------------------------- */
   /*                                 REACT STATE                                */
   /* -------------------------------------------------------------------------- */
@@ -73,7 +73,7 @@ export const Header = () => {
   /*                                  TEMPLATE                                  */
   /* -------------------------------------------------------------------------- */
   return (
-    <header className="header">
+    <>
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <Link href="/" passHref>
@@ -165,6 +165,6 @@ export const Header = () => {
           <ModalContact setShowModalContact={setShowModalContact} />
         </div>
       )}
-    </header>
+    </>
   );
 };

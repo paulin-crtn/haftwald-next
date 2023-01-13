@@ -10,7 +10,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 /* ------------------------------- COMPONENTS ------------------------------- */
-import { Header } from "../components/Header";
+import { Navbar } from "../components/Navbar";
 import { ServiceCard } from "../components/ServiceCard";
 import { Service } from "../components/Service";
 import { Chip } from "../components/Chip";
@@ -75,14 +75,14 @@ const Home: NextPage = () => {
         <title>Développeur Web Freelance Fullstack | Haftwald</title>
         <meta
           name="description"
-          content="Développement d’applications web réalisées sous Javascript, Typescript ou PHP : Angular, React, NextJS, NodeJS et Laravel"
+          content="Développement d’applications web réalisées sous Javascript, Typescript ou PHP : React, NextJS, Node.js, et Laravel"
         />
       </Head>
 
       {/* ------------------------------------------------------------------------- */
-      /*                                   HEADER                                   */
+      /*                                   NAVBAR                                   */
       /* -------------------------------------------------------------------------- */}
-      <Header />
+      <Navbar />
 
       {/* ------------------------------------------------------------------------- */
       /*                                    MAIN                                    */
@@ -173,7 +173,7 @@ const Home: NextPage = () => {
             <OrganisationCard
               title="Présentiel"
               img={team}
-              text="Certains projets nécessitent une présence totale ou partielle sur site, auquel cas cas je peux me déplacer pour intégrer vos équipes directement dans vos locaux. La mobilité est possible sur l’ensemble du territoire."
+              text="Certains projets nécessitent une présence totale ou partielle sur site, auquel cas cas je peux me déplacer pour intégrer vos équipes directement dans vos locaux à Paris, Boulogne-Billancourt, Saint-Cloud ou Issy-les-Moulineaux."
               setShowModalContact={setShowModalContact}
             />
             <OrganisationCard
@@ -477,8 +477,6 @@ const Home: NextPage = () => {
               <strong>Typescript</strong> : NodeJS & NestJS
             </h5>
 
-            <Chip icon={hour}>Montée en compétences en cours</Chip>
-
             <div className={styles.pictoContainer}>
               <figure>
                 <Image src={nodejs} alt="picto framework nodejs" />
@@ -571,7 +569,7 @@ const Home: NextPage = () => {
               excellente pratique.
             </p>
 
-            <h4>Hébergement</h4>
+            <h4>Amazon Web Services</h4>
 
             <Chip icon={hour}>Montée en compétences en cours</Chip>
 
