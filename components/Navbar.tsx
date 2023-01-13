@@ -49,13 +49,13 @@ export const Navbar = () => {
    */
   useEffect(() => {
     const body = document.querySelector("body");
-    const header = document.getElementsByClassName("header")[0];
-    if (body && header) {
+    const navbar = document.getElementsByClassName("navbar")[0];
+    if (body && navbar) {
       // Click listener
       body.addEventListener("click", (e: any) => {
         const target = e.target;
         if (target) {
-          if (!header.contains(target)) {
+          if (!navbar.contains(target)) {
             setShowMobileNav(false);
           }
         }
@@ -73,7 +73,7 @@ export const Navbar = () => {
   /*                                  TEMPLATE                                  */
   /* -------------------------------------------------------------------------- */
   return (
-    <>
+    <div className="navbar">
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <Link href="/" passHref>
@@ -165,6 +165,6 @@ export const Navbar = () => {
           <ModalContact setShowModalContact={setShowModalContact} />
         </div>
       )}
-    </>
+    </div>
   );
 };

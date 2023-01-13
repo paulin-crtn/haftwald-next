@@ -7,7 +7,7 @@ import Head from "next/head";
 import Link from "next/link";
 
 /* ------------------------------- COMPONENTS ------------------------------- */
-import { Header } from "../components/Navbar";
+import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 
 /* --------------------------------- STYLES --------------------------------- */
@@ -32,9 +32,9 @@ const Custom404: NextPage = () => {
       </Head>
 
       {/* ------------------------------------------------------------------------- */
-      /*                                   HEADER                                   */
+      /*                                   NAVBAR                                   */
       /* -------------------------------------------------------------------------- */}
-      <Header />
+      <Navbar />
 
       {/* ------------------------------------------------------------------------- */
       /*                                    MAIN                                    */
