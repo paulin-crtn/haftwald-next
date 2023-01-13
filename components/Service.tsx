@@ -58,19 +58,11 @@ export const Service = ({
   /*                                REACT EFFECT                                */
   /* -------------------------------------------------------------------------- */
   /**
-   * Apply overflowYHidden class on body
-   */
-  useEffect(() => addBodyOverflowClass(), []);
-
-  /**
-   * Apply class active to serviceContainer
+   * Show service
    */
   useEffect(() => {
-    const serviceContainer =
-      document.getElementsByClassName("serviceContainer")[0];
-    if (serviceContainer) {
-      serviceContainer.classList.add("active");
-    }
+    addBodyOverflowClass();
+    addClassActive();
   }, []);
 
   /**
@@ -100,6 +92,18 @@ export const Service = ({
   /* -------------------------------------------------------------------------- */
   /*                                  FUNCTION                                  */
   /* -------------------------------------------------------------------------- */
+  /**
+   * Add css class "active"
+   * Transition is set in styles/global.scss file
+   */
+  function addClassActive() {
+    const serviceContainer =
+      document.getElementsByClassName("serviceContainer")[0];
+    if (serviceContainer) {
+      serviceContainer.classList.add("active");
+    }
+  }
+
   /**
    * Remove css class "active"
    * Transition is set in styles/global.scss file

@@ -10,12 +10,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20px 50px;
+    margin: 20px 40px;
     z-index: 10;
   }
   .logo {
     display: flex;
-    width: 160px;
+    width: 180px;
     cursor: pointer;
     user-select: none;
   }
@@ -26,6 +26,7 @@
     color: $primary-color;
   }
   .navigation {
+    font-size: 1.15rem;
     ul {
       display: flex;
       align-items: center;
@@ -45,10 +46,10 @@
 
 .cta {
   font-weight: 300;
-  background: linear-gradient(0.25turn, $primary-color, #3f78fd);
+  background: $primary-color;
 }
 
-@media (max-width: 1060px) {
+@media (max-width: 1200px) {
   .container {
     .navigation {
       display: none;

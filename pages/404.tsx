@@ -7,7 +7,7 @@ import Head from "next/head";
 import Link from "next/link";
 
 /* ------------------------------- COMPONENTS ------------------------------- */
-import { Header } from "../components/Header";
+import { Header } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 
 /* --------------------------------- STYLES --------------------------------- */

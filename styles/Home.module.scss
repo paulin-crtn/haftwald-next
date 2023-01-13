@@ -6,8 +6,8 @@
   justify-content: space-between;
   align-items: center;
   max-width: $max-width;
-  margin-top: calc(80px + $header-margin);
-  margin-bottom: 80px;
+  margin-top: calc(70px + $header-margin);
+  margin-bottom: 70px;
   margin-right: auto;
   margin-left: auto;
   padding: $container-padding;
@@ -18,8 +18,8 @@
     line-height: 3.5rem;
   }
   h2 {
-    margin: 30px 0 50px 0;
-    font-size: 1.4rem;
+    margin: 30px 0 40px 0;
+    font-size: 1.5rem;
     font-weight: 300;
   }
   button {
@@ -41,7 +41,7 @@
       line-height: 2.9rem;
     }
     h2 {
-      font-size: 1.1rem;
+      font-size: 1.3rem;
     }
     .stackContainer {
       flex: 0 0 400px;
@@ -81,14 +81,15 @@
 
 .title {
   margin-bottom: 20px;
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 600;
   text-align: center;
 }
 .subTitle {
   width: 60%;
   margin: 0 auto;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+  line-height: 2rem;
   text-align: center;
 }
 
@@ -98,6 +99,8 @@
   }
   .subTitle {
     width: 80%;
+    font-size: 1.1rem;
+    line-height: 1.8rem;
   }
 }
 
@@ -129,13 +132,15 @@
   ul,
   p {
     margin: 20px 0;
+    font-size: 1.1rem;
+    line-height: 1.8rem;
   }
   ul {
     line-height: 1.7rem;
   }
   h4 {
     margin: 30px 0 20px 0;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 500;
   }
   h4:first-child {

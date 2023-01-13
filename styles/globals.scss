@@ -11,6 +11,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
   font-weight: 300;
+  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%; // Avoid bug on landscape mobile position
 }
 
@@ -146,7 +147,6 @@ button:disabled {
 
 .serviceContainer.active {
   right: 0px;
-  transition: right 0.7s; // 0.7s match 700ms setTimeout in components/Service.tsx
 }
 
 // SCROLL TO TOP BUTTON
