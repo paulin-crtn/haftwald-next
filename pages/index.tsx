@@ -52,7 +52,7 @@ import mysql from "../public/img/techno/mysql.svg";
 import mongodb from "../public/img/techno/mongodb.svg";
 import next from "../public/img/badge/next.svg";
 import nest from "../public/img/badge/nest.svg";
-import postgres from "../public/img/badge/nest.svg";
+import postgres from "../public/img/badge/postgres.svg";
 import aws from "../public/img/badge/aws.svg";
 import prisma from "../public/img/badge/prisma.svg";
 import sketch from "../public/img/badge/sketch.svg";
