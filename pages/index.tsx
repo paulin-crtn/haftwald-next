@@ -50,6 +50,12 @@ import nodejs from "../public/img/techno/nodejs.svg";
 import nestjs from "../public/img/techno/nestjs.svg";
 import mysql from "../public/img/techno/mysql.svg";
 import mongodb from "../public/img/techno/mongodb.svg";
+import next from "../public/img/badge/next.svg";
+import nest from "../public/img/badge/nest.svg";
+import postgres from "../public/img/badge/nest.svg";
+import aws from "../public/img/badge/aws.svg";
+import prisma from "../public/img/badge/prisma.svg";
+import sketch from "../public/img/badge/sketch.svg";
 
 /* -------------------------------------------------------------------------- */
 /*                                  COMPONENT                                 */
@@ -192,23 +198,18 @@ const Home: NextPage = () => {
               <div className={styles.lacartedeslogementsBadge}>
                 <figure>
                   <Image
-                    src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white"
+                    src={next}
                     width={120}
                     height={35}
                     alt="nextjs badge"
                   />
                 </figure>
                 <figure>
-                  <Image
-                    src="https://img.shields.io/badge/nestjs-E0234E?style=for-the-badge&logo=nestjs&logoColor=whites"
-                    width={115}
-                    height={35}
-                    alt="nest badge"
-                  />
+                  <Image src={nest} width={115} height={35} alt="nest badge" />
                 </figure>
                 <figure>
                   <Image
-                    src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"
+                    src={postgres}
                     width={160}
                     height={35}
                     alt="postgres badge"
@@ -216,23 +217,18 @@ const Home: NextPage = () => {
                 </figure>
                 <figure>
                   <Image
-                    src="https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white"
+                    src={prisma}
                     width={120}
                     height={35}
                     alt="prisma badge"
                   />
                 </figure>
                 <figure>
-                  <Image
-                    src="https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white"
-                    width={150}
-                    height={35}
-                    alt="aws badge"
-                  />
+                  <Image src={aws} width={150} height={35} alt="aws badge" />
                 </figure>
                 <figure>
                   <Image
-                    src="https://img.shields.io/badge/Sketch-FFB387?style=for-the-badge&logo=sketch&logoColor=black"
+                    src={sketch}
                     width={110}
                     height={35}
                     alt="sketch badge"
