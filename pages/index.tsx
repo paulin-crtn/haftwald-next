@@ -171,7 +171,11 @@ const Home: NextPage = () => {
 
           <div className={styles.recentWorkWrapper}>
             <figure className={styles.lacartedeslogementsScreeshot}>
-              <a href="https://www.lacartedeslogements.com" target="_blank">
+              <a
+                href="https://www.lacartedeslogements.com"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Image
                   src={lacartedeslogements}
                   alt="screenshot lacartedeslogements homepage"
