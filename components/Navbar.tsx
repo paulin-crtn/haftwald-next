@@ -94,6 +94,9 @@ export const Navbar = () => {
                 <Link href="/#services">Offres</Link>
               </li>
               <li>
+                <Link href="/#recentWork">Réalisation</Link>
+              </li>
+              <li>
                 <Link href="/#organisation">Organisation</Link>
               </li>
               <li>
@@ -131,6 +134,9 @@ export const Navbar = () => {
         <ul>
           <li onClick={() => setShowMobileNav(false)}>
             <Link href="/#services">Offres</Link>
+          </li>
+          <li onClick={() => setShowMobileNav(false)}>
+            <Link href="/#recentWork">Réalisation</Link>
           </li>
           <li onClick={() => setShowMobileNav(false)}>
             <Link href="/#organisation">Organisation</Link>

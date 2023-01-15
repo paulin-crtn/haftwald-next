@@ -33,12 +33,13 @@ import styles from "../styles/Home.module.scss";
 
 /* --------------------------------- IMAGES --------------------------------- */
 import stack from "../public/img/homepage.png";
-import picture from "../public/img/picto/picture.png";
-import fire from "../public/img/picto/fire.png";
-import setting from "../public/img/picto/setting.png";
+import front from "../public/img/picto/front.png";
+import back from "../public/img/picto/back.png";
+import devops from "../public/img/picto/devops.png";
 import team from "../public/img/team.svg";
 import videocall from "../public/img/videocall.svg";
 import commitment from "../public/img/commitment.svg";
+import lacartedeslogements from "../public/img/lacartedeslogements.png";
 import emoji from "../public/img/emoji.png";
 import hour from "../public/img/hour.svg";
 import reactjs from "../public/img/techno/reactjs.svg";
@@ -135,22 +136,106 @@ const Home: NextPage = () => {
           <div className={[styles.wrapper, styles.servicesWrapper].join(" ")}>
             <ServiceCard
               title="Front-end"
-              picto={picture}
+              picto={front}
               text="Développement d’interfaces dynamiques afin d’offrir une expérience de navigation fluide et rapide à vos utilisateurs : intégration de maquettes responsive, consommation d’API, etc."
               setShowService={setShowServiceDevFront}
             />
             <ServiceCard
               title="Back-end"
-              picto={fire}
+              picto={back}
               text="Développement d’API afin de vous permettre de construire des applications métiers ou des solutions SaaS : outil de suivi ou de gestion, interaction avec une base de données, business intelligence, etc."
               setShowService={setShowServiceDevBack}
             />
             <ServiceCard
               title="DevOps"
-              picto={setting}
+              picto={devops}
               text="Automatisation de certains processus afin de lancer de nouvelles fonctionnalités plus rapidement tout en réduisant le risque d’erreurs et de bugs : versionning, tests unitaires, pipeline CI/CD, monitoring, etc."
               setShowService={setShowServiceDevOps}
             />
+          </div>
+        </section>
+
+        {/* ------------------------------- RECENT WORK ------------------------------ */}
+        <section
+          id="recentWork"
+          className={[styles.sectionContainer, styles.recentWorkContainer].join(
+            " "
+          )}
+        >
+          <h3 className={styles.title}>Réalisation récente</h3>
+          <p className={styles.subTitle}>
+            Développement d'une application web d'annonces de locations entre
+            particuliers réalisée entièrement en Typescript et hébergée dans le
+            cloud avec AWS.
+          </p>
+
+          <div className={styles.recentWorkWrapper}>
+            <figure className={styles.lacartedeslogementsScreeshot}>
+              <a href="https://www.lacartedeslogements.com" target="_blank">
+                <Image
+                  src={lacartedeslogements}
+                  alt="screenshot lacartedeslogements homepage"
+                  placeholder="blur"
+                  quality={100}
+                />
+              </a>
+            </figure>
+
+            <div className={styles.lacartedeslogementsStack}>
+              <h6 className={styles.lacartedeslogementsLogo}>
+                Solutions techniques
+              </h6>
+              <div className={styles.lacartedeslogementsBadge}>
+                <figure>
+                  <Image
+                    src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white"
+                    width={120}
+                    height={35}
+                    alt="nextjs badge"
+                  />
+                </figure>
+                <figure>
+                  <Image
+                    src="https://img.shields.io/badge/nestjs-E0234E?style=for-the-badge&logo=nestjs&logoColor=whites"
+                    width={115}
+                    height={35}
+                    alt="nest badge"
+                  />
+                </figure>
+                <figure>
+                  <Image
+                    src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"
+                    width={160}
+                    height={35}
+                    alt="postgres badge"
+                  />
+                </figure>
+                <figure>
+                  <Image
+                    src="https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white"
+                    width={120}
+                    height={35}
+                    alt="prisma badge"
+                  />
+                </figure>
+                <figure>
+                  <Image
+                    src="https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white"
+                    width={150}
+                    height={35}
+                    alt="aws badge"
+                  />
+                </figure>
+                <figure>
+                  <Image
+                    src="https://img.shields.io/badge/Sketch-FFB387?style=for-the-badge&logo=sketch&logoColor=black"
+                    width={110}
+                    height={35}
+                    alt="sketch badge"
+                  />
+                </figure>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -321,7 +406,7 @@ const Home: NextPage = () => {
       {showServiceDevFront && (
         <Service
           title="Développement Front-end"
-          picto={picture}
+          picto={front}
           setShowService={setShowServiceDevFront}
           setShowModalContact={setShowModalContact}
         >
@@ -433,7 +518,7 @@ const Home: NextPage = () => {
       {showServiceDevBack && (
         <Service
           title="Développement back-end"
-          picto={fire}
+          picto={back}
           setShowService={setShowServiceDevBack}
           setShowModalContact={setShowModalContact}
         >
@@ -521,8 +606,8 @@ const Home: NextPage = () => {
       /* -------------------------------------------------------------------------- */}
       {showServiceDevOps && (
         <Service
-          title="DevOps"
-          picto={setting}
+          title="DevOps - Cloud"
+          picto={devops}
           setShowService={setShowServiceDevOps}
           setShowModalContact={setShowModalContact}
         >

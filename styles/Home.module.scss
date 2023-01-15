@@ -167,6 +167,51 @@
   }
 }
 
+// RECENT WORK
+.recentWorkWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: $max-width;
+  margin-top: 60px;
+  padding: 0 60px;
+}
+
+.lacartedeslogementsScreeshot {
+  flex: 1 1 600px;
+  margin-right: 40px;
+}
+
+.lacartedeslogementsStack {
+  flex: 1 0 500px;
+  text-align: center;
+  h6 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #060015;
+  }
+  .lacartedeslogementsBadge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    figure {
+      margin: 0 5px;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .recentWorkWrapper {
+    display: block;
+    padding: 0 40px;
+  }
+  .lacartedeslogementsStack {
+    margin-top: 30px;
+  }
+}
+
 // ORGANISATION
 .organisationsContainer {
   background: linear-gradient(0.25turn, $primary-color, $primary-color-medium);
