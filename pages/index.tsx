@@ -132,7 +132,7 @@ const Home: NextPage = () => {
             " "
           )}
         >
-          <h3 className={styles.title}>Offres de service</h3>
+          <h3 className={styles.title}>Prestations de service</h3>
           <p className={styles.subTitle}>
             Faites créer ou modifier votre site internet ou votre application
             web : ajout de nouvelles fonctionnalités, correction de bugs,
@@ -442,7 +442,7 @@ const Home: NextPage = () => {
               <figure>
                 <Image src={reactjs} alt="picto librairie react" />
               </figure>
-              <figure className={styles.pictoXs}>
+              <figure>
                 <Image src={nextjs} alt="picto framework nextjs" />
               </figure>
               <figure>
@@ -549,16 +549,6 @@ const Home: NextPage = () => {
             </p>
 
             <h5>
-              <strong>PHP</strong> : Laravel
-            </h5>
-
-            <div className={styles.pictoContainer}>
-              <figure className={styles.pictoXs}>
-                <Image src={laravel} alt="picto framework laravel" />
-              </figure>
-            </div>
-
-            <h5>
               <strong>Typescript</strong> : NodeJS & NestJS
             </h5>
 
@@ -568,6 +558,16 @@ const Home: NextPage = () => {
               </figure>
               <figure>
                 <Image src={nestjs} alt="picto framework nestjs" />
+              </figure>
+            </div>
+
+            <h5>
+              <strong>PHP</strong> : Laravel
+            </h5>
+
+            <div className={styles.pictoContainer}>
+              <figure className={styles.pictoXs}>
+                <Image src={laravel} alt="picto framework laravel" />
               </figure>
             </div>
 

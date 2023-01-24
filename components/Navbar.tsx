@@ -91,7 +91,7 @@ export const Navbar = () => {
           <nav className={styles.navigation}>
             <ul>
               <li>
-                <Link href="/#services">Offres</Link>
+                <Link href="/#services">Prestations</Link>
               </li>
               <li>
                 <Link href="/#recentWork">Réalisation</Link>
@@ -133,7 +133,7 @@ export const Navbar = () => {
       <nav className="mobileNav">
         <ul>
           <li onClick={() => setShowMobileNav(false)}>
-            <Link href="/#services">Offres</Link>
+            <Link href="/#services">Prestations</Link>
           </li>
           <li onClick={() => setShowMobileNav(false)}>
             <Link href="/#recentWork">Réalisation</Link>
