@@ -143,10 +143,9 @@ button:disabled {
   border-radius: 10px 0 0 10px;
   z-index: 100;
   transition: right 0.7s; // 0.7s match 700ms setTimeout in components/Service.tsx
-}
-
-.serviceContainer.active {
-  right: 0px;
+  &.active {
+    right: 0px;
+  }
 }
 
 // SCROLL TO TOP BUTTON

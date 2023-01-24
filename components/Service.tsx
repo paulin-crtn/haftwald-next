@@ -100,7 +100,9 @@ export const Service = ({
     const serviceContainer =
       document.getElementsByClassName("serviceContainer")[0];
     if (serviceContainer) {
-      serviceContainer.classList.add("active");
+      setTimeout(() => {
+        serviceContainer.classList.add("active");
+      }, 10); // Fix for css transition
     }
   }
 
